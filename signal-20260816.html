@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="noir">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="icon" type="image/svg+xml" href="assets/signal-favicon.svg" data-brand="signal">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Signal">
+<meta property="og:title" content="— Signal">
+<meta property="og:description" content="A Tübingen–Max Planck team showed that three frontier labs encrypt hidden reasoning with one shared key per provider — and decoded 315,320 of those traces from public agent logs. What the attack actually does, what it doesn&#x27;t, and why it lands the same week Anthropic crossed into profit.">
+<meta property="og:url" content="https://signalreport2026.z29.web.core.windows.net/signal-20260816.html">
+<meta property="og:image" content="https://signalreport2026.z29.web.core.windows.net/assets/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="— Signal">
+<meta name="twitter:description" content="A Tübingen–Max Planck team showed that three frontier labs encrypt hidden reasoning with one shared key per provider — and decoded 315,320 of those traces from public agent logs. What the attack actually does, what it doesn&#x27;t, and why it lands the same week Anthropic crossed into profit.">
+<meta name="theme-color" content="#0E0C0A">
+<title> — Signal</title>
+<meta name="description" content="A Tübingen–Max Planck team showed that three frontier labs encrypt hidden reasoning with one shared key per provider — and decoded 315,320 of those traces from public agent logs. What the attack actua">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,700;1,9..144,400;1,9..144,600&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/styles.css">
+<!--
+  SIGNAL ISSUE TEMPLATE (FROZEN — agent fills TOKENS only, never restyles).
+  Allowed figure motions (pick ONE per figure, frozen classes only):
+    grow  = isometric bars rising (.bar-grow, stagger via inline animation-delay)
+    draw  = tracks/arcs inking in (.track-draw with --len = path length)
+    sweep = gauge needle (class .needle; hub fixed at 150px 225px — gauge geometry frozen)
+    rise  = stacking slabs (.slab per group, stagger via inline animation-delay)
+  Counters: <tspan data-count-to="N" data-decimals="D" data-prefix="" data-suffix="">
+  Two-series charts: brass (#C6A15B var(--brass)) vs ash (#9A917F var(--ash)).
+  Ember (var(--ember)) = live/unconfirmed ONLY. No green anywhere, ever.
+  Read-along: narration segments live in the edition's segments JSON (see ai_news.md);
+  cues.json is built by synth_cues_azure.py — the dock below needs no per-edition edits.
+-->
+</head>
+<body>
+<div id="bootVeil" aria-hidden="true"><div class="bv-inner"><div class="bv-ring"></div><div class="bv-brand">Sig<em>nal</em></div><div class="bv-rule"><span></span></div><div class="bv-status">Reading edition…</div></div></div>
+<script>(function(){var v=document.getElementById('bootVeil');if(!v)return;var rm=window.matchMedia('(prefers-reduced-motion: reduce)').matches;var seen=null;try{seen=sessionStorage.getItem('signal-seen');}catch(e){}function lift(){v.classList.add('lifted');setTimeout(function(){v.remove();},500);try{sessionStorage.setItem('signal-seen','1');}catch(e){}}if(rm||seen){requestAnimationFrame(function(){requestAnimationFrame(lift);});return;}var msgs=['Reading edition…','Inking figures…','Verifying links…'],mi=0,el=v.querySelector('.bv-status'),tm=setInterval(function(){mi=(mi+1)%msgs.length;if(el)el.textContent=msgs[mi];},340);function done(){clearInterval(tm);lift();}if(document.readyState==='complete'){setTimeout(done,320);}else{window.addEventListener('load',function(){setTimeout(done,320);});setTimeout(done,1500);}})();</script>
+<div id="progress"></div>
+
+<div class="breaking"><div class="wrap">
+  <span class="live"><i></i>Archive</span>
+  <span>This edition is history — <a href="index.html">today’s front page →</a></span>
+</div></div>
+
+<nav class="mainnav" id="mainnav"><div class="wrap">
+  <a class="home" href="index.html">Signal</a>
+  <a href="#releases">Releases</a>
+  <a href="#policy">Policy</a>
+  <a href="#research">Research</a>
+  <a href="#voices">Voices</a>
+  <a href="#other">Other</a>
+  <a href="index.html#archive">Archive</a>
+  <a class="cta" href="#" data-theme-toggle><span data-theme-label>☀ Paper</span></a>
+</div></nav>
+
+<div class="article-shell">
+  <header class="article-hero">
+    <div class="kicker">Daily AI newspaper <span class="date">AUG 16 · 2026 · № 1</span></div>
+    <h1>The day the <span class="accent">traces</span> spoke</h1>
+    <p class="dek">A Tübingen–Max Planck team showed that three frontier labs encrypt hidden reasoning with one shared key per provider — and decoded 315,320 of those traces from public agent logs. What the attack actually does, what it doesn't, and why it lands the same week Anthropic crossed into profit.</p>
+    <div class="article-meta">
+      <span>By <b style="color:var(--ink)">Signal Desk</b></span><span>·</span><span>6 min read</span><span>·</span>
+      <span class="pill">6 items · 1 figures</span>
+      <span style="flex:1"></span>
+      <button class="btn" data-share>⇪ Share</button>
+    </div>
+    <div class="stats-row"><div class="stat"><div class="v">0</div><div class="k">RELEASES<br>ITEMS THIS EDITION</div></div><div class="stat"><div class="v">0</div><div class="k">POLICY<br>ITEMS THIS EDITION</div></div><div class="stat"><div class="v">6</div><div class="k">RESEARCH<br>ITEMS THIS EDITION</div></div><div class="stat"><div class="v">0</div><div class="k">VOICES<br>ITEMS THIS EDITION</div></div><div class="stat"><div class="v">0</div><div class="k">OTHER<br>ITEMS THIS EDITION</div></div></div>
+  </header>
+
+  <div class="article-layout">
+    <aside class="toc" aria-label="On this page">
+      <span>On this page</span>
+      <a href="#releases">01 · Releases</a>
+      <a href="#policy">02 · Policy</a>
+      <a href="#research">03 · Research</a>
+      <a href="#voices">04 · Voices</a>
+      <a href="#other">05 · Other</a>
+      <div class="tstat">0<br>fabricated claims</div>
+    </aside>
+
+    <div>
+      <section class="section" id="releases">
+        <div class="sec-head"><span class="sn">01</span><h2>Releases</h2></div>
+        
+      </section>
+      <section class="section" id="policy">
+        <div class="sec-head"><span class="sn">02</span><h2>Policy &amp; Politics</h2></div>
+        
+      </section>
+      <section class="section" id="research">
+        <div class="sec-head"><span class="sn">03</span><h2>Research &amp; Ideas</h2></div>
+        <div class="item"><div class="item-head"><span class="item-kicker">Field Report · 01 The lede</span><span class="item-title">one key, three labs</span><span class="item-date">Aug 16, 2026</span></div><p class="item-body">Encrypted reasoning traces were supposed to be the part of the response nobody could read. OpenAI, Anthropic, and Google each wrap their models' hidden chain-of-thought in ciphertext before sending it through the API, partly to protect against distillation and partly to keep private reasoning private. This week, researchers at the ELLIS Institute Tübingen and the Max Planck Institute published a demonstration that the wrapping is shared: each provider uses a <b>single global encryption key</b> for every session, every user, and every model it serves (<a href="https://arxiv.org/abs/2608.09867">arXiv 2608.09867</a>).</p><p class="item-body">That one design choice collapses the protection. Because the key never rotates, a compatible decoder model from the same provider can transcribe another model's encrypted reasoning in plaintext — what the authors call a decryption jailbreak. Working from 6,708 public agent trajectory logs, the team decoded <b>315,320 reasoning blocks</b> and recovered <b>182 live credentials</b>, including API keys that had been reasoned over in the hidden layer. The attack spans four vectors: circumventing anti-distillation defenses, extracting private data at scale, reading the reasoning of a stronger model through a weaker sibling, and reconstructing traces from traffic that was never meant to be legible.</p></div>
+<div class="figure">
+      <div class="fig-kicker">What 6,708 public logs yielded</div>
+      <div class="fig-body">
+        <svg viewBox="0 0 720 220" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Diagram of reasoning trace extraction scale">
+          <!-- flow: logs -> blocks -> credentials -->
+          <g font-family="-apple-system,Segoe UI,Roboto,sans-serif">
+            <!-- stage boxes -->
+            <rect x="10" y="70" width="200" height="80" rx="8" fill="#EAF0EF" stroke="#D3E0DD"/>
+            <rect x="260" y="70" width="200" height="80" rx="8" fill="#EAF0EF" stroke="#D3E0DD"/>
+            <rect x="510" y="70" width="200" height="80" rx="8" fill="#EAF0EF" stroke="#D3E0DD"/>
+            <!-- arrows -->
+            <line x1="210" y1="110" x2="256" y2="110" stroke="#6E6455" stroke-width="2"/>
+            <polygon points="256,110 248,105 248,115" fill="#6E6455"/>
+            <line x1="460" y1="110" x2="506" y2="110" stroke="#6E6455" stroke-width="2"/>
+            <polygon points="506,110 498,105 498,115" fill="#6E6455"/>
+            <!-- stage values -->
+            <text x="110" y="102" text-anchor="middle" font-size="24" font-weight="700" fill="#EFE7D7">6,708</text>
+            <text x="110" y="126" text-anchor="middle" font-size="11" fill="#A79B87">public agent trajectory logs</text>
+            <text x="360" y="102" text-anchor="middle" font-size="24" font-weight="700" fill="#C6A15B">315,320</text>
+            <text x="360" y="126" text-anchor="middle" font-size="11" fill="#A79B87">reasoning blocks decoded</text>
+            <text x="610" y="102" text-anchor="middle" font-size="24" font-weight="700" fill="#B23A3A">182</text>
+            <text x="610" y="126" text-anchor="middle" font-size="11" fill="#A79B87">credentials recovered</text>
+            <!-- key note -->
+            <text x="360" y="40" text-anchor="middle" font-size="12" fill="#9A917F" font-weight="600">one global key per provider — no per-session isolation</text>
+            <text x="360" y="188" text-anchor="middle" font-size="11" fill="#6E6455" font-style="italic">OpenAI · Anthropic · Google — ciphertexts interchangeable across sessions, users, and models within each provider</text>
+          </g>
+        </svg>
+      </div>
+      <div class="fig-caption">Source: figures and counts reported in arXiv 2608.09867 (ELLIS Institute Tübingen / Max Planck), paper dated 10 Aug 2026, publicly disclosed 11–12 Aug.</div>
+      <div class="fig-takeaway">Takeaway · The vulnerability is not a broken cipher — it is a key-management decision, and the same key that hides reasoning also leaks it.</div>
+    </div>
+<div class="item"><p class="item-body">The reaction from people who actually run agent infrastructure was less surprise than resignation. Security researchers had flagged the replay design months earlier — Matthew Green at Johns Hopkins pointed at the construction in May, and according to the paper's disclosure timeline the labs initially saw no security implication until a working attack existed. Providers have now deployed mitigations that break the main exploit path, but neither per-session key isolation nor an independent audit has been announced by any of the three.</p></div>
+<div class="item"><p class="item-body">The deeper consequence sits with the open-weight ecosystem. If proprietary reasoning can be read at scale, the anti-distillation moat that justified hiding the traces gets weaker — and the argument for releasing reasoning openly, on open models, gets stronger by symmetry. The paper's authors tested six open-weight reasoning models (Kimi K3, Kimi K2.6, Kimi K2.5, GLM-5.2, DeepSeek-V3.1, Inkling) against the same 90-problem suite, which means the comparison baseline between closed traces and open ones is now public too.</p></div>
+<div class="item"><div class="item-head"><span class="item-kicker">Field Report · 02 The counterweight</span><span class="item-title">Anthropic's quarter</span><span class="item-date">Aug 16, 2026</span></div><p class="item-body">Against that backdrop, Anthropic's reported quarter reads differently. The company told investors it expects <b>$10.9 billion in Q2 2026 revenue</b> — up 130% from $4.8 billion in Q1 — with a <b>$559 million operating profit</b>, the first for any frontier lab at this scale. The mechanism underneath the headline is the cost line: compute spend fell from <b>71 cents to 56 cents per revenue dollar</b>, driven by serving-efficiency work ahead of an expected October listing. Both figures are reported rather than audited, and at least one account notes a compute-ramp discount that may have flattered the quarter, so treat the profit as a signal rather than a verdict.</p></div>
+<div class="item"><p class="item-body">The juxtaposition is the story. The same week one of the three labs in the trace paper reported its first profit, the cryptographic assumption protecting all three labs' reasoning was shown to be broken by design. Neither event cancels the other — but anyone building on these APIs now has two new facts to price in at once: the economics of frontier serving can work, and the secrecy of frontier reasoning currently doesn't.</p></div>
+<div class="item"><div class="item-head"><span class="item-kicker">Field Report · 03 The rest of the day, briefly</span><span class="item-title">03 The rest of the day, briefly</span><span class="item-date">Aug 16, 2026</span></div><p class="item-body">Elsewhere, <b>Stripe finalized its acquisition of OpenRouter</b> for more than $7 billion, per <a href="https://techcrunch.com/2026/08/16/stripe-will-reportedly-acquire-ai-gateway-startup-openrouter-for-7b/">TechCrunch's report on the Bloomberg story</a> — payments infrastructure absorbing the model-routing layer at roughly seven times OpenRouter's May valuation. <b>Z.ai's GLM-5.3</b> launched on a 743B-parameter base with leading CyberGym scores but staged, not shipped, open weights. <b>Qwen passed 3 billion cumulative downloads</b>, topping the open-model charts. Google open-sourced <b>HEIR</b>, a compiler turning pretrained models into encrypted-inference programs — a different, deliberate approach to the privacy problem the trace paper attacked. And <b>Geoffrey Hinton</b> told interviewers that mass unemployment is coming and that the executives betting on replacement know it — a voice item that, like the Anthropic numbers, lands harder in a week when the economics visibly turned.</p><p class="item-body">Nothing else cleared the bar today. The full trace paper is worth reading directly — the appendix reproduces extracted chains-of-thought verbatim, which is the closest the public has come to reading a frontier model's mind.</p></div>
+      </section>
+      <section class="section" id="voices">
+        <div class="sec-head"><span class="sn">04</span><h2>Voices</h2></div>
+        
+      </section>
+      <section class="section" id="other">
+        <div class="sec-head"><span class="sn">05</span><h2>Other AI News</h2></div>
+        
+      </section>
+
+      <section class="related">
+        <div class="sec-head"><span class="sn">✦</span><h2>Related editions</h2><a href="index.html#archive">Archive ↓</a></div>
+        <div class="related-grid"><a class="card" href="signal-20260817.html"><div class="ck">Aug 17</div><div class="ct" style="font-size:18px">What Ships, What Stays — AI Field Report — AI Field Report</div><div class="cm"><span class="n">16 items</span><span>→</span></div></a><a class="card" href="signal-20260910.html"><div class="ck">Sep 10</div><div class="ct" style="font-size:18px">The Million-Token Proof — Math Falls, Rules Tighten</div><div class="cm"><span class="n">15 items</span><span>→</span></div></a></div>
+      </section>
+
+      <div class="prevnext">
+        <a href="index.html"><div class="d">← Previous edition</div><div class="t">Front page</div></a>
+        <a href="index.html"><div class="d">Front page →</div><div class="t n">All editions, glance + archive</div></a>
+      </div>
+      <div class="foot">AUTHORED NARRATIVE · 2 LEAD STORIES · 5 SUPPORTING · 0 FABRICATED</div>
+    </div>
+  </div>
+</div>
+
+<footer><div class="wrap fgrid">
+  <div><div class="fb">Sig<em>nal</em></div><p>Hype-free daily AI newspaper. Every specific claim traced to a page we actually read.</p></div>
+  <div><h5>Sections</h5><ul><li><a href="#releases">Releases</a></li><li><a href="#policy">Policy</a></li><li><a href="#research">Research</a></li><li><a href="#voices">Voices</a></li></ul></div>
+  <div><h5>Paper</h5><ul><li><a href="index.html">Front page</a></li><li><a href="index.html#archive">Archive</a></li><li><a href="index.html">Previous</a></li></ul></div>
+  <div><h5>Listen</h5><ul><li><a href="#top">Today's narration</a></li></ul></div>
+</div>
+<div class="foot">AUTHORED NARRATIVE · 2 LEAD STORIES · 5 SUPPORTING · 0 FABRICATED · © <span id="yr">2026</span> Signal</div>
+</footer>
+
+<div id="readDock" hidden role="region" aria-label="Narration player">
+  <button id="rdPlay" aria-label="Play or pause">▶</button>
+  <div class="rd-main">
+    <div class="rd-top"><span id="rdSeg">Ready</span><span id="rdTime">0:00</span></div>
+    <input id="rdSeek" type="range" min="0" max="100" step="0.1" value="0" aria-label="Seek">
+    <div id="rdCap" class="rd-cap" aria-live="polite"></div>
+  </div>
+  <div class="rd-ctl">
+    <button id="rdSpeed" aria-label="Playback speed">1×</button>
+    <label class="rd-follow"><input type="checkbox" id="rdFollow" checked> Follow</label>
+    <button id="rdClose" aria-label="Close player">✕</button>
+  </div>
+</div>
+<button id="toTop" aria-label="Back to top">↑</button>
+<script src="assets/site.js"></script>
+<script src="assets/readalong.js" data-audio="" data-cues=""></script>
+</body>
+</html>

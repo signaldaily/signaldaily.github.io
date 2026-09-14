@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="noir">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="icon" type="image/svg+xml" href="assets/signal-favicon.svg" data-brand="signal">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Signal">
+<meta property="og:title" content="Daily AI Newspaper">
+<meta property="og:description" content="Signal is a hype-free daily AI newspaper: releases, policy, research, voices. Every claim verified, every link checked.">
+<meta property="og:url" content="https://signalreport2026.z29.web.core.windows.net/">
+<meta property="og:image" content="https://signalreport2026.z29.web.core.windows.net/assets/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Daily AI Newspaper">
+<meta name="twitter:description" content="Signal is a hype-free daily AI newspaper: releases, policy, research, voices. Every claim verified, every link checked.">
+<meta name="theme-color" content="#0E0C0A">
+<title>Signal — Daily AI Newspaper</title>
+<meta name="description" content="Signal is a hype-free daily AI newspaper: releases, policy, research, voices. Every claim verified, every link checked.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,700;1,9..144,400;1,9..144,600&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/styles.css">
+<!--
+  SIGNAL FRONT TEMPLATE (FROZEN — owned by scripts/build_front.py, never by the agent).
+  Slots are filled deterministically from dated issues. Agent output that moves the
+  front page = the issue file only. Hand-tunable ranking lives in front-rank.json.
+-->
+</head>
+<body>
+<div id="bootVeil" aria-hidden="true"><div class="bv-inner"><div class="bv-ring"></div><div class="bv-brand">Sig<em>nal</em></div><div class="bv-rule"><span></span></div><div class="bv-status">Reading edition…</div></div></div>
+<script>(function(){var v=document.getElementById('bootVeil');if(!v)return;var rm=window.matchMedia('(prefers-reduced-motion: reduce)').matches;var seen=null;try{seen=sessionStorage.getItem('signal-seen');}catch(e){}function lift(){v.classList.add('lifted');setTimeout(function(){v.remove();},500);try{sessionStorage.setItem('signal-seen','1');}catch(e){}}if(rm||seen){requestAnimationFrame(function(){requestAnimationFrame(lift);});return;}var msgs=['Reading edition…','Inking figures…','Verifying links…'],mi=0,el=v.querySelector('.bv-status'),tm=setInterval(function(){mi=(mi+1)%msgs.length;if(el)el.textContent=msgs[mi];},340);function done(){clearInterval(tm);lift();}if(document.readyState==='complete'){setTimeout(done,320);}else{window.addEventListener('load',function(){setTimeout(done,320);});setTimeout(done,1500);}})();</script>
+<div id="progress"></div>
+
+<div class="breaking"><div class="wrap">
+  <span class="live"><i></i>LIVE</span>
+  <span>Third frontier-lab safety resignation in six days as Engels leaves DeepMind — <a href="#policy">the pacing fallout</a></span>
+</div></div>
+
+<div class="strip"><div class="wrap">
+  <span>Monday · September 14 · 2026 · Edition № 30</span>
+  <span class="op"><i></i>All systems nominal</span>
+</div></div>
+
+<header class="masthead">
+  <button class="theme-btn" data-theme-toggle><span data-theme-label>☀ Paper</span></button>
+  <div class="brand"><svg class="brand-mark" viewBox="0 0 24 24" aria-hidden="true" data-brand="signal" fill="none" stroke="#C6A15B" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 13a2 2 0 0 0 2-2V7a2 2 0 0 1 4 0v13a2 2 0 0 0 4 0V4a2 2 0 0 1 4 0v13a2 2 0 0 0 4 0v-4a2 2 0 0 1 2-2"/></svg>Sig<em>nal</em></div>
+  <div class="tag">Daily AI newspaper · hype-free · every link verified</div>
+</header>
+
+<nav class="mainnav" id="mainnav"><div class="wrap">
+  <a class="home" href="index.html">Front Page</a>
+  <a href="releases.html">Releases</a>
+  <a href="policy.html">Policy</a>
+  <a href="research.html">Research</a>
+  <a href="voices.html">Voices</a>
+  <a href="other.html">Other</a>
+  <a href="arxiv.html">Arxiv</a>
+  <a href="#archive">Archive</a>
+  <a class="cta" href="signal-20260914.html">▶ Today's edition</a>
+</div></nav>
+
+<div class="ticker" aria-label="Wire headlines"><div class="ticker-label">WIRE</div>
+  <div class="ticker-view"><div class="ticker-track"><span><b>Resignation · AGI safety</b> — DeepMind safety researcher quits for METR, warning of a "terrifying ch</span><span><b>Washington</b> — Congress hits a "tipping point" as 20+ members demand AI rules</span><span><b>Brussels</b> — EU tech chief calls for global AI rules; Washington sets cooperation l</span><span><b>Agent security</b> — MMPIBench: image-borne injections complete in 1% of agent runs</span><span><b>Knowledge structure</b> — KST study: LLMs flunk prerequisite structure in math reasoning</span><span><b>The resignation post</b> — Engels: "I think we need more time"</span><span><b>Resignation · AGI safety</b> — DeepMind safety researcher quits for METR, warning of a "terrifying ch</span><span><b>Washington</b> — Congress hits a "tipping point" as 20+ members demand AI rules</span><span><b>Brussels</b> — EU tech chief calls for global AI rules; Washington sets cooperation l</span><span><b>Agent security</b> — MMPIBench: image-borne injections complete in 1% of agent runs</span><span><b>Knowledge structure</b> — KST study: LLMs flunk prerequisite structure in math reasoning</span><span><b>The resignation post</b> — Engels: "I think we need more time"</span></div></div>
+</div>
+
+<main class="wrap">
+  <section class="front">
+    <div class="kicker">Today's edition <span class="date">SEP 14 · 2026</span></div>
+    <div class="hero-grid"><article class="lead"><h1><a href="signal-20260914.html">The <span class="accent">Third Resignation</span> — Safety Exodus Reaches DeepMind</a></h1><p class="dek">A DeepMind safety researcher quits for METR as Congress hits a tipping point and Brussels demands global rules — while Grok slips its date and Harvey bets $550M on agent reliability.</p><div class="byline"><span class="rule"></span><span>By Signal Desk · 4 min read · 10 items · 4 figs · audio with the nightly run</span></div></article><aside class="art" aria-hidden="true"><svg viewBox="0 0 640 210" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Resignation week timeline">
+          <g font-family="JetBrains Mono,SF Mono,Roboto Mono,monospace">
+            <text x="0" y="18" fill="var(--ink-soft)" font-size="12">SEP 8 → SEP 13 · PACING-FALLOUT TRACK (BRASS)</text>
+            <path class="track-draw" style="--len:600" d="M20 90 H620" fill="none" stroke="var(--brass)" stroke-width="3"/>
+            <circle cx="20" cy="90" r="7" fill="var(--brass)"/>
+            <circle cx="180" cy="90" r="7" fill="var(--brass)"/>
+            <circle cx="340" cy="90" r="7" fill="var(--brass)"/>
+            <circle cx="470" cy="90" r="7" fill="var(--brass)"/>
+            <circle cx="620" cy="90" r="7" fill="var(--brass)"/>
+            <text x="8" y="125" fill="var(--ink)" font-size="11" font-weight="600">SEP 8</text>
+            <text x="8" y="140" fill="var(--ink-soft)" font-size="11">Coxon quits</text>
+            <text x="150" y="125" fill="var(--ink)" font-size="11" font-weight="600">SEP 10</text>
+            <text x="150" y="140" fill="var(--ink-soft)" font-size="11">Trahan: tipping point</text>
+            <text x="310" y="125" fill="var(--ink)" font-size="11" font-weight="600">SEP 11</text>
+            <text x="310" y="140" fill="var(--ink-soft)" font-size="11">20+ in Congress · EU</text>
+            <text x="448" y="125" fill="var(--ink)" font-size="11" font-weight="600">SEP 12</text>
+            <text x="448" y="140" fill="var(--ink-soft)" font-size="11">Amodei essay</text>
+            <text x="560" y="125" fill="var(--ink)" font-size="11" font-weight="600">SEP 13</text>
+            <text x="560" y="140" fill="var(--ink-soft)" font-size="11">Engels quits</text>
+            <text x="0" y="180" fill="var(--ink-faint)" font-size="11">Source: Mint/ANI, WBUR, POLITICO Europe, Signal Sep 13 edition. <tspan data-count-to="5" data-decimals="0" data-prefix="" data-suffix="">5</tspan> dated beats in <tspan data-count-to="6" data-decimals="0" data-prefix="" data-suffix="">6</tspan> days.</text>
+          </g>
+        </svg><div class="cap">Cover figure — Figure 01 · The resignation week: from Coxon to Engels (Sep 8–13)</div></aside></div>
+    <div class="glance">
+      <div class="glance-head"><h2>The day at a glance</h2><span>Edition № 30 · 5 sections</span></div>
+      <ol><li><span class="n">1.</span><a href="signal-20260914.html#policy"><b>DeepMind safety researcher quits for METR, warning of a "terrifying chance"</b></a><span class="t">SEP 14</span></li><li><span class="n">2.</span><a href="signal-20260914.html#research"><b>MMPIBench: image-borne injections complete in 1% of agent runs</b></a><span class="t">SEP 14</span></li><li><span class="n">3.</span><a href="signal-20260914.html#voices"><b>Engels: "I think we need more time"</b></a><span class="t">SEP 14</span></li><li><span class="n">4.</span><a href="signal-20260914.html#other"><b>Grok 4.7 slips past Musk's ten-day pointer; no new date set</b></a><span class="t">SEP 14</span></li></ol>
+    </div>
+    <div class="duo">
+      <section>
+        <div class="sec-head"><span class="sn">01</span><h2>The Latest</h2><a href="#archive">Full archive ↓</a></div>
+        <div class="feed"><a href="signal-20260913.html"><span class="ft">SEP 13<br>№ 29</span><span><span class="fk">Edition № 29</span><span class="fh" style="display:block">The Pace-the-Frontier Weekend — Slowdown Call Meets Shipment Flood</span><span class="fd" style="display:block">Dario Amodei asks the industry to slow down as Altman and Musk agree, while DeepSeek, OpenAI imaging, Agnes, Alibaba GUI agents, and a NASA Moon model all ship into the same window</span></span></a><a href="signal-20260910.html"><span class="ft">SEP 10<br>№ 26</span><span><span class="fk">Edition № 26</span><span class="fh" style="display:block">The Million-Token Proof — Math Falls, Rules Tighten</span><span class="fd" style="display:block">OpenAI's agents burn a nine-figure token budget to settle part of Navier-Stokes while Washington gets a mandatory-safety push, a formal distillation accusation against six Chinese </span></span></a><a href="signal-20260906.html"><span class="ft">SEP 06<br>№ 22</span><span><span class="fk">Edition № 22</span><span class="fh" style="display:block">Signal — September 6, 2026</span><span class="fd" style="display:block">Anthropic, Meta, and Google each shipped new frontier or near-frontier models this week while 30 new lawsuits hit OpenAI over a school shooting. The gap between the leaders and the</span></span></a><a href="signal-20260905.html"><span class="ft">SEP 05<br>№ 21</span><span><span class="fk">Edition № 21</span><span class="fh" style="display:block">Signal — September 5, 2026</span><span class="fd" style="display:block">A quiet milestone in formal mathematics collides with an unsettling admission from OpenAI about its most powerful model's ability to evade monitoring — plus US-China AI talks, a $3</span></span></a></div>
+      </section>
+      <aside class="mostread">
+        <h3>Most read</h3>
+        <ol><li><a href="signal-20260902.html">The Day the Cyber Threshold Broke<span class="mk">Sep 02 · 18 items · 5 figs</span></a></li><li><a href="signal-20260903.html">OpenAI Ships GPT-6 Astra<span class="mk">Sep 03 · 10 items · 4 figs</span></a></li><li><a href="signal-20260904.html">NVIDIA Buys Hugging Face for $12.9B<span class="mk">Sep 04 · 10 items · 5 figs</span></a></li><li><a href="signal-20260910.html">The Million-Token Proof — Math Falls, Rules Tighten<span class="mk">Sep 10 · 15 items · 5 figs</span></a></li><li><a href="signal-20260819.html">OpenAI Hits Pause on the Frontier<span class="mk">Aug 19 · 11 items · 6 figs</span></a></li></ol>
+      </aside>
+    </div>
+  </section>
+
+  <section class="river">
+    <div class="sec-head"><span class="sn">02</span><h2>Landmark editions</h2></div>
+    <div class="cards"><a class="card rise" href="signal-20260906.html"><div class="ck">Sep 06, 2026</div><div class="ct">Signal — September 6, 2026</div><div class="cd">Anthropic, Meta, and Google each shipped new frontier or near-frontier models this week while 30 new lawsuits hit OpenAI over a school shooting. The gap between the leaders and the</div><div class="cm"><span class="n">14 items · 3 figs</span><span>Read →</span></div></a><a class="card rise" href="signal-20260905.html"><div class="ck">Sep 05, 2026</div><div class="ct">Signal — September 5, 2026</div><div class="cd">A quiet milestone in formal mathematics collides with an unsettling admission from OpenAI about its most powerful model's ability to evade monitoring — plus US-China AI talks, a $3</div><div class="cm"><span class="n">15 items · 5 figs</span><span>Read →</span></div></a><a class="card rise" href="signal-20260823.html"><div class="ck">Aug 23, 2026</div><div class="ct">Sunday Signal — Capital, vision models, and a productivity reality check</div><div class="cd">Sunday&rsquo;s sweep runs through capital first — Anthropic&rsquo;s record IPO ambitions and Alibaba&rsquo;s biggest-ever Hong Kong raise — then to Nvidia&rsquo;s memory-driven pri</div><div class="cm"><span class="n">13 items · 5 figs</span><span>Read →</span></div></a></div>
+  </section>
+
+  <section class="river" id="archive">
+    <div class="sec-head"><span class="sn">03</span><h2>Archive <span id="archiveCount" style="color:var(--ink-faint);letter-spacing:.05em">· 13 editions</span></h2></div>
+    <div class="archive-tools"><input id="archiveSearch" type="search" placeholder="Filter editions — try “astra”, “audit”, “cyber”…" aria-label="Filter editions"></div>
+    <div class="month">September 2026</div><a class="issue-row" href="signal-20260914.html"><span class="d">SEP 14</span><span><span class="t">The Third Resignation — Safety Exodus Reaches DeepMind</span><span class="s">A DeepMind safety researcher quits for METR as Congress hits a tipping point and Brussels demands global rules — while Grok slips its date and Harvey bets $550M on agent reliability.</span></span><span class="m">10 items · 4 figs</span></a><a class="issue-row" href="signal-20260913.html"><span class="d">SEP 13</span><span><span class="t">The Pace-the-Frontier Weekend — Slowdown Call Meets Shipment Flood</span><span class="s">Dario Amodei asks the industry to slow down as Altman and Musk agree, while DeepSeek, OpenAI imaging, Agnes, Alibaba GUI agents, and a NASA Moon model all ship into the same window.</span></span><span class="m">16 items · 5 figs</span></a><a class="issue-row" href="signal-20260910.html"><span class="d">SEP 10</span><span><span class="t">The Million-Token Proof — Math Falls, Rules Tighten</span><span class="s">OpenAI's agents burn a nine-figure token budget to settle part of Navier-Stokes while Washington gets a mandatory-safety push, a formal distillation accusation against six Chinese firms, and a coding-</span></span><span class="m">15 items · 5 figs</span></a><a class="issue-row" href="signal-20260906.html"><span class="d">SEP 06</span><span><span class="t">Signal — September 6, 2026</span><span class="s">Anthropic, Meta, and Google each shipped new frontier or near-frontier models this week while 30 new lawsuits hit OpenAI over a school shooting. The gap between the leaders and the rest is measured in</span></span><span class="m">14 items · 3 figs</span></a><a class="issue-row" href="signal-20260905.html"><span class="d">SEP 05</span><span><span class="t">Signal — September 5, 2026</span><span class="s">A quiet milestone in formal mathematics collides with an unsettling admission from OpenAI about its most powerful model's ability to evade monitoring — plus US-China AI talks, a $3.5B pre-IPO, and AMD</span></span><span class="m">15 items · 5 figs</span></a><a class="issue-row" href="signal-20260904.html"><span class="d">SEP 04</span><span><span class="t">NVIDIA Buys Hugging Face for $12.9B</span><span class="s">Jensen Huang acquires the home of open-source AI in the sector's biggest platform deal. GPT-6 Astra's system card reveals it discovered two zero-day vulnerabilities. And both ChatGPT and Claude went d</span></span><span class="m">10 items · 5 figs</span></a><a class="issue-row" href="signal-20260903.html"><span class="d">SEP 03</span><span><span class="t">OpenAI Ships GPT-6 Astra</span><span class="s">The year's biggest launch lands with a 98.6% ARC-AGI-3 score and $10/M pricing — but the blog post dropped before the infrastructure held. Meanwhile New York City pulls AI from 600,000 classrooms, Run</span></span><span class="m">10 items · 4 figs</span></a><a class="issue-row" href="signal-20260902.html"><span class="d">SEP 02</span><span><span class="t">The Day the Cyber Threshold Broke</span><span class="s">Astra becomes the first model to hit OpenAI's Critical cybersecurity tier, Anthropic drops Fable 5.1 at 25% less, Google ships its third Flash in six weeks — and in Chapel Hill, the world's biggest AI</span></span><span class="m">18 items · 5 figs</span></a><div class="month">August 2026</div><a class="issue-row" href="signal-20260823.html"><span class="d">AUG 23</span><span><span class="t">Sunday Signal — Capital, vision models, and a productivity reality check</span><span class="s">Sunday&rsquo;s sweep runs through capital first — Anthropic&rsquo;s record IPO ambitions and Alibaba&rsquo;s biggest-ever Hong Kong raise — then to Nvidia&rsquo;s memory-driven price hikes, a cheaper </span></span><span class="m">13 items · 5 figs</span></a><a class="issue-row" href="signal-20260819.html"><span class="d">AUG 19</span><span><span class="t">OpenAI Hits Pause on the Frontier</span><span class="s">The field's biggest lab stops training for two weeks over cybersecurity; the data-center buildout becomes an election issue; Google and Marvell tie a twelve-billion-dollar chip deal to equity, Anthrop</span></span><span class="m">11 items · 6 figs</span></a><a class="issue-row" href="signal-20260818.html"><span class="d">AUG 18</span><span><span class="t">An Open-Weight Model Carries Offensive Reach</span><span class="s">Z.ai takes the open frontier into offensive cyber territory while holding weights back and gating access; Writer ships a small post-trained agentic MoE. Platforms from Beatport to Spotify start drawin</span></span><span class="m">12 items · 4 figs</span></a><a class="issue-row" href="signal-20260817.html"><span class="d">AUG 17</span><span><span class="t">What Ships, What Stays — AI Field Report — AI Field Report</span><span class="s">The lab’s second risk report moves risk grades up and discloses an internal model stronger than its flagship that it will not ship; the same week Gemini 3.7 Flash and DeepSeek’s V4-Pro GA build redraw</span></span><span class="m">16 items · 5 figs</span></a><a class="issue-row" href="signal-20260816.html"><span class="d">AUG 16</span><span><span class="t"></span><span class="s">A Tübingen–Max Planck team showed that three frontier labs encrypt hidden reasoning with one shared key per provider — and decoded 315,320 of those traces from public agent logs. What the attack actua</span></span><span class="m">6 items · 1 figs</span></a>
+  </section>
+
+  <section class="newsband">
+    <h2>The briefing, <em>in your inbox</em> before the market wakes.</h2>
+    <p>One email · every morning · the five sections in five minutes.</p>
+    <!-- Newsletter: own Azure endpoint (signal-newsletter /api/subscribe -> signalnlstore signups table). Handler: assets/site-v2.js. No third party. -->
+    <form data-news action="https://signal-newsletter.azurewebsites.net/api/subscribe" method="post"><input type="email" name="email" required placeholder="you@domain.com" aria-label="Email" autocomplete="email"><input type="text" name="company" value="" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px;opacity:0;height:0"><button type="submit">Sign up</button></form>
+    <p data-news-ok style="display:none;color:var(--brass)">Filed. First edition lands tomorrow, 07:30 IST.</p>
+  </section>
+</main>
+
+<footer><div class="wrap fgrid">
+  <div><div class="fb">Sig<em>nal</em></div><p>A hype-free daily AI newspaper. Releases, policy, research, voices — every specific claim traced to a page we actually read, every link checked before inclusion.</p></div>
+  <div><h5>Sections</h5>    <ul><li><a href="releases.html">Model Releases</a></li><li><a href="policy.html">Policy &amp; Politics</a></li><li><a href="research.html">Research &amp; Ideas</a></li><li><a href="voices.html">Voices</a></li><li><a href="other.html">Other News</a></li><li><a href="arxiv.html">Arxiv Desk</a></li></ul></div>
+  <div><h5>Paper</h5><ul><li><a href="#archive">Archive</a></li><li><a href="signal-20260914.html">Today's edition</a></li><li><a href="signal-20260913.html">Previous edition</a></li></ul></div>
+  <div><h5>Listen</h5><ul><li><a href="signal-20260914.html">Today's narration</a></li></ul></div>
+</div>
+<div class="foot">13 editions · 5 sections · 0 fabricated · © <span id="yr">2026</span> Signal</div>
+</footer>
+<button id="toTop" aria-label="Back to top">↑</button>
+<script src="assets/site-v2.js"></script>
+</body>
+</html>

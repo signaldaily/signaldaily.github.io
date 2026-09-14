@@ -1,0 +1,627 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="noir">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="icon" type="image/svg+xml" href="assets/signal-favicon.svg" data-brand="signal">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Signal">
+<meta property="og:title" content="What Ships, What Stays — AI Field Report — AI Field Report">
+<meta property="og:description" content="The lab’s second risk report moves risk grades up and discloses an internal model stronger than its flagship that it will not ship; the same week Gemini 3.7 Flash and DeepSeek’s V4-Pro GA build redraw the cheap end of the frontier, Grok 4.7 slips toward September, OpenAI answers Apple in court today">
+<meta property="og:url" content="https://signalreport2026.z29.web.core.windows.net/signal-20260817.html">
+<meta property="og:image" content="https://signalreport2026.z29.web.core.windows.net/assets/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="What Ships, What Stays — AI Field Report — AI Field Report">
+<meta name="twitter:description" content="The lab’s second risk report moves risk grades up and discloses an internal model stronger than its flagship that it will not ship; the same week Gemini 3.7 Flash and DeepSeek’s V4-Pro GA build redraw the cheap end of the frontier, Grok 4.7 slips toward September, OpenAI answers Apple in court today">
+<meta name="theme-color" content="#0E0C0A">
+<title>What Ships, What Stays — AI Field Report — AI Field Report — Signal</title>
+<meta name="description" content="The lab’s second risk report moves risk grades up and discloses an internal model stronger than its flagship that it will not ship; the same week Gemini 3.7 Flash and DeepSeek’s V4-Pro GA build redraw">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,700;1,9..144,400;1,9..144,600&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/styles.css">
+<!--
+  SIGNAL ISSUE TEMPLATE (FROZEN — agent fills TOKENS only, never restyles).
+  Allowed figure motions (pick ONE per figure, frozen classes only):
+    grow  = isometric bars rising (.bar-grow, stagger via inline animation-delay)
+    draw  = tracks/arcs inking in (.track-draw with --len = path length)
+    sweep = gauge needle (class .needle; hub fixed at 150px 225px — gauge geometry frozen)
+    rise  = stacking slabs (.slab per group, stagger via inline animation-delay)
+  Counters: <tspan data-count-to="N" data-decimals="D" data-prefix="" data-suffix="">
+  Two-series charts: brass (#C6A15B var(--brass)) vs ash (#9A917F var(--ash)).
+  Ember (var(--ember)) = live/unconfirmed ONLY. No green anywhere, ever.
+  Read-along: narration segments live in the edition's segments JSON (see ai_news.md);
+  cues.json is built by synth_cues_azure.py — the dock below needs no per-edition edits.
+-->
+</head>
+<body>
+<div id="bootVeil" aria-hidden="true"><div class="bv-inner"><div class="bv-ring"></div><div class="bv-brand">Sig<em>nal</em></div><div class="bv-rule"><span></span></div><div class="bv-status">Reading edition…</div></div></div>
+<script>(function(){var v=document.getElementById('bootVeil');if(!v)return;var rm=window.matchMedia('(prefers-reduced-motion: reduce)').matches;var seen=null;try{seen=sessionStorage.getItem('signal-seen');}catch(e){}function lift(){v.classList.add('lifted');setTimeout(function(){v.remove();},500);try{sessionStorage.setItem('signal-seen','1');}catch(e){}}if(rm||seen){requestAnimationFrame(function(){requestAnimationFrame(lift);});return;}var msgs=['Reading edition…','Inking figures…','Verifying links…'],mi=0,el=v.querySelector('.bv-status'),tm=setInterval(function(){mi=(mi+1)%msgs.length;if(el)el.textContent=msgs[mi];},340);function done(){clearInterval(tm);lift();}if(document.readyState==='complete'){setTimeout(done,320);}else{window.addEventListener('load',function(){setTimeout(done,320);});setTimeout(done,1500);}})();</script>
+<div id="progress"></div>
+
+<div class="breaking"><div class="wrap">
+  <span class="live"><i></i>Archive</span>
+  <span>This edition is history — <a href="index.html">today’s front page →</a></span>
+</div></div>
+
+<nav class="mainnav" id="mainnav"><div class="wrap">
+  <a class="home" href="index.html">Signal</a>
+  <a href="#releases">Releases</a>
+  <a href="#policy">Policy</a>
+  <a href="#research">Research</a>
+  <a href="#voices">Voices</a>
+  <a href="#other">Other</a>
+  <a href="index.html#archive">Archive</a>
+  <a class="cta" href="#" data-theme-toggle><span data-theme-label>☀ Paper</span></a>
+</div></nav>
+
+<div class="article-shell">
+  <header class="article-hero">
+    <div class="kicker">Daily AI newspaper <span class="date">AUG 17 · 2026 · № 2</span></div>
+    <h1>Anthropic keeps <span class="accent">Model 2</span> inside, and the price race tightens outside</h1>
+    <p class="dek">The lab’s second risk report moves risk grades up and discloses an internal model stronger than its flagship that it will not ship; the same week Gemini 3.7 Flash and DeepSeek’s V4-Pro GA build redraw the cheap end of the frontier, Grok 4.7 slips toward September, OpenAI answers Apple in court today, and the defender’s-window debate gets its loudest voice yet.</p>
+    <div class="article-meta">
+      <span>By <b style="color:var(--ink)">Signal Desk</b></span><span>·</span><span>35 min read</span><span>·</span>
+      <span class="pill">16 items · 5 figures</span>
+      <span style="flex:1"></span>
+      <button class="btn" data-share>⇪ Share</button>
+    </div>
+    <div class="stats-row"><div class="stat"><div class="v">4</div><div class="k">RELEASES<br>ITEMS THIS EDITION</div></div><div class="stat"><div class="v">3</div><div class="k">POLICY<br>ITEMS THIS EDITION</div></div><div class="stat"><div class="v">3</div><div class="k">RESEARCH<br>ITEMS THIS EDITION</div></div><div class="stat"><div class="v">2</div><div class="k">VOICES<br>ITEMS THIS EDITION</div></div><div class="stat"><div class="v">4</div><div class="k">OTHER<br>ITEMS THIS EDITION</div></div></div>
+  </header>
+
+  <div class="article-layout">
+    <aside class="toc" aria-label="On this page">
+      <span>On this page</span>
+      <a href="#releases">01 · Releases</a>
+      <a href="#policy">02 · Policy</a>
+      <a href="#research">03 · Research</a>
+      <a href="#voices">04 · Voices</a>
+      <a href="#other">05 · Other</a>
+      <div class="tstat">0<br>fabricated claims</div>
+    </aside>
+
+    <div>
+      <section class="section" id="releases">
+        <div class="sec-head"><span class="sn">01</span><h2>Releases</h2></div>
+        <div class="item">
+        <div class="item-head">
+          <span class="item-kicker">Release</span>
+          <span class="item-title">Gemini 3.7 Flash: Google’s coding workhorse arrives at half price, three weeks after 3.6</span>
+          <span class="item-date">Aug 13, 2026</span>
+        </div>
+        <div class="item-body">
+          <p>Google put <b>Gemini 3.7 Flash</b> (gemini-3.7-flash) into general availability on <b>Aug 13</b>, its launch post says, three weeks after 3.6 Flash, aimed squarely at coding, agent orchestration, knowledge work, and web-development workflows. The headline number is price: <b>$0.75 per million input and $3.75 per million output tokens</b> through December 31 — the launch post describes it as half the original 3.6 Flash cost per million tokens, and the model card benchmarks it in the neighborhood of GPT-5.6 Terra and Claude Sonnet 5 depending on the task. It shipped day-zero into GitHub Copilot and Google Antigravity; the API changelog confirms GA on Aug 13. Google positioned the release as a direct response to developer feedback on the Flash line rather than a new frontier flagship.</p>
+          <p>Community reaction mixed enthusiasm for the price with skepticism about the cadence: one HN commenter summed the mood as Google being competitive on the cost-speed frontier without leading capability anymore.</p>
+        </div>
+        <div class="stats-row">
+          <div class="stat"><div class="v">$0.75</div><div class="k">per 1M input tokens (intro, to Dec 31)</div></div>
+          <div class="stat"><div class="v">$3.75</div><div class="k">per 1M output tokens (intro)</div></div>
+          <div class="stat"><div class="v">3 wks</div><div class="k">after Gemini 3.6 Flash (Jul 21)</div></div>
+          <div class="stat"><div class="v">Day 0</div><div class="k">in GitHub Copilot and Antigravity</div></div>
+        </div>
+        <div class="quote">
+          <div class="q">“Seems like Google is back in the game, though not leading the frontier anymore.”</div>
+          <div class="who">— HN commenter nickandbro on <a href="https://news.ycombinator.com/item?id=49289112">the Gemini 3.7 Flash launch thread</a> (967 points, Aug 13).</div>
+        </div>
+        <div class="item-src">
+          <a href="https://blog.google/innovation-and-ai/models-and-research/gemini-models/introducing-gemini-3-7-flash/">Google launch post</a>
+          <a href="https://deepmind.google/models/model-cards/gemini-3-7-flash/">Model card</a>
+          <a href="https://github.blog/changelog/2026-08-13-gemini-3-7-flash-is-now-available-in-github-copilot/">GitHub Copilot changelog</a>
+        </div>
+      </div>
+
+      <div class="item">
+        <div class="item-head">
+          <span class="item-kicker">Release</span>
+          <span class="item-title">DeepSeek-V4-Pro-0813: flagship GA build drops quietly, with open weights and a price hike three days later</span>
+          <span class="item-date">Aug 13, 2026</span>
+        </div>
+        <div class="item-body">
+          <p>DeepSeek’s general-availability build of its flagship, <b>DeepSeek-V4-Pro-0813</b>, landed <b>Aug 13</b>: a 1.6-trillion-parameter MoE with 49 billion active parameters, a 1M-token context, 384K output tokens, and tool calling, with weights on the DeepSeek Hugging Face organization under an MIT license. There was no blog post and no announcement page — the model id itself carries the date — and for the first days it was served only through DeepSeek’s own API (one provider listed on OpenRouter at <b>$0.66/$1.98 per million tokens</b>). DeepSeek’s official X account eventually confirmed the release; the model card carries an unusual note that this build ships without a Jinja-format chat template.</p>
+          <p>Three days later the company raised DeepSeek-V4-Flash prices 93% ($0.14 to $0.27 per million input tokens), which the community read as a demand signal — the cheap-flagship window closing just as the Pro build went live. The absence of a release page became part of the story itself.</p>
+        </div>
+        <div class="stats-row">
+          <div class="stat"><div class="v">1.6T</div><div class="k">parameters, MoE (49B active)</div></div>
+          <div class="stat"><div class="v">1M</div><div class="k">token context; 384K max output</div></div>
+          <div class="stat"><div class="v">$0.66</div><div class="k">per 1M in / $1.98 out (OpenRouter)</div></div>
+          <div class="stat"><div class="v">+93%</div><div class="k">V4-Flash price rise three days later</div></div>
+        </div>
+        <div class="quote">
+          <div class="q">“DeepSeek really need to provide a PAGE for this model release.”</div>
+          <div class="who">— Simon Willison on <a href="https://news.ycombinator.com/item?id=49274600">the DeepSeek V4 Pro 0813 thread</a> (1,037 points, Aug 12).</div>
+        </div>
+        <div class="item-src">
+          <a href="https://huggingface.co/deepseek-ai/DeepSeek-V4-Pro-0813">HF model card</a>
+          <a href="https://x.com/deepseek_ai/status/2087864585504305397">DeepSeek announcement on X</a>
+          <a href="https://openrouter.ai/deepseek/deepseek-v4-pro-0813">OpenRouter listing</a>
+          <a href="https://simonwillison.net/2026/Aug/12/deepseek-v4-pro-0813/">Simon Willison on the quiet release</a>
+        </div>
+      </div>
+
+      <div class="item">
+        <div class="item-head">
+          <span class="item-kicker">Development on Aug 14 release</span>
+          <span class="item-title">Qwen3.8-27B’s independent numbers land: on par with GLM-5.2 and Luna on intelligence, ahead of Opus 4.6 Max on agentic coding</span>
+          <span class="item-date">Aug 16–17, 2026</span>
+        </div>
+        <div class="item-body">
+          <p>The 27B dense companion released Aug 14 picked up its first independent measurements over the weekend. Artificial Analysis’s Intelligence Index puts it at <b>52</b> — the same figure as GLM-5.2 and GPT-5.6 Luna, which are far larger — and community tabulations place it 7th overall on the agentic index, above GPT-5.6 Terra. Alibaba’s own card reports <b>SWE-bench Pro 61.7</b> against Opus 4.6 Max’s 53.4 and DeepSWE 42.2 versus 13.3 for the previous generation, while the same card shows it trailing on knowledge benchmarks (HLE 30.8 vs 40.0). The pattern is consistent across re-runs: a self-hostable 27B beats a frontier flagship on agentic software-engineering work and loses the pure-knowledge comparisons.</p>
+        </div>
+        <div class="figure">
+          <div class="fig-kicker">Where the 27B wins and loses — Qwen3.8-27B vs Claude Opus 4.6 Max</div>
+          <div class="fig-body">
+            <svg viewBox="0 0 720 250" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Grouped bar chart comparing Qwen3.8-27B and Opus 4.6 Max on SWE-bench Pro, DeepSWE, and HLE">
+              <g font-family="-apple-system,Segoe UI,Roboto,sans-serif">
+                <text x="360" y="18" text-anchor="middle" font-size="12" fill="#A79B87">scores out of 100 — Qwen3.8-27B (blue) vs Opus 4.6 Max (teal)</text>
+                <text x="200" y="58" text-anchor="end" font-size="12" fill="#A79B87">SWE-bench Pro</text>
+                <rect x="210" y="44" width="246" height="16" rx="2" fill="#C6A15B"/>
+                <text x="464" y="56" font-size="12" font-weight="700" fill="#EFE7D7">61.7</text>
+                <rect x="210" y="64" width="213" height="16" rx="2" fill="#9A917F"/>
+                <text x="431" y="76" font-size="12" fill="#A79B87">53.4</text>
+                <text x="200" y="118" text-anchor="end" font-size="12" fill="#A79B87">DeepSWE</text>
+                <rect x="210" y="104" width="168" height="16" rx="2" fill="#C6A15B"/>
+                <text x="386" y="116" font-size="12" font-weight="700" fill="#EFE7D7">42.2</text>
+                <rect x="210" y="124" width="53" height="16" rx="2" fill="#9A917F"/>
+                <text x="271" y="136" font-size="12" fill="#A79B87">13.3</text>
+                <text x="200" y="178" text-anchor="end" font-size="12" fill="#A79B87">HLE</text>
+                <rect x="210" y="164" width="123" height="16" rx="2" fill="#C6A15B"/>
+                <text x="341" y="176" font-size="12" font-weight="700" fill="#EFE7D7">30.8</text>
+                <rect x="210" y="184" width="160" height="16" rx="2" fill="#9A917F"/>
+                <text x="378" y="196" font-size="12" fill="#A79B87">40.0</text>
+                <text x="360" y="232" text-anchor="middle" font-size="10.5" fill="#6E6455">all figures as reported by Alibaba in the Qwen3.8-27B model card; HLE = Humanity’s Last Exam</text>
+              </g>
+            </svg>
+          </div>
+          <div class="fig-caption">Source: Qwen3.8-27B model card on Hugging Face (SWE-bench Pro, DeepSWE, HLE tables, checked 17 Aug 2026); HLE gap confirmed by explainx.ai’s independent comparison of the same card.</div>
+          <div class="fig-takeaway">Takeaway · Engineering-agentry is where the 27B competes with frontier flagships; knowledge recall is where it still pays the size tax — the split decides who can actually deploy it.</div>
+        </div>
+        <div class="stats-row">
+          <div class="stat"><div class="v">52</div><div class="k">AA Intelligence Index (ties GLM-5.2, GPT-5.6 Luna)</div></div>
+          <div class="stat"><div class="v">61.7</div><div class="k">SWE-bench Pro vs 53.4 for Opus 4.6 Max</div></div>
+          <div class="stat"><div class="v">42.2</div><div class="k">DeepSWE vs 13.3 for Qwen3.6-27B</div></div>
+          <div class="stat"><div class="v">7th</div><div class="k">agentic index, above GPT-5.6 Terra (community tabulation)</div></div>
+        </div>
+        <div class="quote">
+          <div class="q">“It’s 7th (!!!) overall on the agentic index, above Terra.”</div>
+          <div class="who">— HN commenter colingauvin, <a href="https://news.ycombinator.com/item?id=49334544">on the Aug 17 “Qwen3.8 27B scores 52 on Artificial Analysis” thread</a> (150 points).</div>
+        </div>
+        <div class="item-src">
+          <a href="https://huggingface.co/Qwen/Qwen3.8-27B">Qwen3.8-27B model card</a>
+          <a href="https://news.ycombinator.com/item?id=49334544">HN thread, Aug 17</a>
+          <a href="https://mer.vin/news/qwen3-8-27b-beats-opus-4-6-max-computer-use/">mer.vin benchmark breakdown</a>
+          <a href="https://www.explainx.ai/blog/qwen-3-8-27b-open-weight-model-claude-opus-comparison-august-2026">explainx.ai comparison</a>
+        </div>
+      </div>
+
+      <div class="item">
+        <div class="item-head">
+          <span class="item-kicker">Pipeline status</span>
+          <span class="item-title">Grok 4.7: training done, SpaceX data going in, and the window slips into September</span>
+          <span class="item-date tentative">~week of Sep 7, 2026 (tentative)</span>
+        </div>
+        <div class="item-body">
+          <p>Not a release — a status update. Elon Musk said on <b>Aug 12</b> that Grok 4.7’s initial training is complete and the company is adding “a massive amount” of SpaceX engineering data in a supplemental run, with a 3–4 week readiness estimate. Analyzers tracking the model’s cadence describe that estimate as already slipped from an earlier late-August target to early-to-mid September. The model is reported (not confirmed) to sit at roughly <b>2.1 trillion parameters</b> against 4.6’s ~1.5T, which would make it the first parameter-count increase in the 4.x line.</p>
+          <p>The substance of the delay is the data, not the compute: SpaceX’s engineering corpus (ITAR-restricted material excluded) is being folded into the same run; the prior xAI release cycles leaned on regenerated SFT traces and agentic RL sweeps. Treat the September window as earliest-readiness, not a schedule.</p>
+        </div>
+        <div class="stats-row">
+          <div class="stat"><div class="v">~2.1T</div><div class="k">reported parameters (4.6 was ~1.5T)</div></div>
+          <div class="stat"><div class="v">Init done</div><div class="k">pretraining complete, per Musk, Aug 12</div></div>
+          <div class="stat"><div class="v">3–4 wks</div><div class="k">Musk’s readiness estimate from Aug 12</div></div>
+          <div class="stat"><div class="v">Slipped</div><div class="k">from late-Aug target to early/mid-Sep</div></div>
+        </div>
+        <div class="quote">
+          <div class="q">“Fable level performance, faster and significantly cheaper. Wow!”</div>
+          <div class="who">— HN commenter sergiotapia on <a href="https://news.ycombinator.com/item?id=49274027">Grok 4.6’s launch thread</a> (631 points) — the reception 4.7 inherits as its bar.</div>
+        </div>
+        <div class="item-src">
+          <a href="https://x.ai/news/grok-4-6">x.ai — Introducing Grok 4.6</a>
+          <a href="https://x.com/elonmusk/status/2087604711767896527">Musk on Grok 4.7, X, Aug 12</a>
+          <a href="https://www.orcarouter.ai/blog/grok-4-7-release-date">orcarouter.ai — release-window tracking</a>
+          <a href="https://www.nextbigfuture.com/2026/08/elon-claims-spacexai-grok-4-7-will-surpass-all-current-models.html">NextBigFuture parameter estimate</a>
+        </div>
+      </div>
+      </section>
+      <section class="section" id="policy">
+        <div class="sec-head"><span class="sn">02</span><h2>Policy &amp; Politics</h2></div>
+        <div class="item">
+        <div class="item-head">
+          <span class="item-kicker">Risk governance</span>
+          <span class="item-title">Anthropic’s second risk report: risk grades move up, and a stronger internal model stays inside</span>
+          <span class="item-date">Aug 15, 2026</span>
+        </div>
+        <div class="item-body">
+          <p>Anthropic published its second Responsible Scaling Policy Risk Report — 186 pages, redacted for staff circulation — and three disclosures stand out. It moved its assessment of catastrophic misalignment risk in high-stakes settings from “very low” to <b>“low”</b>; it disclosed an internal model it calls <b>Model 2</b> that out-scores its released flagship Mythos 5 on the CoBench evals but has no release date because safety work is incomplete; and it flagged automated AI R&amp;D as an emerging risk class for the first time. Secondary reads of the document also surfaced a roughly year-long gap in a vulnerability-classification safeguard that left an estimated 133 million vendor conversations without full coverage — a disclosure more concrete than the headline risk-grade changes.</p>
+          <p>The report is the second under the framework Anthropic co-designed with government agencies, and its timing matters: it lands the same week Toby Ord’s math on AI-accelerated R&amp;D circulates (see Research) and days after the US government’s own 30-day pre-release review machinery came into force under EO 14409.</p>
+        </div>
+        <div class="stats-row">
+          <div class="stat"><div class="v">186</div><div class="k">pages, second RSP risk report</div></div>
+          <div class="stat"><div class="v">“low”</div><div class="k">misalignment risk grade (was “very low”)</div></div>
+          <div class="stat"><div class="v">Model 2</div><div class="k">internal model out-scores Mythos 5 on CoBench; unreleased</div></div>
+          <div class="stat"><div class="v">133M</div><div class="k">vendor conversations in a ~year-long safeguard gap (per report readers)</div></div>
+        </div>
+        <div class="quote">
+          <div class="q">“a mystery ‘model 2’ is mentioned alongside mythos/fable.”</div>
+          <div class="who">— HN commenter visiondude on <a href="https://news.ycombinator.com/item?id=49303540">the risk-report thread</a> (56 points, Aug 15).</div>
+        </div>
+        <div class="item-src">
+          <a href="https://www.anthropic.com/aug-2026-risk-report">Anthropic — Redacted Risk Report, August 2026</a>
+          <a href="https://explainx.ai/blog/anthropic-august-2026-risk-report">explainx.ai reading of the report</a>
+          <a href="https://news.ycombinator.com/item?id=49303540">HN discussion</a>
+        </div>
+      </div>
+
+      <div class="item">
+        <div class="item-head">
+          <span class="item-kicker">Litigation</span>
+          <span class="item-title">OpenAI’s answer to Apple’s injunction request is due today — the biggest calendar item in the trade-secrets fight</span>
+          <span class="item-date">Aug 17, 2026</span>
+        </div>
+        <div class="item-body">
+          <p>Today is the court-ordered deadline for OpenAI to respond to Apple’s request for a preliminary injunction restricting OpenAI and two former Apple employees — hardware chief Tang Tan and Chang Liu — from using Apple confidential information while the case proceeds. The public record so far: Apple’s suit, OpenAI’s Aug 4 statement calling the injunction request “careless, aggressive, and oddly personal,” and OpenAI’s Aug 6 motion to dismiss describing the complaint as “rotten to its core” and arguing Apple’s own offboarding practices created the residual access it now sues over. The hearing is set for October 1.</p>
+          <p>The fight runs parallel to OpenAI’s S-1 calendar — the public prospectus is expected on EDGAR in the coming weeks — so every procedural beat in the Apple case is now priced against a potential listing.</p>
+        </div>
+        <div class="figure">
+          <div class="fig-kicker">The dispute so far — five beats in three weeks</div>
+          <div class="fig-body">
+            <svg viewBox="0 0 720 190" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Timeline of the OpenAI-Apple trade secrets dispute, August 2026">
+              <g font-family="-apple-system,Segoe UI,Roboto,sans-serif">
+                <line x1="70" y1="80" x2="650" y2="80" stroke="#6E6455" stroke-width="2"/>
+                <circle cx="70" cy="80" r="7" fill="#C6A15B"/>
+                <text x="70" y="52" text-anchor="middle" font-size="12" font-weight="700" fill="#EFE7D7">Late Jul</text>
+                <text x="70" y="112" text-anchor="middle" font-size="10.5" fill="#A79B87">Apple files suit and</text>
+                <text x="70" y="127" text-anchor="middle" font-size="10.5" fill="#A79B87">injunction request</text>
+                <circle cx="215" cy="80" r="7" fill="#C6A15B"/>
+                <text x="215" y="52" text-anchor="middle" font-size="12" font-weight="700" fill="#EFE7D7">Aug 4</text>
+                <text x="215" y="112" text-anchor="middle" font-size="10.5" fill="#A79B87">OpenAI statement:</text>
+                <text x="215" y="127" text-anchor="middle" font-size="10.5" fill="#A79B87">“careless, aggressive”</text>
+                <circle cx="360" cy="80" r="7" fill="#C6A15B"/>
+                <text x="360" y="52" text-anchor="middle" font-size="12" font-weight="700" fill="#EFE7D7">Aug 6</text>
+                <text x="360" y="112" text-anchor="middle" font-size="10.5" fill="#A79B87">motion to dismiss:</text>
+                <text x="360" y="127" text-anchor="middle" font-size="10.5" fill="#A79B87">“rotten to its core”</text>
+                <circle cx="505" cy="80" r="7" fill="#9A917F"/>
+                <text x="505" y="52" text-anchor="middle" font-size="12" font-weight="700" fill="#EFE7D7">Aug 17</text>
+                <text x="505" y="112" text-anchor="middle" font-size="10.5" fill="#A79B87">injunction response</text>
+                <text x="505" y="127" text-anchor="middle" font-size="10.5" fill="#A79B87">due today</text>
+                <circle cx="650" cy="80" r="7" fill="#6E6455"/>
+                <text x="650" y="52" text-anchor="middle" font-size="12" font-weight="700" fill="#EFE7D7">Oct 1</text>
+                <text x="650" y="112" text-anchor="middle" font-size="10.5" fill="#A79B87">hearing</text>
+                <text x="650" y="127" text-anchor="middle" font-size="10.5" fill="#A79B87">scheduled</text>
+              </g>
+            </svg>
+          </div>
+          <div class="fig-caption">Source: Shacknews (OpenAI statement, Aug 4), motion-to-dismiss coverage (Aug 6, per ainew/Gizmodo syndication), aitoolsrecap daily briefing (response deadline Aug 17), hearing date per OpenAI’s motion.</div>
+          <div class="fig-takeaway">Takeaway · The timetable is compressed on purpose — both sides are litigating at the speed of the S-1 calendar, not the usual pace of trade-secrets practice.</div>
+        </div>
+        <div class="quote">
+          <div class="q">No verified community commentary on today’s OpenAI–Apple filings.</div>
+        </div>
+        <div class="item-src">
+          <a href="https://venturepost.co/tech-policy/openai-apple-trade-secrets-lawsuit">VenturePost — procedural stage tracker</a>
+          <a href="https://www.gotechtor.com/openai-motion-dismiss-apple-trade-secrets-lawsuit/">Gotechtor — motion-to-dismiss summary</a>
+          <a href="https://ainew.top/story/openai-asks-judge-to-dismiss-apple-trade-secrets-suit">AI News Hub — dismissal bid</a>
+        </div>
+      </div>
+
+      <div class="item">
+        <div class="item-head">
+          <span class="item-kicker">Regulation</span>
+          <span class="item-title">The EU AI Act has been enforceable for two weeks — a deadline that passed without a story attached</span>
+          <span class="item-date">Aug 2, 2026</span>
+        </div>
+        <div class="item-body">
+          <p><b>Aug 2</b> was the EU AI Act’s substantive enforcement date: the transparency obligations of Article 50 and the penalty powers covering general-purpose AI models (fines up to €35 million or 7% of global turnover) are now live across the bloc. The Digital Omnibus amendments pushed most high-risk Annex III system obligations toward 2027–28, and only a minority of member states had designated their enforcement authorities as of the spring surveys — the enforcement machinery exists on paper faster than it exists in the capitals. For model providers the practical consequence is that synthetic-content labeling is now a compliance requirement, and the Commission’s service desk is the authoritative tracker of what applies when.</p>
+          <p>The quiet landing is itself the story: the hardest governance deadline of the year arrived during the week of model launches and court filings, and nobody noticed.</p>
+        </div>
+        <div class="stats-row">
+          <div class="stat"><div class="v">Aug 2, 2026</div><div class="k">enforcement date: Art. 50 + GPAI penalties</div></div>
+          <div class="stat"><div class="v">€35M</div><div class="k">or 7% of global turnover, max fines</div></div>
+          <div class="stat"><div class="v">8 / 27</div><div class="k">member states with designated authorities (spring survey)</div></div>
+          <div class="stat"><div class="v">2027–28</div><div class="k">most high-risk Annex III duties, post-Omnibus</div></div>
+        </div>
+        <div class="quote">
+          <div class="q">No verified community commentary on the EU AI Act enforcement date today.</div>
+        </div>
+        <div class="item-src">
+          <a href="https://ai-act-service-desk.ec.europa.eu/en/ai-act/timeline/timeline-implementation-eu-ai-act">European Commission — AI Act implementation timeline</a>
+          <a href="https://www.digitalapplied.com/blog/eu-ai-act-august-2026-transparency-obligations-agency-checklist">digitalapplied — what actually applied Aug 2</a>
+          <a href="https://worldreporter.com/eu-ai-act-august-2026-deadline-only-8-of-27-eu-states-ready-what-it-means-for-global-ai-compliance/">World Reporter — readiness survey</a>
+        </div>
+      </div>
+      </section>
+      <section class="section" id="research">
+        <div class="sec-head"><span class="sn">03</span><h2>Research &amp; Ideas</h2></div>
+        <div class="item">
+        <div class="item-head">
+          <span class="item-kicker">Theory</span>
+          <span class="item-title">Toby Ord re-derives the mathematics of intelligence explosions, and the result is a warning about generation time</span>
+          <span class="item-date">Aug 14, 2026</span>
+        </div>
+        <div class="item-body">
+          <p>In “The Dynamics of Intelligence Explosions” (arXiv 2608.14426), the Oxford philosopher models the AI-helps-build-AI feedback loop and reaches two results that cut against the most common framings. Singular growth — capability rising to a vertical asymptote — is harder to achieve than recent economics-inspired models suggest; but there is a neglected intermediate class of growth rates that are faster than exponential without reaching a finite-time blow-up. The pivotal parameter is <b>generation time</b>: the time to complete one full loop of the cycle, which must approach zero for singular growth to be possible.</p>
+          <p>The paper arrives days after Anthropic’s risk report flagged automated AI R&amp;D as an emerging risk class — the two documents read as the theory and the practitioner’s version of the same concern, which is why it is circulating in safety-adjacent briefings.</p>
+        </div>
+        <div class="item-src">
+          <a href="https://arxiv.org/abs/2608.14426">arXiv 2608.14426</a>
+        </div>
+      </div>
+
+      <div class="item">
+        <div class="item-head">
+          <span class="item-kicker">Agents</span>
+          <span class="item-title">Twin: a frontier coding agent that writes its own world model clears 179 of 183 ARC-AGI-3 games</span>
+          <span class="item-date">Aug 14, 2026</span>
+        </div>
+        <div class="item-body">
+          <p>The “Twin” system (arXiv 2608.14490, with Cornell and MIT authors) replaces hand-engineered task models with a loop: a frontier coding agent writes an executable world model of an unknown grid game from interaction alone, and the harness refuses actions until the model reproduces every previously observed transition — each mismatch becomes a counterexample that repairs the model. The results on ARC-AGI-3-style continual-learning games: <b>179 of 183 levels cleared (97.8%)</b>, more efficiently than humans on 158 of the cleared levels, and the system infers the goal before any reward on 87% of them.</p>
+          <p>The ablation is the informative part. The raw base model scores 7.8% on the gamut, an off-the-shelf harness lifts it to 61.1%, and the twin world model lifts the same base model to 93.3% — the gain is concentrated in the world-model loop, not the model.</p>
+        </div>
+        <div class="figure">
+          <div class="fig-kicker">What the world model buys — same base model, three configurations</div>
+          <div class="fig-body">
+            <svg viewBox="0 0 720 220" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Bar chart showing Twin system game scores: base model 7.8, off-the-shelf harness 61.1, twin world model 93.3">
+              <g font-family="-apple-system,Segoe UI,Roboto,sans-serif">
+                <text x="360" y="18" text-anchor="middle" font-size="12" fill="#A79B87">completion score, out of 100, versus humans playing each game for the first time</text>
+                <text x="120" y="195" text-anchor="middle" font-size="12" fill="#A79B87">base model</text>
+                <rect x="70" y="160" width="100" height="24" rx="3" fill="#6E6455"/>
+                <text x="140" y="130" text-anchor="middle" font-size="16" font-weight="700" fill="#EFE7D7">7.8</text>
+                <text x="360" y="195" text-anchor="middle" font-size="12" fill="#A79B87">+ off-the-shelf harness</text>
+                <rect x="310" y="85" width="100" height="99" rx="3" fill="#C6A15B"/>
+                <text x="360" y="55" text-anchor="middle" font-size="16" font-weight="700" fill="#EFE7D7">61.1</text>
+                <text x="600" y="195" text-anchor="middle" font-size="12" fill="#A79B87">+ twin world model</text>
+                <rect x="550" y="35" width="100" height="149" rx="3" fill="#9A917F"/>
+                <text x="600" y="25" text-anchor="middle" font-size="16" font-weight="700" fill="#EFE7D7">93.3</text>
+                <text x="360" y="212" text-anchor="middle" font-size="10.5" fill="#6E6455">levels cleared: 179 / 183 (97.8%) — goals inferred before reward on 87% of cleared levels</text>
+              </g>
+            </svg>
+          </div>
+          <div class="fig-caption">Source: arXiv 2608.14490 abstract and results section (“Twin: Playing an Unknown Game with a Test-Time Digital Twin”).</div>
+          <div class="fig-takeaway">Takeaway · The bottleneck for agentic reasoning is shifting from the model to the validation loop around it — the harness is now worth 55 points where the base model alone has 8.</div>
+        </div>
+        <div class="item-src">
+          <a href="https://arxiv.org/abs/2608.14490">arXiv 2608.14490</a>
+        </div>
+      </div>
+
+      <div class="item">
+        <div class="item-head">
+          <span class="item-kicker">Inference</span>
+          <span class="item-title">YOPO: answering and abstaining in a single forward pass of a frozen model — abstention without training it in</span>
+          <span class="item-date">Aug 14, 2026</span>
+        </div>
+        <div class="item-body">
+          <p>“You Only Pass Once” (arXiv 2608.14465) fuses two earlier ideas on the same residual stream of a frozen backbone: a conditional steering probe that recovers reasoning accuracy, and a zero-shot “sufficiency direction” that detects when the input lacks the information to answer. Deployed naively they interfere — the steering write shifts the state the readout depends on, costing up to 8 AUROC points — so the authors train a small reconstructor that undoes the steer before reading, keeping everything in one forward pass.</p>
+          <p>On Qwen2.5 backbones from 1.5B to 7B, three-way accuracy (answer / steer / abstain) more than doubles the frozen baseline (0.375 → 0.798 at 1.5B on alphaNLI) and one pass beats the two-pass reference at every scale (0.893 vs 0.863 at 7B). The paper also charts a capacity-transfer frontier arguing the field should not train abstention in — a design opinion with direct bearing on how the closed labs are adding refusal and calibration behavior.</p>
+        </div>
+        <div class="item-src">
+          <a href="https://arxiv.org/abs/2608.14465">arXiv 2608.14465</a>
+        </div>
+      </div>
+
+      <div class="quote">
+        <div class="q">No verified community commentary on today’s arXiv papers.</div>
+      </div>
+      </section>
+      <section class="section" id="voices">
+        <div class="sec-head"><span class="sn">04</span><h2>Voices</h2></div>
+        <div class="item">
+        <div class="item-head">
+          <span class="item-kicker">Tracked voice</span>
+          <span class="item-title">Musk gives Grok 4.7 its first concrete update: pretraining done, SpaceX data in, “3 to 4 weeks” out</span>
+          <span class="item-date">Aug 12, 2026</span>
+        </div>
+        <div class="item-body">
+          <p>Elon Musk’s Aug 12 post is the anchor of the 4.7 storyline still moving today: initial training complete, a “massive amount” of SpaceX company data entering supplemental training, and a readiness estimate of three to four weeks. It follows the same script as the July preview — engineering data in, “something special” out — but with one new fact: the parameter count reportedly rising to ~2.1T, the first increase in the Grok 4.x generation line.</p>
+          <p>The slip narrative attached to the post (late-August target pushed to September) is the week’s development, not the post itself.</p>
+        </div>
+        <div class="figure">
+          <div class="fig-kicker">The Grok 4.x cadence — and where 4.7 sits now</div>
+          <div class="fig-body">
+            <svg viewBox="0 0 720 180" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Timeline of Grok releases and the slipping Grok 4.7 window">
+              <g font-family="-apple-system,Segoe UI,Roboto,sans-serif">
+                <line x1="70" y1="70" x2="650" y2="70" stroke="#6E6455" stroke-width="2"/>
+                <circle cx="90" cy="70" r="7" fill="#A79B87"/>
+                <text x="90" y="44" text-anchor="middle" font-size="12" font-weight="700" fill="#EFE7D7">Jul 8</text>
+                <text x="90" y="104" text-anchor="middle" font-size="10.5" fill="#A79B87">Grok 4.5 (1.4T)</text>
+                <circle cx="280" cy="70" r="7" fill="#C6A15B"/>
+                <text x="280" y="44" text-anchor="middle" font-size="12" font-weight="700" fill="#EFE7D7">Aug 12</text>
+                <text x="280" y="104" text-anchor="middle" font-size="10.5" fill="#A79B87">Grok 4.6 (~1.5T) — shipped</text>
+                <circle cx="470" cy="70" r="7" fill="#6E6455"/>
+                <text x="470" y="44" text-anchor="middle" font-size="12" font-weight="700" fill="#EFE7D7">Late Aug</text>
+                <text x="470" y="104" text-anchor="middle" font-size="10.5" fill="#A79B87">original 4.7 target — passed</text>
+                <circle cx="640" cy="70" r="7" fill="#9A917F"/>
+                <text x="640" y="44" text-anchor="middle" font-size="12" font-weight="700" fill="#EFE7D7">Early–mid Sep</text>
+                <text x="640" y="104" text-anchor="middle" font-size="10.5" fill="#A79B87">revised window (~2.1T, SpaceX data)</text>
+              </g>
+            </svg>
+          </div>
+          <div class="fig-caption">Source: x.ai’s Grok 4.6 announcement (Aug 12); Musk’s X post on 4.7 (Aug 12); window tracking per orcarouter.ai and NextBigFuture (Aug 13–16); parameter figures per TechTimes/NextBigFuture reporting — unconfirmed by xAI.</div>
+          <div class="fig-takeaway">Takeaway · The slip is real but small — what changed is the story: the next Grok is now being defined by engineering-data inputs rather than raw scale, and the calendar followed.</div>
+        </div>
+        <div class="quote">
+          <div class="q">“Grok 4.7 is significantly better than 4.6 and should be ready in 3 to 4 weeks.”</div>
+          <div class="who">— Elon Musk, <a href="https://x.com/elonmusk/status/2087604711767896527">X post, Aug 12, 2026</a>.</div>
+        </div>
+        <div class="item-src">
+          <a href="https://x.com/elonmusk/status/2087604711767896527">x.com/elonmusk/status/2087604711767896527</a>
+          <a href="https://x.ai/news/grok-4-6">x.ai — Grok 4.6 announcement</a>
+        </div>
+      </div>
+
+      <div class="item">
+        <div class="item-head">
+          <span class="item-kicker">Tracked voice</span>
+          <span class="item-title">Delangue: China is winning the AI race on open-weight models — a statement the week’s releases keep validating</span>
+          <span class="item-date">Aug 3, 2026 (CNBC interview)</span>
+        </div>
+        <div class="item-body">
+          <p>Hugging Face CEO Clément Delangue told CNBC on Aug 3 that China is winning the AI race through open-weight models and could catch up to US frontier labs within a year or two. Business Insider amplified the remarks as the open-weights debate intensified in the aftermath of the July Hugging Face breach. Two weeks on, the track record is doing the arguing: the week’s most-downloaded open releases — Qwen3.8-27B, DeepSeek-V4-Pro-0813, GLM-5.3 — all came from Chinese labs, which is precisely the pattern Delangue described.</p>
+        </div>
+        <div class="quote">
+          <div class="q">“Clément Delangue said China is winning the AI race through open-weight models.”</div>
+          <div class="who">— as reported by <a href="https://www.businessinsider.com/hugging-face-ceo-open-weight-ai-models-china-2026-8">Business Insider</a>, following Delangue’s CNBC interview, Aug 3, 2026.</div>
+        </div>
+        <div class="item-src">
+          <a href="https://www.businessinsider.com/hugging-face-ceo-open-weight-ai-models-china-2026-8">Business Insider — Delangue on China and open weights</a>
+        </div>
+      </div>
+      </section>
+      <section class="section" id="other">
+        <div class="sec-head"><span class="sn">05</span><h2>Other AI News</h2></div>
+        <div class="item">
+        <div class="item-head">
+          <span class="item-kicker">Security</span>
+          <span class="item-title">OpenAI publishes “The Defender’s Window” — the first lab essay to make post-breach defense a product thesis</span>
+          <span class="item-date">Aug 17, 2026</span>
+        </div>
+        <div class="item-body">
+          <p>OpenAI’s “The Defender’s Window,” posted today and attributed to president Greg Brockman, argues the security environment has crossed a threshold: attackers now use AI to scale and automate intrusions, so every organization must begin automating its security program, and the security community has a bounded window to define the tools and playbooks that keep defenders ahead. It is the company’s first major security essay since its model’s July breach of Hugging Face’s platform — the “first autonomous agent cyberattack,” as Delangue called it — and it reads as the forward half of that story: OpenAI stops litigating the incident and starts selling the posture.</p>
+        </div>
+        <div class="quote">
+          <div class="q">“The defender’s window is open now.”</div>
+          <div class="who">— OpenAI, “The Defender’s Window”, Aug 17, 2026, <a href="https://openai.com/index/the-defenders-window/">openai.com</a> (also mirrored by <a href="https://www.startuphub.ai/ai-news/artificial-intelligence/2026/openai-the-defender-s-window-is-open">StartupHub</a>).</div>
+        </div>
+        <div class="item-src">
+          <a href="https://openai.com/index/the-defenders-window/">openai.com/index/the-defenders-window/</a>
+          <a href="https://ainews.lumi-systems.io/en/2026/08/17/openai-on-ai-in-cybersecurity-the-defenders-window/">Lumi AI News — summary</a>
+        </div>
+      </div>
+
+      <div class="item">
+        <div class="item-head">
+          <span class="item-kicker">Inference</span>
+          <span class="item-title">OpenAI previews Ultrafast: GPT-5.6 Sol at up to 14x standard speed on Cerebras silicon</span>
+          <span class="item-date">Aug 13, 2026</span>
+        </div>
+        <div class="item-body">
+          <p>OpenAI opened a limited preview of <b>Ultrafast</b>, a service tier that runs GPT-5.6 Sol on Cerebras hardware at up to 14 times standard processing speed, peaking around 750 output tokens per second, with access granted by application rather than open subscription. The company frames it for time-critical work — outage debugging, large serial reasoning bursts — and the HN thread (712 points) immediately split between admirers of the raw speed and skeptics asking what a 14x attack surface costs in a post-Hugging-Face world. The preview is the first visible fruit of the OpenAI–Cerebras partnership.</p>
+        </div>
+        <div class="quote">
+          <div class="q">“the 4.5-day hack on Hugging Face’s systems happening ~10 times faster”</div>
+          <div class="who">— HN commenter dewarrn1, <a href="https://news.ycombinator.com/item?id=49289844">Ultrafast thread</a>, on what 14x inference implies for incident response.</div>
+        </div>
+        <div class="stats-row">
+          <div class="stat"><div class="v">14x</div><div class="k">claimed speedup vs standard GPT-5.6 Sol</div></div>
+          <div class="stat"><div class="v">750</div><div class="k">output tokens/sec, vendor-claimed peak</div></div>
+          <div class="stat"><div class="v">Limited</div><div class="k">preview; access by application</div></div>
+          <div class="stat"><div class="v">712</div><div class="k">HN points on launch thread</div></div>
+        </div>
+        <div class="item-src">
+          <a href="https://news.ycombinator.com/item?id=49289844">HN thread — Accelerating GPT-5.6 Sol Ultrafast</a>
+          <a href="https://www.digitalapplied.com/blog/gpt-5-6-sol-ultrafast-preview-14x-inference-2026">digitalapplied — preview breakdown</a>
+        </div>
+      </div>
+
+      <div class="item">
+        <div class="item-head">
+          <span class="item-kicker">Incident</span>
+          <span class="item-title">tl;dv left 181,874 meeting records queryable for six months — the AI-notetaker exposure audit keeps compounding</span>
+          <span class="item-date">Disclosed Aug 10, 2026</span>
+        </div>
+        <div class="item-body">
+          <p>A missing Firestore rule at AI meeting-recording platform tl;dv let any signed-up account enumerate <b>181,874 meeting records from 84,312 users across 35,003 domains</b> — including government mailboxes from 23 countries — for roughly six months after a January 28 report. The researcher’s disclosure (published Aug 10, reverberating through the week) also found roughly 1,000 of those meetings were still recording at any moment, meaning the exposed links were doorways into live calls. tl;dv reports more than 2 million users and holds SOC 2; the certification did not cover the tenant-isolation failure, which is the detail teams keep circling.</p>
+          <p>For AI-adjacent vendors the case generalizes: the platform’s AI summaries were a feature layered on top of a database with no tenant isolation — the model was never the vulnerability.</p>
+        </div>
+        <div class="stats-row">
+          <div class="stat"><div class="v">181,874</div><div class="k">meeting records exposed</div></div>
+          <div class="stat"><div class="v">84,312</div><div class="k">users affected, 35,003 domains</div></div>
+          <div class="stat"><div class="v">~1,000</div><div class="k">meetings live at any moment, joinable</div></div>
+          <div class="stat"><div class="v">6 mo</div><div class="k">unfixed after Jan 28 report</div></div>
+        </div>
+        <div class="quote">
+          <div class="q">No verified community commentary on the tl;dv disclosure on HN or Reddit today.</div>
+        </div>
+        <div class="item-src">
+          <a href="https://www.explainx.ai/blog/tldv-firestore-breach-181000-meetings-exposed-2026">explainx.ai — disclosure detail</a>
+          <a href="https://best-ai.org/ai-news/tldv-exposed-181874-meeting-records-6-month-unfixed-vulnerability-revealed-by-bobdahacker-oz9lmc">best-ai.org — research writeup</a>
+        </div>
+      </div>
+
+      <div class="item">
+        <div class="item-head">
+          <span class="item-kicker">Users</span>
+          <span class="item-title">Gemini passes a billion monthly users — and the consumer race hits a different scale than the model race</span>
+          <span class="item-date">Aug 11, 2026</span>
+        </div>
+        <div class="item-body">
+          <p>Sundar Pichai announced on Aug 11 that the Gemini app passed <b>1 billion monthly active users</b> — up from 950 million at Alphabet’s late-July earnings call and 750 million in February — calling it the fastest-growing product in company history. ChatGPT crossed the same mark earlier this year, so the two assistants now sit on the same side of the billion-user line while their model lines diverge: Gemini’s launch cadence is Flash-heavy, and its Pro line has no near-term date, which is exactly where the community debate sits.</p>
+        </div>
+        <div class="figure">
+          <div class="fig-kicker">Gemini app monthly active users — six months to one billion</div>
+          <div class="fig-body">
+            <svg viewBox="0 0 720 210" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Line chart of Gemini monthly active users from 750 million in February to 1 billion on August 11 2026">
+              <g font-family="-apple-system,Segoe UI,Roboto,sans-serif">
+                <line x1="60" y1="170" x2="660" y2="170" stroke="#6E6455" stroke-width="1.5"/>
+                <line x1="60" y1="170" x2="140" y2="128" stroke="#C6A15B" stroke-width="3"/>
+                <line x1="140" y1="128" x2="430" y2="38" stroke="#C6A15B" stroke-width="3"/>
+                <line x1="430" y1="38" x2="640" y2="20" stroke="#9A917F" stroke-width="3"/>
+                <circle cx="60" cy="170" r="6" fill="#C6A15B"/>
+                <text x="60" y="192" text-anchor="middle" font-size="10.5" fill="#A79B87">Feb</text>
+                <text x="110" y="112" font-size="12" font-weight="700" fill="#EFE7D7">750M</text>
+                <circle cx="140" cy="128" r="6" fill="#C6A15B"/>
+                <text x="140" y="192" text-anchor="middle" font-size="10.5" fill="#A79B87">May</text>
+                <text x="190" y="75" font-size="12" font-weight="700" fill="#EFE7D7">950M</text>
+                <circle cx="430" cy="38" r="6" fill="#C6A15B"/>
+                <text x="430" y="192" text-anchor="middle" font-size="10.5" fill="#A79B87">Late Jul (earnings)</text>
+                <circle cx="640" cy="20" r="7" fill="#9A917F"/>
+                <text x="590" y="14" font-size="12" font-weight="700" fill="#EFE7D7">1B — Aug 11</text>
+                <text x="640" y="192" text-anchor="middle" font-size="10.5" fill="#A79B87">Aug</text>
+                <text x="360" y="208" text-anchor="middle" font-size="10.5" fill="#6E6455">figures per Alphabet reporting and Google statements as compiled by The Verge and TechCrunch, Aug 11</text>
+              </g>
+            </svg>
+          </div>
+          <div class="fig-caption">Source: The Verge (Aug 11) citing Alphabet’s February figure of 750M, the late-July earnings update of 950M, and Google’s Aug 11 announcement of 1B; TechCrunch same-day report.</div>
+          <div class="fig-takeaway">Takeaway · Distribution is now a separate competition from capability — Gemini reached the billion-user line on the strength of bundling and a Flash cadence, not a new frontier flagship.</div>
+        </div>
+        <div class="quote">
+          <div class="q">No verified community commentary on the Gemini user milestone today.</div>
+        </div>
+        <div class="item-src">
+          <a href="https://www.theverge.com/ai-artificial-intelligence/978113/chatgpt-gemini-1-billion-users">The Verge — both assistants at 1B</a>
+          <a href="https://techcrunch.com/2026/08/11/googles-gemini-app-surges-to-one-billion-users/">TechCrunch — milestone report</a>
+        </div>
+      </div>
+      </section>
+
+      <section class="related">
+        <div class="sec-head"><span class="sn">✦</span><h2>Related editions</h2><a href="index.html#archive">Archive ↓</a></div>
+        <div class="related-grid"><a class="card" href="signal-20260816.html"><div class="ck">Aug 16</div><div class="ct" style="font-size:18px"></div><div class="cm"><span class="n">6 items</span><span>→</span></div></a><a class="card" href="signal-20260818.html"><div class="ck">Aug 18</div><div class="ct" style="font-size:18px">An Open-Weight Model Carries Offensive Reach</div><div class="cm"><span class="n">12 items</span><span>→</span></div></a><a class="card" href="signal-20260910.html"><div class="ck">Sep 10</div><div class="ct" style="font-size:18px">The Million-Token Proof — Math Falls, Rules Tighten</div><div class="cm"><span class="n">15 items</span><span>→</span></div></a></div>
+      </section>
+
+      <div class="prevnext">
+        <a href="signal-20260816.html"><div class="d">← Previous edition</div><div class="t"></div></a>
+        <a href="index.html"><div class="d">Front page →</div><div class="t n">All editions, glance + archive</div></a>
+      </div>
+      <div class="foot">4 RELEASES · 3 POLICY · 3 RESEARCH · 2 VOICES · 4 OTHER · 5 FIGURES · 16 ITEMS · 0 FABRICATED · REPORT 2026-08-17</div>
+    </div>
+  </div>
+</div>
+
+<footer><div class="wrap fgrid">
+  <div><div class="fb">Sig<em>nal</em></div><p>Hype-free daily AI newspaper. Every specific claim traced to a page we actually read.</p></div>
+  <div><h5>Sections</h5><ul><li><a href="#releases">Releases</a></li><li><a href="#policy">Policy</a></li><li><a href="#research">Research</a></li><li><a href="#voices">Voices</a></li></ul></div>
+  <div><h5>Paper</h5><ul><li><a href="index.html">Front page</a></li><li><a href="index.html#archive">Archive</a></li><li><a href="signal-20260816.html">Previous</a></li></ul></div>
+  <div><h5>Listen</h5><ul><li><a href="#top">Today's narration</a></li></ul></div>
+</div>
+<div class="foot">4 RELEASES · 3 POLICY · 3 RESEARCH · 2 VOICES · 4 OTHER · 5 FIGURES · 16 ITEMS · 0 FABRICATED · REPORT 2026-08-17 · © <span id="yr">2026</span> Signal</div>
+</footer>
+
+<div id="readDock" hidden role="region" aria-label="Narration player">
+  <button id="rdPlay" aria-label="Play or pause">▶</button>
+  <div class="rd-main">
+    <div class="rd-top"><span id="rdSeg">Ready</span><span id="rdTime">0:00</span></div>
+    <input id="rdSeek" type="range" min="0" max="100" step="0.1" value="0" aria-label="Seek">
+    <div id="rdCap" class="rd-cap" aria-live="polite"></div>
+  </div>
+  <div class="rd-ctl">
+    <button id="rdSpeed" aria-label="Playback speed">1×</button>
+    <label class="rd-follow"><input type="checkbox" id="rdFollow" checked> Follow</label>
+    <button id="rdClose" aria-label="Close player">✕</button>
+  </div>
+</div>
+<button id="toTop" aria-label="Back to top">↑</button>
+<script src="assets/site.js"></script>
+<script src="assets/readalong.js" data-audio="" data-cues=""></script>
+</body>
+</html>

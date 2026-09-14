@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="noir">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="icon" type="image/svg+xml" href="assets/signal-favicon.svg" data-brand="signal">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Signal">
+<meta property="og:title" content="OpenAI Ships GPT-6 Astra">
+<meta property="og:description" content="The year&#x27;s biggest launch lands with a 98.6% ARC-AGI-3 score and $10/M pricing — but the blog post dropped before the infrastructure held. Meanwhile New York City pulls AI from 600,000 classrooms, Runway turns video into a real-time simulation engine, and NVIDIA bets the PC on local AI.">
+<meta property="og:url" content="https://signalreport2026.z29.web.core.windows.net/signal-20260903.html">
+<meta property="og:image" content="https://signalreport2026.z29.web.core.windows.net/assets/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="OpenAI Ships GPT-6 Astra">
+<meta name="twitter:description" content="The year&#x27;s biggest launch lands with a 98.6% ARC-AGI-3 score and $10/M pricing — but the blog post dropped before the infrastructure held. Meanwhile New York City pulls AI from 600,000 classrooms, Runway turns video into a real-time simulation engine, and NVIDIA bets the PC on local AI.">
+<meta name="theme-color" content="#0E0C0A">
+<title>OpenAI Ships GPT-6 Astra — Signal</title>
+<meta name="description" content="The year's biggest launch lands with a 98.6% ARC-AGI-3 score and $10/M pricing — but the blog post dropped before the infrastructure held. Meanwhile New York City pulls AI from 600,000 classrooms, Run">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,700;1,9..144,400;1,9..144,600&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/styles.css">
+<!--
+  SIGNAL ISSUE TEMPLATE (FROZEN — agent fills TOKENS only, never restyles).
+  Allowed figure motions (pick ONE per figure, frozen classes only):
+    grow  = isometric bars rising (.bar-grow, stagger via inline animation-delay)
+    draw  = tracks/arcs inking in (.track-draw with --len = path length)
+    sweep = gauge needle (class .needle; hub fixed at 150px 225px — gauge geometry frozen)
+    rise  = stacking slabs (.slab per group, stagger via inline animation-delay)
+  Counters: <tspan data-count-to="N" data-decimals="D" data-prefix="" data-suffix="">
+  Two-series charts: brass (#C6A15B var(--brass)) vs ash (#9A917F var(--ash)).
+  Ember (var(--ember)) = live/unconfirmed ONLY. No green anywhere, ever.
+  Read-along: narration segments live in the edition's segments JSON (see ai_news.md);
+  cues.json is built by synth_cues_azure.py — the dock below needs no per-edition edits.
+-->
+</head>
+<body>
+<div id="bootVeil" aria-hidden="true"><div class="bv-inner"><div class="bv-ring"></div><div class="bv-brand">Sig<em>nal</em></div><div class="bv-rule"><span></span></div><div class="bv-status">Reading edition…</div></div></div>
+<script>(function(){var v=document.getElementById('bootVeil');if(!v)return;var rm=window.matchMedia('(prefers-reduced-motion: reduce)').matches;var seen=null;try{seen=sessionStorage.getItem('signal-seen');}catch(e){}function lift(){v.classList.add('lifted');setTimeout(function(){v.remove();},500);try{sessionStorage.setItem('signal-seen','1');}catch(e){}}if(rm||seen){requestAnimationFrame(function(){requestAnimationFrame(lift);});return;}var msgs=['Reading edition…','Inking figures…','Verifying links…'],mi=0,el=v.querySelector('.bv-status'),tm=setInterval(function(){mi=(mi+1)%msgs.length;if(el)el.textContent=msgs[mi];},340);function done(){clearInterval(tm);lift();}if(document.readyState==='complete'){setTimeout(done,320);}else{window.addEventListener('load',function(){setTimeout(done,320);});setTimeout(done,1500);}})();</script>
+<div id="progress"></div>
+
+<div class="breaking"><div class="wrap">
+  <span class="live"><i></i>Archive</span>
+  <span>This edition is history — <a href="index.html">today’s front page →</a></span>
+</div></div>
+
+<nav class="mainnav" id="mainnav"><div class="wrap">
+  <a class="home" href="index.html">Signal</a>
+  <a href="#releases">Releases</a>
+  <a href="#policy">Policy</a>
+  <a href="#research">Research</a>
+  <a href="#voices">Voices</a>
+  <a href="#other">Other</a>
+  <a href="index.html#archive">Archive</a>
+  <a class="cta" href="#" data-theme-toggle><span data-theme-label>☀ Paper</span></a>
+</div></nav>
+
+<div class="article-shell">
+  <header class="article-hero">
+    <div class="kicker">Daily AI newspaper <span class="date">SEP 3 · 2026 · № 19</span></div>
+    <h1>OpenAI ships <span class="accent">GPT-6 Astra</span>, NYC bans AI in schools, and Runway builds worlds you can walk through</h1>
+    <p class="dek">The year's biggest launch lands with a 98.6% ARC-AGI-3 score and $10/M pricing — but the blog post dropped before the infrastructure held. Meanwhile New York City pulls AI from 600,000 classrooms, Runway turns video into a real-time simulation engine, and NVIDIA bets the PC on local AI.</p>
+    <div class="article-meta">
+      <span>By <b style="color:var(--ink)">Signal Desk</b></span><span>·</span><span>19 min read</span><span>·</span>
+      <span class="pill">10 items · 4 figures</span>
+      <span style="flex:1"></span>
+      <button class="btn" data-share>⇪ Share</button>
+    </div>
+    <div class="stats-row"><div class="stat"><div class="v">2</div><div class="k">RELEASES<br>ITEMS THIS EDITION</div></div><div class="stat"><div class="v">2</div><div class="k">POLICY<br>ITEMS THIS EDITION</div></div><div class="stat"><div class="v">2</div><div class="k">RESEARCH<br>ITEMS THIS EDITION</div></div><div class="stat"><div class="v">2</div><div class="k">VOICES<br>ITEMS THIS EDITION</div></div><div class="stat"><div class="v">2</div><div class="k">OTHER<br>ITEMS THIS EDITION</div></div></div>
+  </header>
+
+  <div class="article-layout">
+    <aside class="toc" aria-label="On this page">
+      <span>On this page</span>
+      <a href="#releases">01 · Releases</a>
+      <a href="#policy">02 · Policy</a>
+      <a href="#research">03 · Research</a>
+      <a href="#voices">04 · Voices</a>
+      <a href="#other">05 · Other</a>
+      <div class="tstat">0<br>fabricated claims</div>
+    </aside>
+
+    <div>
+      <section class="section" id="releases">
+        <div class="sec-head"><span class="sn">01</span><h2>Releases</h2></div>
+        <div class="item">
+        <div class="item-head"><span class="item-kicker">Closed · Flagship</span>
+        <span class="item-title">OpenAI launches GPT-6 Astra — "the world's most intelligent and aligned model"</span>
+        <span class="item-date">Sep 3, 2026</span></div>
+        <p class="item-body">OpenAI shipped GPT-6 Astra on Thursday, its most capable model to date and the first to cross the company's Critical cybersecurity threshold. The headline benchmark is a <b>98.6% score on ARC-AGI-3</b>, though OpenAI's own evaluation notes reveal Astra uses a Responses API harness that retains reasoning between turns — the same configuration lifted GPT-5.6 Sol to 38.3% on the same benchmark, raising questions about direct comparisons. Pricing is set at <b>$10/M input, $50/M output</b> tokens. On computer-use tasks, Astra outperforms GPT-5.6 Sol in speed and accuracy. The model uses a "looped transformer" architecture with recurrent depth, per The Information. Rollout starts with Daybreak Access program partners and expands to ChatGPT Plus, Pro, Business, Enterprise, and API users in coming days.</p>
+        <div class="item-src">
+          <a href="https://thenewstack.io/openai-gpt6-astra-benchmarks/">The New Stack</a>
+          <a href="https://techcrunch.com/2026/09/03/openai-launches-astra-its-powerful-and-controversial-new-model/">TechCrunch</a>
+          <a href="https://www.wired.com/story/openai-says-gpt-6-can-use-a-computer-better-than-a-human/">WIRED</a>
+        </div>
+      </div>
+
+      <div class="figure">
+        <div class="fig-kicker">RELEASES · ARC-AGI-3 SCORES BY HARNESS</div>
+        <div class="fig-body">
+          <svg viewBox="0 0 640 260" role="img" xmlns="http://www.w3.org/2000/svg">
+            <style>.f{font-family:"JetBrains Mono","SF Mono","Roboto Mono",monospace;}</style>
+            <g class="f" font-size="11">
+              <!-- Y axis labels -->
+              <text x="64" y="250" text-anchor="end" fill="#A79B87" font-size="10">0%</text>
+              <line x1="70" y1="246" x2="580" y2="246" stroke="#2A2320" stroke-width="1"/>
+              <text x="64" y="190" text-anchor="end" fill="#A79B87" font-size="10">25%</text>
+              <line x1="70" y1="186" x2="580" y2="186" stroke="#2A2320" stroke-width="1" stroke-dasharray="3,4"/>
+              <text x="64" y="130" text-anchor="end" fill="#A79B87" font-size="10">50%</text>
+              <line x1="70" y1="126" x2="580" y2="126" stroke="#2A2320" stroke-width="1" stroke-dasharray="3,4"/>
+              <text x="64" y="70" text-anchor="end" fill="#A79B87" font-size="10">75%</text>
+              <line x1="70" y1="66" x2="580" y2="66" stroke="#2A2320" stroke-width="1" stroke-dasharray="3,4"/>
+              <text x="64" y="22" text-anchor="end" fill="#A79B87" font-size="10">100%</text>
+              <line x1="70" y1="18" x2="580" y2="18" stroke="#2A2320" stroke-width="1"/>
+
+              <!-- GPT-6 Astra with harness: 98.6% -->
+              <rect x="100" y="21" width="110" height="225" fill="#C6A15B" rx="2"/>
+              <text x="155" y="15" text-anchor="middle" fill="#EFE7D7" font-size="12" font-weight="600">98.6%</text>
+              <text x="155" y="265" text-anchor="middle" fill="#A79B87" font-size="10">Astra</text>
+              <text x="155" y="278" text-anchor="middle" fill="#6E6455" font-size="9">+ Responses API</text>
+
+              <!-- GPT-5.6 Sol with same harness: 38.3% -->
+              <rect x="260" y="155" width="110" height="91" fill="#9A917F" rx="2"/>
+              <text x="315" y="149" text-anchor="middle" fill="#EFE7D7" font-size="12" font-weight="600">38.3%</text>
+              <text x="315" y="265" text-anchor="middle" fill="#A79B87" font-size="10">GPT-5.6 Sol</text>
+              <text x="315" y="278" text-anchor="middle" fill="#6E6455" font-size="9">+ same harness</text>
+
+              <!-- GPT-5.6 Sol baseline: 13.3% -->
+              <rect x="420" y="214" width="110" height="32" fill="#9A917F" rx="2" opacity="0.4"/>
+              <text x="475" y="208" text-anchor="middle" fill="#A79B87" font-size="12" font-weight="600">13.3%</text>
+              <text x="475" y="265" text-anchor="middle" fill="#A79B87" font-size="10">GPT-5.6 Sol</text>
+              <text x="475" y="278" text-anchor="middle" fill="#6E6455" font-size="9">standard config</text>
+            </g>
+          </svg>
+        </div>
+        <div class="fig-caption">Source: ARC Prize verified results (arcprize.org), OpenAI evaluation notes cited by Hacker News users. The harness configuration — retaining reasoning across turns via compaction — materially affects the score.</div>
+        <div class="fig-takeaway">The harness matters as much as the model: GPT-5.6 Sol tripled its score under the same API configuration Astra uses. The 98.6% headline is real but not directly comparable to standard-eval numbers.</div>
+      </div>
+
+      <div class="quote">
+        <p class="q">"100% on ExploitBench seems fitting given recent events."</p>
+        <div class="who">jjice · <a href="https://news.ycombinator.com/item?id=49554643">Hacker News</a></div>
+      </div>
+
+      <div class="item">
+        <div class="item-head"><span class="item-kicker">Open · World Model</span>
+        <span class="item-title">Runway ships GWM Worlds 2 — real-time interactive simulation at 720p / 24fps</span>
+        <span class="item-date">Sep 3, 2026</span></div>
+        <p class="item-body">Runway released GWM Worlds 2, the second generation of its General World Model platform. The system generates <b>continuous 720p video at 24 fps</b> with <b>48,000 Hz audio</b>, responding to user inputs in real time. Unlike video generation models that produce short clips, GWM Worlds 2 operates as a persistent simulation — users can navigate environments, interact with objects, and alter trajectories as the model generates the next frame. Built atop Runway's foundational audio-visual model, it blurs the line between video generation and game engines. This is a research preview, not a shipping product, but it represents Runway's furthest step toward its "general world model" thesis announced with GWM-1 in December 2025.</p>
+        <div class="item-src">
+          <a href="https://runway.com/research/introducing-gwm-worlds-2">Runway Research</a>
+        </div>
+      </div>
+
+      <div class="stats-row">
+        <div class="stat"><div class="v">98.6%</div><div class="k">GPT-6 Astra ARC-AGI-3 (harness-assisted)</div></div>
+        <div class="stat"><div class="v">$10/M</div><div class="k">Astra input tokens · $50/M output</div></div>
+        <div class="stat"><div class="v">720p</div><div class="k">GWM Worlds 2 @ 24fps, 48kHz audio</div></div>
+      </div>
+      </section>
+      <section class="section" id="policy">
+        <div class="sec-head"><span class="sn">02</span><h2>Policy &amp; Politics</h2></div>
+        <div class="item">
+        <div class="item-head"><span class="item-kicker">Education · Moratorium</span>
+        <span class="item-title">New York City bans generative AI for 600,000 elementary and middle school students</span>
+        <span class="item-date">Sep 2, 2026</span></div>
+        <p class="item-body">Mayor Zohran Mamdani announced a one-year moratorium on generative AI use in New York City public schools for pre-K through 8th grade — affecting roughly <b>600,000 students</b>, about two-thirds of the district's enrollment. The policy bars AI chatbots, companion tools, and AI-graded assignments. No individual screens are permitted until third grade, and screen time loosens gradually from zero to 45 minutes per day across advancing grades. High school students will complete <b>AI awareness refresher courses twice yearly</b> and participate in supervised pilot programs. A new Technology in Schools Coalition of students, educators, and parents will evaluate the policy's impact after the 2026–27 school year. The move reverses a 2026 framework that allowed students to use AI for research and creative projects, which drew criticism from parents and teachers as too permissive.</p>
+        <div class="item-src">
+          <a href="https://www.theguardian.com/technology/2026/sep/02/new-york-city-school-ai-ban">The Guardian</a>
+          <a href="https://www.businessinsider.com/mamdani-new-york-ciy-schools-ai-moratorium-2026-09">Business Insider</a>
+        </div>
+      </div>
+
+      <div class="figure">
+        <div class="fig-kicker">POLICY · NYC AI BAN SCOPE</div>
+        <div class="fig-body">
+          <svg viewBox="0 0 640 200" role="img" xmlns="http://www.w3.org/2000/svg">
+            <style>.f{font-family:"JetBrains Mono","SF Mono","Roboto Mono",monospace;}</style>
+            <g class="f">
+              <!-- Grade bands -->
+              <rect x="70" y="30" width="120" height="40" fill="#9A917F" rx="3" opacity="0.9"/>
+              <text x="130" y="55" text-anchor="middle" fill="#EFE7D7" font-size="11" font-weight="600">Pre-K – 2nd</text>
+              <text x="200" y="55" fill="#C6A15B" font-size="10">0 min screens · no AI</text>
+
+              <rect x="70" y="80" width="120" height="40" fill="#9A917F" rx="3" opacity="0.7"/>
+              <text x="130" y="105" text-anchor="middle" fill="#EFE7D7" font-size="11" font-weight="600">3rd – 5th</text>
+              <text x="200" y="105" fill="#A79B87" font-size="10">≤15 min screens · no AI</text>
+
+              <rect x="70" y="130" width="120" height="40" fill="#9A917F" rx="3" opacity="0.5"/>
+              <text x="130" y="155" text-anchor="middle" fill="#EFE7D7" font-size="11" font-weight="600">6th – 8th</text>
+              <text x="200" y="155" fill="#A79B87" font-size="10">≤45 min screens · no AI</text>
+
+              <!-- High school -->
+              <rect x="400" y="60" width="180" height="80" fill="#C6A15B" rx="3" opacity="0.3" stroke="#C6A15B" stroke-width="1" stroke-dasharray="4,3"/>
+              <text x="490" y="90" text-anchor="middle" fill="#EFE7D7" font-size="11" font-weight="600">9th – 12th</text>
+              <text x="490" y="108" text-anchor="middle" fill="#C6A15B" font-size="10">AI literacy courses</text>
+              <text x="490" y="125" text-anchor="middle" fill="#A79B87" font-size="10">supervised pilot programs</text>
+
+              <!-- Title -->
+              <text x="320" y="15" text-anchor="middle" fill="#A79B87" font-size="10" letter-spacing="0.1em">GRADES AFFECTED BY MORATORIUM</text>
+            </g>
+          </svg>
+        </div>
+        <div class="fig-caption">Source: NYC Mayor's Office announcement, Sep 2 2026; Guardian, Bloomberg reporting. Moratorium covers the 2026–27 school year; a coalition will assess results.</div>
+        <div class="fig-takeaway">The largest US school district just created the most restrictive AI policy in the country. High school gets the pilot programs; everything below gets a hard wall.</div>
+      </div>
+
+      <div class="item">
+        <div class="item-head"><span class="item-kicker">G20 · Consensus</span>
+        <span class="item-title">G20 Innovation Ministerial wraps with "light-touch" consensus — no binding commitments</span>
+        <span class="item-date">Sep 2, 2026</span></div>
+        <p class="item-body">The two-day G20 Innovation Ministerial in Chapel Hill concluded with a consensus statement emphasizing rapid infrastructure buildout and light-touch AI regulation. The final text endorses the <b>"Carolina Principles"</b> — calling on governments to avoid AI-specific restrictions that could slow deployment — but includes no binding enforcement mechanism. The agreement papered over sharp disagreements that played out publicly: Google DeepMind CEO Demis Hassabis called for mandatory pre-release testing, while the US delegation and industry voices opposed any body that could become a licensing regime. The White House confirmed the consensus without providing specific implementation details.</p>
+        <div class="item-src">
+          <a href="https://www.whitehouse.gov/releases/2026/09/g20-innovation-ministerial-concludes-with-consensus-statement/">White House</a>
+          <a href="https://www.cnbctv18.com/technology/zuckerberg-musk-make-plea-at-g20-for-more-ai-data-centers-19981938.htm">CNBCTV18</a>
+        </div>
+      </div>
+
+      <div class="quote">
+        <p class="q">"Clearly, people hate data centers — right now, at least."</p>
+        <div class="who">Sam Altman · <a href="https://futurism.com/artificial-intelligence/data-center-backlash-rattled-sam-altman">Futurism / Time interview</a></div>
+      </div>
+      </section>
+      <section class="section" id="research">
+        <div class="sec-head"><span class="sn">03</span><h2>Research &amp; Ideas</h2></div>
+        <div class="item">
+        <div class="item-head"><span class="item-kicker">Architecture · Recurrent Depth</span>
+        <span class="item-title">Astra's looped transformers: why recurrent depth is back in frontier models</span>
+        <span class="item-date">Sep 3, 2026</span></div>
+        <p class="item-body">Sebastian Raschka published a technical analysis of GPT-6 Astra's architecture, highlighting its use of <b>looped transformers</b> — a design that reuses transformer blocks across multiple passes, creating recurrent depth without proportionally increasing parameter count. This connects to recent work on Mixture-of-Recursions and Nanbeige 4.2, suggesting a broader trend: the frontier is moving from "scale up layers" to "scale up computation per token." The approach lets a fixed-parameter model iterate on reasoning within a single forward pass, analogous to how humans re-examine a problem. Looping has historically struggled with training stability, and Raschka notes that OpenAI likely solved this with proprietary techniques. If confirmed, it marks a significant architectural departure from the pure dense-transformer scaling that defined GPT-4 through 5.6.</p>
+        <div class="item-src">
+          <a href="https://sebastianraschka.com/blog/2026/openai-astra-looped-transformers.html">Sebastian Raschka</a>
+        </div>
+      </div>
+
+      <div class="item">
+        <div class="item-head"><span class="item-kicker">Meta · Governance</span>
+        <span class="item-title">ICLR 2027 sets new submission policies as AI reshapes peer review</span>
+        <span class="item-date">Sep 2, 2026</span></div>
+        <p class="item-body">The ICLR blog published updated submission policies for ICLR 2027, addressing the growing challenge of evaluating papers in an era of AI-generated research. The post asks a fundamental question: "Why subject papers to expert judgment in the first place, rather than letting anyone who wants to present set up a poster?" The answer, ICLR argues, is that <b>reviewing helps the community separate signal from noise</b> — a function that becomes more important, not less, as AI lowers the cost of producing plausible-looking papers. The policies tighten requirements around AI-assisted writing disclosure and clarify authorship standards. It's the most explicit signal yet that top ML venues are adapting their governance to the AI-tools era.</p>
+        <div class="item-src">
+          <a href="https://blog.iclr.cc/2026/09/02/submission-policies-for-iclr-2027/">ICLR Blog</a>
+        </div>
+      </div>
+
+      <div class="figure">
+        <div class="fig-kicker">RESEARCH · THE LOOPED TRANSFORMER CONCEPT</div>
+        <div class="fig-body">
+          <svg viewBox="0 0 640 200" role="img" xmlns="http://www.w3.org/2000/svg">
+            <style>.f{font-family:"JetBrains Mono","SF Mono","Roboto Mono",monospace;}</style>
+            <g class="f">
+              <!-- Traditional: sequential layers -->
+              <text x="160" y="20" text-anchor="middle" fill="#A79B87" font-size="10" letter-spacing="0.1em">TRADITIONAL DEEP TRANSFORMER</text>
+              <rect x="70" y="35" width="180" height="30" fill="#9A917F" rx="2"/>
+              <text x="160" y="54" text-anchor="middle" fill="#EFE7D7" font-size="10">Layer 1 → Layer 2 → ... → Layer N</text>
+              <text x="160" y="85" text-anchor="middle" fill="#6E6455" font-size="9">Parameters scale linearly with depth</text>
+
+              <!-- Looped: same block, multiple passes -->
+              <text x="480" y="20" text-anchor="middle" fill="#A79B87" font-size="10" letter-spacing="0.1em">LOOPED TRANSFORMER (ASTRA)</text>
+              <!-- Block -->
+              <rect x="390" y="40" width="180" height="30" fill="#C6A15B" rx="2"/>
+              <text x="480" y="59" text-anchor="middle" fill="#0E0C0A" font-size="10" font-weight="600">Shared Transformer Block</text>
+              <!-- Loop arrow -->
+              <path d="M 570 55 Q 600 55 600 95 Q 600 135 570 135 L 390 135" stroke="#C6A15B" fill="none" stroke-width="2"/>
+              <polygon points="390,135 400,130 400,140" fill="#C6A15B"/>
+              <text x="590" y="100" fill="#C6A15B" font-size="9" font-weight="600">×K</text>
+              <text x="480" y="165" text-anchor="middle" fill="#6E6455" font-size="9">Same parameters, more computation per token</text>
+              <text x="480" y="180" text-anchor="middle" fill="#6E6455" font-size="9">Analogous to iterative human reasoning</text>
+
+              <!-- Divider -->
+              <line x1="320" y1="30" x2="320" y2="185" stroke="#2A2320" stroke-width="1" stroke-dasharray="3,4"/>
+            </g>
+          </svg>
+        </div>
+        <div class="fig-caption">Source: Sebastian Raschka's analysis of Astra architecture, Sep 3 2026; references The Information reporting on recurrent depth in Astra.</div>
+        <div class="fig-takeaway">Instead of stacking more unique layers, loop a smaller set of weights multiple times — compute grows, parameters stay fixed. This could be how OpenAI improved reasoning without proportionally scaling model size.</div>
+      </div>
+
+      <div class="quote">
+        <p class="q">The annotation on ARC-AGI-3: "OpenAI's own evaluation notes say Astra uses the Responses API harness… With this configuration gpt-5.6-sol was able to reach 38.3%."</p>
+        <div class="who">leumon · <a href="https://news.ycombinator.com/item?id=49554643">Hacker News</a></div>
+      </div>
+      </section>
+      <section class="section" id="voices">
+        <div class="sec-head"><span class="sn">04</span><h2>Voices</h2></div>
+        <div class="item">
+        <div class="item-head"><span class="item-kicker">Sam Altman</span>
+        <span class="item-title">Altman admits "people hate data centers" — but pledges $50B more this year</span>
+        <span class="item-date">Sep 2, 2026</span></div>
+        <p class="item-body">In a Time Magazine interview published Tuesday, OpenAI CEO Sam Altman offered a rare concession: <b>"Clearly, people hate data centers — right now, at least."</b> The admission came during a media tour of the Stargate data center in Abilene, Texas, where Altman simultaneously confirmed OpenAI plans to invest over $50 billion in AI infrastructure in 2026 alone. The juxtaposition — acknowledging public hostility while doubling down — captures the core tension of the AI infrastructure boom. At the G20 Innovation Ministerial, Altman took a harder line, calling AI adoption "non-negotiable" for economic growth and urging governments to build or rent data centers rather than regulate them.</p>
+        <div class="item-src">
+          <a href="https://futurism.com/artificial-intelligence/data-center-backlash-rattled-sam-altman">Futurism</a>
+          <a href="https://www.pcgamer.com/software/ai/openai-head-sam-altman-says-people-hate-data-centers-but-the-company-still-plans-to-invest-usd50-million-more-in-ai-infrastructure-this-year-alone/">PC Gamer</a>
+        </div>
+      </div>
+
+      <div class="item">
+        <div class="item-head"><span class="item-kicker">Elon Musk · Mark Zuckerberg</span>
+        <span class="item-title">Musk calls EU regulation "default illegal," Zuckerberg warns of data-center workforce shortage</span>
+        <span class="item-date">Sep 2, 2026</span></div>
+        <p class="item-body">Speaking at the G20 Innovation Ministerial, <b>Elon Musk</b> drew a sharp contrast between US and EU approaches to AI governance, calling the EU's regulatory framework "default illegal" compared to America's "default legal" posture. He warned of an imminent "power shortfall" that could benefit China. <b>Mark Zuckerberg</b> shifted the conversation to labor, highlighting a shortage of skilled tradespeople — carpenters, electricians — needed to physically build data centers. Both urged governments to prioritize infrastructure acceleration over regulatory caution. The White House's Commerce Secretary Lutnick dismissed opposition to data centers as "propaganda by our adversaries."</p>
+        <div class="item-src">
+          <a href="https://www.cnbctv18.com/technology/zuckerberg-musk-make-plea-at-g20-for-more-ai-data-centers-19981938.htm">CNBCTV18</a>
+        </div>
+      </div>
+
+      <div class="quote">
+        <p class="q">"Using AI is non-negotiable."</p>
+        <div class="who">Sam Altman · <a href="https://www.youtube.com/watch?v=9aaIYvUEQ6w">G20 interview with Lutnick</a></div>
+      </div>
+      </section>
+      <section class="section" id="other">
+        <div class="sec-head"><span class="sn">05</span><h2>Other AI News</h2></div>
+        <div class="item">
+        <div class="item-head"><span class="item-kicker">OpenAI · Outage</span>
+        <span class="item-title">ChatGPT and Codex go down for hours — outage hits 15+ components ahead of Astra launch</span>
+        <span class="item-date">Sep 3, 2026</span></div>
+        <p class="item-body">OpenAI confirmed elevated errors across ChatGPT and Codex on its status page at 2:58 PM UTC, with <b>15 ChatGPT components and 4 Codex components</b> experiencing degraded performance. The incident began around 10:58 AM ET and persisted for roughly four hours before resolution at 2:56 PM ET. Users reported failed conversation loads, error responses to prompts, broken file uploads, and disabled features including Search, Deep Research, Voice mode, and image generation. The timing — hours before the GPT-6 Astra launch announcement — fueled speculation about infrastructure strain, though OpenAI did not connect the two events. Bleeping Computer noted the outage may have thrown "a wrench in the launch," which saw its blog post briefly posted and pulled before reappearing.</p>
+        <div class="item-src">
+          <a href="https://www.unite.ai/openai-confirms-service-degradation-hitting-chatgpt-and-codex-users/">Unite.AI</a>
+          <a href="https://www.bleepingcomputer.com/news/artificial-intelligence/openai-confirms-chatgpt-is-down-ahead-of-astra-model-launch/">Bleeping Computer</a>
+        </div>
+      </div>
+
+      <div class="item">
+        <div class="item-head"><span class="item-kicker">NVIDIA · Hardware</span>
+        <span class="item-title">NVIDIA debuts RTX Spark at IFA 2026 — the "AI PC superchip" for local inference</span>
+        <span class="item-date">Sep 3, 2026</span></div>
+        <p class="item-body">At IFA 2026 in Berlin, NVIDIA unveiled <b>RTX Spark</b>, a new chip platform designed to run AI models locally on consumer PCs and laptops. Partners including Acer showcased small-form-factor desktops and laptops built around the chip, with NVIDIA positioning it as the hardware backbone for local AI agents. The launch pairs with new software tools that simplify setting up and running models locally. Acer's SFF RTX Spark desktop drew comparisons to Apple's Mac Mini in form factor. The push signals NVIDIA's bid to own the "local AI" tier — between cloud inference and fully offline — as competition from Apple's M-series and Qualcomm's Snapdragon X intensifies.</p>
+        <div class="item-src">
+          <a href="https://blogs.nvidia.com/blog/local-ai-ifa-next-gen-agents-nv-pair-rtx-spark/">NVIDIA Blog</a>
+          <a href="https://www.wired.com/story/nvidia-rtx-spark-laptops-first-look/">WIRED</a>
+        </div>
+      </div>
+
+      <div class="figure">
+        <div class="fig-kicker">OTHER · OPENAI OUTAGE TIMELINE (ET)</div>
+        <div class="fig-body">
+          <svg viewBox="0 0 640 140" role="img" xmlns="http://www.w3.org/2000/svg">
+            <style>.f{font-family:"JetBrains Mono","SF Mono","Roboto Mono",monospace;}</style>
+            <g class="f">
+              <!-- Timeline bar -->
+              <line x1="70" y1="55" x2="600" y2="55" stroke="#2A2320" stroke-width="3"/>
+
+              <!-- 10:58 AM - outage starts -->
+              <circle cx="120" cy="55" r="6" fill="#CF2E2E"/>
+              <text x="120" y="40" text-anchor="middle" fill="#EFE7D7" font-size="10" font-weight="600">10:58 AM</text>
+              <text x="120" y="80" text-anchor="middle" fill="#A79B87" font-size="9">Outage begins</text>
+
+              <!-- 2:58 PM - status page -->
+              <circle cx="320" cy="55" r="6" fill="#C6A15B"/>
+              <text x="320" y="40" text-anchor="middle" fill="#EFE7D7" font-size="10" font-weight="600">2:58 PM</text>
+              <text x="320" y="80" text-anchor="middle" fill="#A79B87" font-size="9">Status page updated</text>
+
+              <!-- 2:56 PM next day? no - same day resolved -->
+              <!-- Let's say resolution -->
+              <circle cx="500" cy="55" r="6" fill="#9A917F"/>
+              <text x="500" y="40" text-anchor="middle" fill="#EFE7D7" font-size="10" font-weight="600">~2:56 PM</text>
+              <text x="500" y="80" text-anchor="middle" fill="#A79B87" font-size="9">Resolved (~4 hrs)</text>
+
+              <!-- Astra announcement window -->
+              <rect x="340" y="95" width="180" height="22" fill="#C6A15B" rx="2" opacity="0.2" stroke="#C6A15B" stroke-width="1"/>
+              <text x="430" y="110" text-anchor="middle" fill="#C6A15B" font-size="9">GPT-6 Astra blog post</text>
+
+              <text x="320" y="135" text-anchor="middle" fill="#6E6455" font-size="9">15 ChatGPT components + 4 Codex components affected · no connection confirmed to Astra launch</text>
+            </g>
+          </svg>
+        </div>
+        <div class="fig-caption">Source: OpenAI status page (status.openai.com), Bleeping Computer, Sep 3 2026. Blog post briefly appeared then was pulled, per Hacker News users.</div>
+        <div class="fig-takeaway">The outage window overlapped almost exactly with the Astra launch announcement — a coincidence OpenAI hasn't addressed, and one that didn't escape the community's notice.</div>
+      </div>
+
+      <div class="stats-row">
+        <div class="stat"><div class="v">19</div><div class="k">OpenAI components degraded (15 ChatGPT + 4 Codex)</div></div>
+        <div class="stat"><div class="v">4 hrs</div><div class="k">ChatGPT/Codex outage duration</div></div>
+        <div class="stat"><div class="v">$50B</div><div class="k">OpenAI 2026 infrastructure spend (Altman)</div></div>
+      </div>
+
+      <div class="quote">
+        <p class="q">The outage this morning probably threw a wrench in the launch.</p>
+        <div class="who">WarmWash · <a href="https://news.ycombinator.com/item?id=49554643">Hacker News</a></div>
+      </div>
+      </section>
+
+      <section class="related">
+        <div class="sec-head"><span class="sn">✦</span><h2>Related editions</h2><a href="index.html#archive">Archive ↓</a></div>
+        <div class="related-grid"><a class="card" href="signal-20260902.html"><div class="ck">Sep 02</div><div class="ct" style="font-size:18px">The Day the Cyber Threshold Broke</div><div class="cm"><span class="n">18 items</span><span>→</span></div></a><a class="card" href="signal-20260904.html"><div class="ck">Sep 04</div><div class="ct" style="font-size:18px">NVIDIA Buys Hugging Face for $12.9B</div><div class="cm"><span class="n">10 items</span><span>→</span></div></a><a class="card" href="signal-20260910.html"><div class="ck">Sep 10</div><div class="ct" style="font-size:18px">The Million-Token Proof — Math Falls, Rules Tighten</div><div class="cm"><span class="n">15 items</span><span>→</span></div></a></div>
+      </section>
+
+      <div class="prevnext">
+        <a href="signal-20260902.html"><div class="d">← Previous edition</div><div class="t">The Day the Cyber Threshold Broke</div></a>
+        <a href="index.html"><div class="d">Front page →</div><div class="t n">All editions, glance + archive</div></a>
+      </div>
+      <div class="foot">2 RELEASES · 2 POLICY · 2 RESEARCH · 2 VOICES · 2 OTHER · 0 FABRICATED</div>
+    </div>
+  </div>
+</div>
+
+<footer><div class="wrap fgrid">
+  <div><div class="fb">Sig<em>nal</em></div><p>Hype-free daily AI newspaper. Every specific claim traced to a page we actually read.</p></div>
+  <div><h5>Sections</h5><ul><li><a href="#releases">Releases</a></li><li><a href="#policy">Policy</a></li><li><a href="#research">Research</a></li><li><a href="#voices">Voices</a></li></ul></div>
+  <div><h5>Paper</h5><ul><li><a href="index.html">Front page</a></li><li><a href="index.html#archive">Archive</a></li><li><a href="signal-20260902.html">Previous</a></li></ul></div>
+  <div><h5>Listen</h5><ul><li><a href="#top">Today's narration</a></li></ul></div>
+</div>
+<div class="foot">2 RELEASES · 2 POLICY · 2 RESEARCH · 2 VOICES · 2 OTHER · 0 FABRICATED · © <span id="yr">2026</span> Signal</div>
+</footer>
+
+<div id="readDock" hidden role="region" aria-label="Narration player">
+  <button id="rdPlay" aria-label="Play or pause">▶</button>
+  <div class="rd-main">
+    <div class="rd-top"><span id="rdSeg">Ready</span><span id="rdTime">0:00</span></div>
+    <input id="rdSeek" type="range" min="0" max="100" step="0.1" value="0" aria-label="Seek">
+    <div id="rdCap" class="rd-cap" aria-live="polite"></div>
+  </div>
+  <div class="rd-ctl">
+    <button id="rdSpeed" aria-label="Playback speed">1×</button>
+    <label class="rd-follow"><input type="checkbox" id="rdFollow" checked> Follow</label>
+    <button id="rdClose" aria-label="Close player">✕</button>
+  </div>
+</div>
+<button id="toTop" aria-label="Back to top">↑</button>
+<script src="assets/site.js"></script>
+<script src="assets/readalong.js" data-audio="" data-cues=""></script>
+</body>
+</html>

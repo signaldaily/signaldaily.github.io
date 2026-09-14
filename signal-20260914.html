@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="noir">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="icon" type="image/svg+xml" href="assets/signal-favicon.svg" data-brand="signal">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Signal">
+<meta property="og:title" content="The Third Resignation — Safety Exodus Reaches DeepMind">
+<meta property="og:description" content="A DeepMind safety researcher quits for METR as Congress hits a tipping point and Brussels demands global rules — while Grok slips its date and Harvey bets $550M on agent reliability.">
+<meta property="og:url" content="https://signalreport2026.z29.web.core.windows.net/signal-20260914.html">
+<meta property="og:image" content="https://signalreport2026.z29.web.core.windows.net/assets/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="The Third Resignation — Safety Exodus Reaches DeepMind">
+<meta name="twitter:description" content="A DeepMind safety researcher quits for METR as Congress hits a tipping point and Brussels demands global rules — while Grok slips its date and Harvey bets $550M on agent reliability.">
+<meta name="theme-color" content="#0E0C0A">
+<title>The Third Resignation — Safety Exodus Reaches DeepMind — Signal</title>
+<meta name="description" content="A DeepMind safety researcher quits for METR as Congress hits a tipping point and Brussels demands global rules — while Grok slips its date and Harvey bets $550M on agent reliability.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,700;1,9..144,400;1,9..144,600&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/styles.css">
+<!--
+  SIGNAL ISSUE TEMPLATE (FROZEN — agent fills TOKENS only, never restyles).
+  Allowed figure motions (pick ONE per figure, frozen classes only):
+    grow  = isometric bars rising (.bar-grow, stagger via inline animation-delay)
+    draw  = tracks/arcs inking in (.track-draw with --len = path length)
+    sweep = gauge needle (class .needle; hub fixed at 150px 225px — gauge geometry frozen)
+    rise  = stacking slabs (.slab per group, stagger via inline animation-delay)
+  Counters: <tspan data-count-to="N" data-decimals="D" data-prefix="" data-suffix="">
+  Two-series charts: brass (#C6A15B var(--brass)) vs ash (#9A917F var(--ash)).
+  Ember (var(--ember)) = live/unconfirmed ONLY. No green anywhere, ever.
+  Read-along: narration segments live in the edition's segments JSON (see ai_news.md);
+  cues.json is built by synth_cues_azure.py — the dock below needs no per-edition edits.
+-->
+</head>
+<body>
+<div id="bootVeil" aria-hidden="true"><div class="bv-inner"><div class="bv-ring"></div><div class="bv-brand">Sig<em>nal</em></div><div class="bv-rule"><span></span></div><div class="bv-status">Reading edition…</div></div></div>
+<script>(function(){var v=document.getElementById('bootVeil');if(!v)return;var rm=window.matchMedia('(prefers-reduced-motion: reduce)').matches;var seen=null;try{seen=sessionStorage.getItem('signal-seen');}catch(e){}function lift(){v.classList.add('lifted');setTimeout(function(){v.remove();},500);try{sessionStorage.setItem('signal-seen','1');}catch(e){}}if(rm||seen){requestAnimationFrame(function(){requestAnimationFrame(lift);});return;}var msgs=['Reading edition…','Inking figures…','Verifying links…'],mi=0,el=v.querySelector('.bv-status'),tm=setInterval(function(){mi=(mi+1)%msgs.length;if(el)el.textContent=msgs[mi];},340);function done(){clearInterval(tm);lift();}if(document.readyState==='complete'){setTimeout(done,320);}else{window.addEventListener('load',function(){setTimeout(done,320);});setTimeout(done,1500);}})();</script>
+<div id="progress"></div>
+
+<div class="breaking"><div class="wrap">
+  <span class="live"><i></i>Developing</span>
+  <span>Third frontier-lab safety resignation in six days as Engels leaves DeepMind — <a href="#policy">the pacing fallout</a></span>
+</div></div>
+
+<nav class="mainnav" id="mainnav"><div class="wrap">
+  <a class="home" href="index.html">Signal</a>
+  <a href="#releases">Releases</a>
+  <a href="#policy">Policy</a>
+  <a href="#research">Research</a>
+  <a href="#voices">Voices</a>
+  <a href="#other">Other</a>
+  <a href="arxiv.html">Arxiv</a>
+  <a href="index.html#archive">Archive</a>
+  <a class="cta" href="#" data-theme-toggle><span data-theme-label>☀ Paper</span></a>
+</div></nav>
+
+<div class="article-shell">
+  <header class="article-hero">
+    <div class="kicker">Daily AI newspaper <span class="date">SEP 14 · 2026 · № 30</span></div>
+    <h1>The <span class="accent">Third Resignation</span> — Safety Exodus Reaches DeepMind</h1>
+    <p class="dek">A DeepMind safety researcher quits for METR as Congress hits a tipping point and Brussels demands global rules — while Grok slips its date and Harvey bets $550M on agent reliability.</p>
+    <div class="article-meta">
+      <span>By <b style="color:var(--ink)">Signal Desk</b></span><span>·</span><span>4 min read</span><span>·</span>
+      <span class="pill">10 items · 4 figures</span>
+      <span style="flex:1"></span>
+      <button class="btn solid" id="listenBtn">▶ Listen · 3 min</button>
+      <button class="btn" data-share>⇪ Share</button>
+    </div>
+    <div class="stats-row"><div class="stat"><div class="v">20+</div><div class="k">LAWMAKERS DEMAND<br>AI RULES</div></div><div class="stat"><div class="v">$550M</div><div class="k">HARVEY ROUND<br>$15.5B VALUATION</div></div><div class="stat"><div class="v">1%</div><div class="k">INJECTION COMPLETION<br>MMPIBENCH AGENTS</div></div><div class="stat"><div class="v">3rd</div><div class="k">SAFETY RESIGNATION<br>IN SIX DAYS</div></div></div>
+  </header>
+
+  <div class="article-layout">
+    <aside class="toc" aria-label="On this page">
+      <span>On this page</span>
+      <a href="#releases">01 · Releases</a>
+      <a href="#policy">02 · Policy</a>
+      <a href="#research">03 · Research</a>
+      <a href="#voices">04 · Voices</a>
+      <a href="#other">05 · Other</a>
+      <div class="tstat">0<br>fabricated claims<br>19/19 links live-verified</div>
+    </aside>
+
+    <div>
+      <section class="section" id="releases">
+        <div class="sec-head"><span class="sn">01</span><h2>Releases</h2></div>
+        <p class="quiet">Nothing cleared the bar today — yesterday's edition covered the September 10–12 shipment wave (DeepSeek-V4.1-Flash, Agnes-3.0-Flash, Qwen-UI-Agent, GLM-OCR), and no watchlisted lab shipped anything new inside this lookback window.</p>
+      </section>
+      <section class="section" id="policy">
+        <div class="sec-head"><span class="sn">02</span><h2>Policy &amp; Politics</h2></div>
+        <div class="item">
+        <div class="item-head"><span class="item-kicker">Resignation · AGI safety</span><span class="item-title">DeepMind safety researcher quits for METR, warning of a "terrifying chance"</span><span class="item-date">Sep 13, 2026</span></div>
+        <div class="item-body">Google DeepMind researcher Josh Engels left the company's AGI safety team about three weeks ago — turning down offers from Anthropic and OpenAI — to join the independent evaluation nonprofit METR. He says there is a "terrifying chance" AI systems cause immense harm within five years, arguing recursive self-improvement could outrun alignment as agents collude, hack, conceal actions, and socially engineer humans. At METR he will study misalignment sources, test whether safeguards suffice, and judge whether the industry is on track — on the premise that "we need more time."</div>
+        <div class="item-src"><a href="https://www.livemint.com/technology/deepmind-ai-safety-researcher-josh-engels-resigns-warns-of-superintelligence-risks-11789292295646.html">Mint/ANI — Sep 13</a><a href="https://www.storyboard18.com/brand-makers/google-deepmind-researcher-quits-warns-of-terrifying-chance-that-ai-could-cause-immense-harm-110600.htm">Storyboard18 — Sep 13</a></div>
+      </div>
+
+      <div class="item">
+        <div class="item-head"><span class="item-kicker">Washington</span><span class="item-title">Congress hits a "tipping point" as 20+ members demand AI rules</span><span class="item-date">Sep 10–12, 2026</span></div>
+        <div class="item-body">Rep. Lori Trahan told WBUR on September 10 her phone "hasn't stopped ringing" since the Coxon whistleblowing and called the moment a tipping point, pitching her Frontier Act's transparency, incident-reporting, independent-verification, and pause-button rules as table stakes. By September 11 more than 20 House and Senate members had called for new or stronger regulation, and a September 12 roundup reports Sens. Cruz, Klobuchar, and Thune co-sponsoring a bill letting regulators demand safety testing and block models posing catastrophic risk. Backdrop: Pew finds 52% of Americans more concerned than excited about AI, up from 37% in 2021.</div>
+        <div class="item-src"><a href="https://www.wbur.org/upnext/2026/09/10/trahan-hubinger-anthropic-openai">WBUR — Sep 10</a><a href="https://www.thenews.com.pk/latest/1415955-anthropic-insiders-viral-resignation-reaches-congress">The News — Sep 12</a></div>
+      </div>
+
+      <div class="item">
+        <div class="item-head"><span class="item-kicker">Brussels</span><span class="item-title">EU tech chief calls for global AI rules; Washington sets cooperation limits</span><span class="item-date">Sep 11, 2026</span></div>
+        <div class="item-body">Commission executive vice-president Henna Virkkunen said in Dublin that "global rules are really needed," noting EU law already forces labs to assess loss-of-control risk while most of the world requires nothing. Germany's digital minister wants an IAEA-style international AI safety body, and an MEP formally asked whether the Commission will push a frontier-incident protocol at the G7, G20, and OECD. The US ambassador to the EU answered the same day that Washington favors partnership but won't let American firms "be regulated to the point where we can't beat China."</div>
+        <div class="item-src"><a href="https://www.politico.eu/article/henna-virkkunen-eu-global-ai-rules-extinction-warning">POLITICO Europe — Sep 11</a></div>
+      </div>
+
+      <div class="figure">
+        <div class="fig-kicker">Figure 01 · The resignation week: from Coxon to Engels (Sep 8–13)</div>
+        <div class="fig-body">
+        <svg viewBox="0 0 640 210" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Resignation week timeline">
+          <g font-family="JetBrains Mono,SF Mono,Roboto Mono,monospace">
+            <text x="0" y="18" fill="var(--ink-soft)" font-size="12">SEP 8 → SEP 13 · PACING-FALLOUT TRACK (BRASS)</text>
+            <path class="track-draw" style="--len:600" d="M20 90 H620" fill="none" stroke="var(--brass)" stroke-width="3"/>
+            <circle cx="20" cy="90" r="7" fill="var(--brass)"/>
+            <circle cx="180" cy="90" r="7" fill="var(--brass)"/>
+            <circle cx="340" cy="90" r="7" fill="var(--brass)"/>
+            <circle cx="470" cy="90" r="7" fill="var(--brass)"/>
+            <circle cx="620" cy="90" r="7" fill="var(--brass)"/>
+            <text x="8" y="125" fill="var(--ink)" font-size="11" font-weight="600">SEP 8</text>
+            <text x="8" y="140" fill="var(--ink-soft)" font-size="11">Coxon quits</text>
+            <text x="150" y="125" fill="var(--ink)" font-size="11" font-weight="600">SEP 10</text>
+            <text x="150" y="140" fill="var(--ink-soft)" font-size="11">Trahan: tipping point</text>
+            <text x="310" y="125" fill="var(--ink)" font-size="11" font-weight="600">SEP 11</text>
+            <text x="310" y="140" fill="var(--ink-soft)" font-size="11">20+ in Congress · EU</text>
+            <text x="448" y="125" fill="var(--ink)" font-size="11" font-weight="600">SEP 12</text>
+            <text x="448" y="140" fill="var(--ink-soft)" font-size="11">Amodei essay</text>
+            <text x="560" y="125" fill="var(--ink)" font-size="11" font-weight="600">SEP 13</text>
+            <text x="560" y="140" fill="var(--ink-soft)" font-size="11">Engels quits</text>
+            <text x="0" y="180" fill="var(--ink-faint)" font-size="11">Source: Mint/ANI, WBUR, POLITICO Europe, Signal Sep 13 edition. <tspan data-count-to="5" data-decimals="0" data-prefix="" data-suffix="">5</tspan> dated beats in <tspan data-count-to="6" data-decimals="0" data-prefix="" data-suffix="">6</tspan> days.</text>
+          </g>
+        </svg>
+        </div>
+        <div class="fig-caption">Source: Mint/ANI, WBUR, POLITICO Europe, Signal's Sep 13 edition.</div>
+        <div class="fig-takeaway">Takeaway: resignations bookend the week — whistleblowers quit first, lawmakers and commissioners move second.</div>
+      </div>
+
+      <div class="quote"><div class="q">"The most powerful technology in human history is being regulated by its developers."</div><div class="who">— Rep. Lori Trahan, via <a href="https://www.wbur.org/upnext/2026/09/10/trahan-hubinger-anthropic-openai">WBUR, Sep 10</a></div></div>
+      </section>
+      <section class="section" id="research">
+        <div class="sec-head"><span class="sn">03</span><h2>Research &amp; Ideas</h2></div>
+        <div class="item">
+        <div class="item-head"><span class="item-kicker">Agent security</span><span class="item-title">MMPIBench: image-borne injections complete in 1% of agent runs</span><span class="item-date">Sep 8, 2026</span></div>
+        <div class="item-body">Nguyen and Husain's MMPIBench fires a fixed attack set at agentic frameworks through six visual carriers — OCR text, overlays, EXIF metadata, QR codes, fake interfaces, and hybrids — across 720 runs covering six frameworks, five models, and four attacker objectives. Attacks complete in about 1% of runs but are attempted in 12.8%; the gap closes almost entirely at planning, where the model reads the injection and declines. The model matters far more than the framework — one model never attempts and spots 59.7%, two others attempt 23.6% — and an audio extension completes in 49% of cells where the signal arrives.</div>
+        <div class="item-src"><a href="https://arxiv.org/abs/2609.09404">arXiv 2609.09404 — Sep 8</a></div>
+      </div>
+
+      <div class="item">
+        <div class="item-head"><span class="item-kicker">Knowledge structure</span><span class="item-title">KST study: LLMs flunk prerequisite structure in math reasoning</span><span class="item-date">Sep 4, 2026</span></div>
+        <div class="item-body">Cui, Do, and Sachan test eight open- and closed-source models against real human learners using Knowledge Space Theory, which formalizes that mastering a concept requires its prerequisites. LLMs routinely violate those dependencies and fail to use related in-context knowledge on dependent questions; nor do models share a consistent structure with each other. Most pointedly, the deficiencies stay nearly invisible to accuracy-based and LLM-as-judge evaluations — the benchmarks grading the homework cannot see the missing foundations.</div>
+        <div class="item-src"><a href="https://arxiv.org/abs/2609.05245">arXiv 2609.05245 — Sep 4</a></div>
+      </div>
+
+      <div class="figure">
+        <div class="fig-kicker">Figure 02 · MMPIBench: attempted (brass) vs completed (ash) attacks, %</div>
+        <div class="fig-body">
+        <svg viewBox="0 0 640 200" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="MMPIBench attempt versus completion bars">
+          <g font-family="JetBrains Mono,SF Mono,Roboto Mono,monospace">
+            <text x="0" y="18" fill="var(--ink-soft)" font-size="12">ATTEMPTED (BRASS)</text>
+            <rect x="0" y="28" width="627" height="26" fill="var(--panel-2)" stroke="var(--hairline)"/>
+            <g class="bar-grow"><rect x="0" y="28" width="80" height="26" fill="var(--brass)"/></g>
+            <text x="88" y="46" fill="var(--ink)" font-size="12" font-weight="600"><tspan data-count-to="12.8" data-decimals="1" data-prefix="" data-suffix="">12.8%</tspan></text>
+            <text x="0" y="84" fill="var(--ink-soft)" font-size="12">COMPLETED (ASH)</text>
+            <rect x="0" y="94" width="627" height="26" fill="var(--panel-2)" stroke="var(--hairline)"/>
+            <g class="bar-grow" style="animation-delay:.2s"><rect x="0" y="94" width="6" height="26" fill="var(--ash)"/></g>
+            <text x="14" y="112" fill="var(--ink)" font-size="12" font-weight="600"><tspan data-count-to="1" data-decimals="0" data-prefix="" data-suffix="">1</tspan>%</text>
+            <text x="0" y="150" fill="var(--ink-soft)" font-size="12">AUDIO CHANNEL: 49% COMPLETION WHERE SIGNAL ARRIVES · 720 RUNS</text>
+            <text x="0" y="180" fill="var(--ink-faint)" font-size="11">Source: MMPIBench, arXiv 2609.09404, Sep 8, 2026. Planning step declines most attempts.</text>
+          </g>
+        </svg>
+        </div>
+        <div class="fig-caption">Source: MMPIBench results, arXiv 2609.09404, Sep 8, 2026.</div>
+        <div class="fig-takeaway">Takeaway: vision is the wide door agents mostly refuse to walk through — audio is narrower but far less defended.</div>
+      </div>
+
+      <div class="quote"><div class="q">No verified community commentary on MMPIBench today.</div></div>
+      </section>
+      <section class="section" id="voices">
+        <div class="sec-head"><span class="sn">04</span><h2>Voices</h2></div>
+        <div class="item">
+        <div class="item-head"><span class="item-kicker">The resignation post</span><span class="item-title">Engels: "I think we need more time"</span><span class="item-date">Sep 13, 2026</span></div>
+        <div class="item-body">"The AI companies are all trying to build superintelligence," Engels wrote, warning that recursive self-improvement "could become dangerous if alignment does not keep pace" and admitting "we don't currently know how to make sure AIs are safe enough for RSI." The notable detail is the declined leverage: he walked away from DeepMind despite enjoying the work and turned down both Anthropic and OpenAI to do independent evaluation at METR. Third insider exit in six days makes the pacing debate a personnel crisis, not just a policy one.</div>
+        <div class="item-src"><a href="https://www.livemint.com/technology/deepmind-ai-safety-researcher-josh-engels-resigns-warns-of-superintelligence-risks-11789292295646.html">Mint/ANI — Sep 13</a></div>
+      </div>
+
+      <div class="item">
+        <div class="item-head"><span class="item-kicker">The delay post</span><span class="item-title">Musk: Grok 4.7 "needs a few more days to cook"</span><span class="item-date">Sep 11, 2026</span></div>
+        <div class="item-body">Musk's September 11 reply is unusually diagnostic for a launch thread: RL "might have penalized response length too much (or something)," so the model "still gives up on hard tasks (that it can do!) too early and isn't yet sufficiently rigorous in checking its work." Read it as a frontier-wide confession — persistence and verification, not raw capability, are the binding constraint on agentic models right now. The post drew about two million views within days.</div>
+        <div class="item-src"><a href="https://x.com/elonmusk/status/2098462085973741960">Musk on X — Sep 11</a></div>
+      </div>
+
+      <div class="figure">
+        <div class="fig-kicker">Figure 03 · The week in four numbers (flat read)</div>
+        <div class="fig-body">
+        <svg viewBox="0 0 640 170" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Week numbers">
+          <g font-family="JetBrains Mono,SF Mono,Roboto Mono,monospace">
+            <text x="0" y="40" fill="var(--ink)" font-size="22" font-weight="600"><tspan data-count-to="2" data-decimals="0" data-prefix="" data-suffix="">2</tspan>M</text>
+            <text x="0" y="60" fill="var(--ink-soft)" font-size="12">VIEWS · MUSK DELAY POST</text>
+            <text x="170" y="40" fill="var(--ink)" font-size="22" font-weight="600"><tspan data-count-to="5" data-decimals="0" data-prefix="" data-suffix="">5</tspan>YR</text>
+            <text x="170" y="60" fill="var(--ink-soft)" font-size="12">ENGELS HARM HORIZON</text>
+            <text x="340" y="40" fill="var(--ink)" font-size="22" font-weight="600"><tspan data-count-to="3" data-decimals="0" data-prefix="" data-suffix="">3</tspan>WK</text>
+            <text x="340" y="60" fill="var(--ink-soft)" font-size="12">SINCE ENGELS LEFT DEEPMIND</text>
+            <text x="510" y="40" fill="var(--ink)" font-size="22" font-weight="600"><tspan data-count-to="20" data-decimals="0" data-prefix="&gt;" data-suffix="">20+</tspan></text>
+            <text x="510" y="60" fill="var(--ink-soft)" font-size="12">LAWMAKERS CALLING FOR RULES</text>
+            <text x="0" y="110" fill="var(--ink-soft)" font-size="12">ONE RESIGNATION, ONE DELAY, ONE WARNING WINDOW, ONE LEGISLATIVE SURGE</text>
+            <text x="0" y="140" fill="var(--ink-faint)" font-size="11">Source: X post metadata; Mint/ANI; WBUR, Sep 2026.</text>
+          </g>
+        </svg>
+        </div>
+        <div class="fig-caption">Source: X post metadata; Mint/ANI; WBUR, Sep 2026.</div>
+        <div class="fig-takeaway">Takeaway: the loudest numbers this week are not benchmarks — they are audiences, horizons, and headcounts.</div>
+      </div>
+
+      <div class="quote"><div class="q">"Grok 4.7 needs a few more days to cook."</div><div class="who">— Elon Musk, via <a href="https://x.com/elonmusk/status/2098462085973741960">X, Sep 11</a></div></div>
+      </section>
+      <section class="section" id="other">
+        <div class="sec-head"><span class="sn">05</span><h2>Other AI News</h2></div>
+        <div class="item">
+        <div class="item-head"><span class="item-kicker">Delay · Settled</span><span class="item-title">Grok 4.7 slips past Musk's ten-day pointer; no new date set</span><span class="item-date">Sep 11–12, 2026</span></div>
+        <div class="item-body">This settles yesterday's unconfirmed watch: Musk's September 2 ten-day pointer lapsed with no release, and on September 11 he confirmed "a few more days" while floating an over-penalized response-length reward as the suspect. xAI has published no model card, benchmarks, pricing, or replacement date, so Grok 4.6 — 500K context at $2 in / $6 out per million under 200K prompt tokens — remains the flagship. Cursor log sightings of a grok-4-7-0907 slug stay community reports, not releases; the dated hold remains the September 15–17 Grok Bot live event.</div>
+        <div class="item-src"><a href="https://www.datastudios.org/post/xai-grok-4-7-delay-reinforcement-learning-self-checking">Data Studios — Sep 12</a><a href="https://teslanorth.com/2026/09/11/grok-4-7-few-more-days">TeslaNorth — Sep 11</a></div>
+      </div>
+
+      <div class="item">
+        <div class="item-head"><span class="item-kicker">Funding · Legal AI</span><span class="item-title">Harvey raises $550M at $15.5B and buys Guardrails AI</span><span class="item-date">Sep 9, 2026</span></div>
+        <div class="item-body">Legal AI outfit Harvey closed a $550 million round at a $15.5 billion valuation — co-led by Diffusion and Lightspeed, up from a $200 million raise at $11 billion under six months earlier — making it the best-funded legal AI company. Alongside the money came its fourth acquisition of the year: Guardrails AI, whose open reliability framework sees 250,000-plus monthly downloads plus the Snowglobe agent stress-testing simulator. It missed our editions' window, so we record it here with its exact date: vertical AI is now buying the safety tooling the frontier debate says doesn't exist.</div>
+        <div class="item-src"><a href="https://www.harvey.ai/blog/guardrails-ai-joins-harvey">Harvey announcement — Sep 9</a><a href="https://www.siliconrepublic.com/start-ups/harvey-legal-ai-funding-and-investment-550m">Silicon Republic — Sep 9</a></div>
+      </div>
+
+      <div class="item">
+        <div class="item-head"><span class="item-kicker">Distribution</span><span class="item-title">Microsoft puts Grok inside Copilot across Word, Excel, and PowerPoint</span><span class="item-date">Sep 12, 2026</span></div>
+        <div class="item-body">Microsoft added Grok models to Copilot inside its Office flagships, with the company saying candidate models clear testing, safety validation, and Responsible AI review before reaching customers. The move extends xAI's enterprise distribution beyond its own API and Cursor sightings into the productivity suite where most office work actually happens. Single-sourced so far — treat the rollout scope as reported, not confirmed — but the direction is unmistakable: every Copilot shelf will soon carry a rival lab's model.</div>
+        <div class="item-src"><a href="https://www.iphoneincanada.ca/2026/09/12/microsoft-adds-grok-to-copilot-in-word-excel-and-powerpoint">iPhone in Canada — Sep 12</a></div>
+      </div>
+
+      <div class="figure">
+        <div class="fig-kicker">Figure 04 · Harvey's jump: raise and valuation, $B (brass = new, ash = old)</div>
+        <div class="fig-body">
+        <svg viewBox="0 0 640 220" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Harvey funding bars">
+          <g font-family="JetBrains Mono,SF Mono,Roboto Mono,monospace">
+            <text x="0" y="18" fill="var(--ink-soft)" font-size="12">RAISE: $0.2B MAR (ASH)</text>
+            <rect x="0" y="28" width="627" height="26" fill="var(--panel-2)" stroke="var(--hairline)"/>
+            <g class="bar-grow"><rect x="0" y="28" width="23" height="26" fill="var(--ash)"/></g>
+            <text x="31" y="46" fill="var(--ink)" font-size="12" font-weight="600">$<tspan data-count-to="0.2" data-decimals="1" data-prefix="" data-suffix="">0.2</tspan>B</text>
+            <text x="0" y="84" fill="var(--ink-soft)" font-size="12">RAISE: $0.55B SEP (BRASS)</text>
+            <rect x="0" y="94" width="627" height="26" fill="var(--panel-2)" stroke="var(--hairline)"/>
+            <g class="bar-grow" style="animation-delay:.15s"><rect x="0" y="94" width="63" height="26" fill="var(--brass)"/></g>
+            <text x="71" y="112" fill="var(--ink)" font-size="12" font-weight="600">$<tspan data-count-to="0.55" data-decimals="2" data-prefix="" data-suffix="">0.55</tspan>B</text>
+            <text x="0" y="150" fill="var(--ink-soft)" font-size="12">VALUATION: $11B (ASH) VS $15.5B (BRASS)</text>
+            <rect x="0" y="160" width="627" height="26" fill="var(--panel-2)" stroke="var(--hairline)"/>
+            <g class="bar-grow" style="animation-delay:.3s"><rect x="0" y="160" width="445" height="26" fill="var(--ash)"/></g>
+            <g class="bar-grow" style="animation-delay:.45s"><rect x="0" y="160" width="627" height="26" fill="var(--brass)" opacity="0.85"/></g>
+            <text x="8" y="178" fill="var(--ink)" font-size="12" font-weight="600">$11B vs $15.5B</text>
+            <text x="0" y="210" fill="var(--ink-faint)" font-size="11">Source: Harvey via Silicon Republic, Sep 9, 2026. Prior round under six months earlier.</text>
+          </g>
+        </svg>
+        </div>
+        <div class="fig-caption">Source: Harvey funding via Silicon Republic, Sep 9, 2026.</div>
+        <div class="fig-takeaway">Takeaway: nearly triple the raise at a $4.5B step-up in months — legal AI now prices reliability as the product.</div>
+      </div>
+
+      <div class="quote"><div class="q">No verified community commentary on Harvey's round today.</div></div>
+      </section>
+
+      <section class="related">
+        <div class="sec-head"><span class="sn">✦</span><h2>Related editions</h2><a href="index.html#archive">Archive ↓</a></div>
+        <div class="related-grid"><a class="card" href="signal-20260913.html"><div class="ck">Sep 13</div><div class="ct" style="font-size:18px">The Pace-the-Frontier Weekend — Slowdown Call Meets Shipment Flood</div><div class="cm"><span class="n">Previous</span><span>→</span></div></a><a class="card" href="signal-20260910.html"><div class="ck">Sep 10</div><div class="ct" style="font-size:18px">The Million-Token Proof — Math Falls, Rules Tighten</div><div class="cm"><span class="n">Archive</span><span>→</span></div></a><a class="card" href="signal-20260904.html"><div class="ck">Sep 04</div><div class="ct" style="font-size:18px">NVIDIA Buys Hugging Face for $12.9B</div><div class="cm"><span class="n">Landmark</span><span>→</span></div></a></div>
+      </section>
+
+      <div class="prevnext">
+        <a href="signal-20260913.html"><div class="d">← Previous edition</div><div class="t">The Pace-the-Frontier Weekend — Slowdown Call Meets Shipment Flood</div></a>
+        <a href="index.html"><div class="d">Front page →</div><div class="t n">All editions, glance + archive</div></a>
+      </div>
+      <div class="foot">0 RELEASES · 3 POLICY · 2 RESEARCH · 2 VOICES · 3 OTHER · 0 FABRICATED</div>
+    </div>
+  </div>
+</div>
+
+<footer><div class="wrap fgrid">
+  <div><div class="fb">Sig<em>nal</em></div><p>Hype-free daily AI newspaper. Every specific claim traced to a page we actually read.</p></div>
+  <div><h5>Sections</h5><ul><li><a href="#releases">Releases</a></li><li><a href="#policy">Policy</a></li><li><a href="#research">Research</a></li><li><a href="#voices">Voices</a></li></ul></div>
+  <div><h5>Paper</h5><ul><li><a href="index.html">Front page</a></li><li><a href="index.html#archive">Archive</a></li><li><a href="signal-20260913.html">Previous</a></li></ul></div>
+  <div><h5>Listen</h5><ul><li><a href="#top">Today's narration</a></li></ul></div>
+</div>
+<div class="foot">0 RELEASES · 3 POLICY · 2 RESEARCH · 2 VOICES · 3 OTHER · 0 FABRICATED · © <span id="yr">2026</span> Signal</div>
+</footer>
+
+<div id="readDock" hidden role="region" aria-label="Narration player">
+  <button id="rdPlay" aria-label="Play or pause">▶</button>
+  <div class="rd-main">
+    <div class="rd-top"><span id="rdSeg">Ready</span><span id="rdTime">0:00</span></div>
+    <input id="rdSeek" type="range" min="0" max="100" step="0.1" value="0" aria-label="Seek">
+    <div id="rdCap" class="rd-cap" aria-live="polite"></div>
+  </div>
+  <div class="rd-ctl">
+    <button id="rdSpeed" aria-label="Playback speed">1×</button>
+    <label class="rd-follow"><input type="checkbox" id="rdFollow" checked> Follow</label>
+    <button id="rdClose" aria-label="Close player">✕</button>
+  </div>
+</div>
+<button id="toTop" aria-label="Back to top">↑</button>
+<script src="assets/site-v2.js"></script>
+<script src="assets/readalong.js" data-audio="https://signalreport2026.z29.web.core.windows.net/audio/today-news.mp3" data-cues="https://signalreport2026.z29.web.core.windows.net/audio/today-cues.json"></script>
+</body>
+</html>

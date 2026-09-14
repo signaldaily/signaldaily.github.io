@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="noir">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="icon" type="image/svg+xml" href="assets/signal-favicon.svg" data-brand="signal">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Signal">
+<meta property="og:title" content="Unsubscribe — Signal">
+<meta property="og:description" content="Signal is a hype-free daily AI newspaper: releases, policy, research, voices. Every claim verified, every link checked.">
+<meta property="og:url" content="https://signalreport2026.z29.web.core.windows.net/unsubscribe.html">
+<meta property="og:image" content="https://signalreport2026.z29.web.core.windows.net/assets/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Unsubscribe — Signal">
+<meta name="twitter:description" content="Signal is a hype-free daily AI newspaper: releases, policy, research, voices. Every claim verified, every link checked.">
+<meta name="theme-color" content="#0E0C0A">
+<title>Unsubscribe — Signal</title>
+<meta name="description" content="Leave the Signal list in one click. No login.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,600;1,9..144,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/styles.css">
+</head>
+<body>
+<div id="bootVeil" aria-hidden="true"><div class="bv-inner"><div class="bv-ring"></div><div class="bv-brand">Sig<em>nal</em></div><div class="bv-rule"><span></span></div><div class="bv-status">Reading edition…</div></div></div>
+<script>(function(){var v=document.getElementById('bootVeil');if(!v)return;var rm=window.matchMedia('(prefers-reduced-motion: reduce)').matches;var seen=null;try{seen=sessionStorage.getItem('signal-seen');}catch(e){}function lift(){v.classList.add('lifted');setTimeout(function(){v.remove();},500);try{sessionStorage.setItem('signal-seen','1');}catch(e){}}if(rm||seen){requestAnimationFrame(function(){requestAnimationFrame(lift);});return;}var msgs=['Reading edition…','Inking figures…','Verifying links…'],mi=0,el=v.querySelector('.bv-status'),tm=setInterval(function(){mi=(mi+1)%msgs.length;if(el)el.textContent=msgs[mi];},340);function done(){clearInterval(tm);lift();}if(document.readyState==='complete'){setTimeout(done,320);}else{window.addEventListener('load',function(){setTimeout(done,320);});setTimeout(done,1500);}})();</script>
+<div class="strip"><div class="wrap">
+  <span><a href="index.html" style="text-decoration:none">← Signal front page</a></span>
+  <span>One click · no login</span>
+</div></div>
+<main class="wrap" style="max-width:560px;padding:60px 24px;text-align:center">
+  <div class="kicker">Signal list</div>
+  <h1 style="font-family:Fraunces,serif;font-size:clamp(30px,5vw,44px);font-weight:600">Leave the list?</h1>
+  <p style="color:var(--ink-soft);margin-top:12px">Enter the address to remove. Gone in one click, no questions.</p>
+  <form id="unsub" style="display:flex;gap:8px;margin-top:24px">
+    <input id="unsubEmail" type="email" required placeholder="you@domain.com" aria-label="Email" autocomplete="email"
+      style="flex:1;background:var(--panel);border:1px solid var(--hairline-2);border-radius:4px;padding:12px 16px;color:var(--ink);font-size:14px;outline:none;min-width:0">
+    <button type="submit" class="btn solid">Leave</button>
+  </form>
+  <p id="unsubMsg" style="margin-top:14px;font-size:14px;display:none"></p>
+</main>
+<script>
+document.getElementById("unsub").addEventListener("submit", function (e) {
+  e.preventDefault();
+  var em = document.getElementById("unsubEmail").value.trim();
+  var msg = document.getElementById("unsubMsg");
+  window.location.href = "https://signal-newsletter.azurewebsites.net/api/unsubscribe?email=" + encodeURIComponent(em);
+  msg.style.display = "block";
+  msg.textContent = "Taking you to the confirmation…";
+});
+</script>
+</body>
+</html>

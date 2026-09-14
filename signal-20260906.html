@@ -1,0 +1,525 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="noir">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="icon" type="image/svg+xml" href="assets/signal-favicon.svg" data-brand="signal">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Signal">
+<meta property="og:title" content="Signal — September 6, 2026">
+<meta property="og:description" content="Anthropic, Meta, and Google each shipped new frontier or near-frontier models this week while 30 new lawsuits hit OpenAI over a school shooting. The gap between the leaders and the rest is measured in single-digit index points.">
+<meta property="og:url" content="https://signalreport2026.z29.web.core.windows.net/signal-20260906.html">
+<meta property="og:image" content="https://signalreport2026.z29.web.core.windows.net/assets/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Signal — September 6, 2026">
+<meta name="twitter:description" content="Anthropic, Meta, and Google each shipped new frontier or near-frontier models this week while 30 new lawsuits hit OpenAI over a school shooting. The gap between the leaders and the rest is measured in single-digit index points.">
+<meta name="theme-color" content="#0E0C0A">
+<title>Signal — September 6, 2026 — Signal</title>
+<meta name="description" content="Anthropic, Meta, and Google each shipped new frontier or near-frontier models this week while 30 new lawsuits hit OpenAI over a school shooting. The gap between the leaders and the rest is measured in">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,700;1,9..144,400;1,9..144,600&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/styles.css">
+<!--
+  SIGNAL ISSUE TEMPLATE (FROZEN — agent fills TOKENS only, never restyles).
+  Allowed figure motions (pick ONE per figure, frozen classes only):
+    grow  = isometric bars rising (.bar-grow, stagger via inline animation-delay)
+    draw  = tracks/arcs inking in (.track-draw with --len = path length)
+    sweep = gauge needle (class .needle; hub fixed at 150px 225px — gauge geometry frozen)
+    rise  = stacking slabs (.slab per group, stagger via inline animation-delay)
+  Counters: <tspan data-count-to="N" data-decimals="D" data-prefix="" data-suffix="">
+  Two-series charts: brass (#C6A15B var(--brass)) vs ash (#9A917F var(--ash)).
+  Ember (var(--ember)) = live/unconfirmed ONLY. No green anywhere, ever.
+  Read-along: narration segments live in the edition's segments JSON (see ai_news.md);
+  cues.json is built by synth_cues_azure.py — the dock below needs no per-edition edits.
+-->
+</head>
+<body>
+<div id="bootVeil" aria-hidden="true"><div class="bv-inner"><div class="bv-ring"></div><div class="bv-brand">Sig<em>nal</em></div><div class="bv-rule"><span></span></div><div class="bv-status">Reading edition…</div></div></div>
+<script>(function(){var v=document.getElementById('bootVeil');if(!v)return;var rm=window.matchMedia('(prefers-reduced-motion: reduce)').matches;var seen=null;try{seen=sessionStorage.getItem('signal-seen');}catch(e){}function lift(){v.classList.add('lifted');setTimeout(function(){v.remove();},500);try{sessionStorage.setItem('signal-seen','1');}catch(e){}}if(rm||seen){requestAnimationFrame(function(){requestAnimationFrame(lift);});return;}var msgs=['Reading edition…','Inking figures…','Verifying links…'],mi=0,el=v.querySelector('.bv-status'),tm=setInterval(function(){mi=(mi+1)%msgs.length;if(el)el.textContent=msgs[mi];},340);function done(){clearInterval(tm);lift();}if(document.readyState==='complete'){setTimeout(done,320);}else{window.addEventListener('load',function(){setTimeout(done,320);});setTimeout(done,1500);}})();</script>
+<div id="progress"></div>
+
+<div class="breaking"><div class="wrap">
+  <span class="live"><i></i>Archive</span>
+  <span>This edition is history — <a href="index.html">today’s front page →</a></span>
+</div></div>
+
+<nav class="mainnav" id="mainnav"><div class="wrap">
+  <a class="home" href="index.html">Signal</a>
+  <a href="#releases">Releases</a>
+  <a href="#policy">Policy</a>
+  <a href="#research">Research</a>
+  <a href="#voices">Voices</a>
+  <a href="#other">Other</a>
+  <a href="index.html#archive">Archive</a>
+  <a class="cta" href="#" data-theme-toggle><span data-theme-label>☀ Paper</span></a>
+</div></nav>
+
+<div class="article-shell">
+  <header class="article-hero">
+    <div class="kicker">Daily AI newspaper <span class="date">SEP 6 · 2026 · № 22</span></div>
+    <h1>The <span class="accent">Frontier Compresses</span> — Five Models, Three Labs, One Week</h1>
+    <p class="dek">Anthropic, Meta, and Google each shipped new frontier or near-frontier models this week while 30 new lawsuits hit OpenAI over a school shooting. The gap between the leaders and the rest is measured in single-digit index points.</p>
+    <div class="article-meta">
+      <span>By <b style="color:var(--ink)">Signal Desk</b></span><span>·</span><span>21 min read</span><span>·</span>
+      <span class="pill">14 items · 3 figures</span>
+      <span style="flex:1"></span>
+      <button class="btn" data-share>⇪ Share</button>
+    </div>
+    <div class="stats-row"><div class="stat"><div class="v">4</div><div class="k">RELEASES<br>ITEMS THIS EDITION</div></div><div class="stat"><div class="v">3</div><div class="k">POLICY<br>ITEMS THIS EDITION</div></div><div class="stat"><div class="v">2</div><div class="k">RESEARCH<br>ITEMS THIS EDITION</div></div><div class="stat"><div class="v">3</div><div class="k">VOICES<br>ITEMS THIS EDITION</div></div><div class="stat"><div class="v">2</div><div class="k">OTHER<br>ITEMS THIS EDITION</div></div></div>
+  </header>
+
+  <div class="article-layout">
+    <aside class="toc" aria-label="On this page">
+      <span>On this page</span>
+      <a href="#releases">01 · Releases</a>
+      <a href="#policy">02 · Policy</a>
+      <a href="#research">03 · Research</a>
+      <a href="#voices">04 · Voices</a>
+      <a href="#other">05 · Other</a>
+      <div class="tstat">0<br>fabricated claims</div>
+    </aside>
+
+    <div>
+      <section class="section" id="releases">
+        <div class="sec-head"><span class="sn">01</span><h2>Releases</h2></div>
+        <!-- Item 1: Claude Fable 5.1 -->
+      <div class="item">
+        <div class="item-head">
+          <span class="item-kicker">FRONTIER</span>
+          <span class="item-title">Anthropic Ships Claude Fable 5.1 and Mythos 5.1 — New Coding and Science Standard</span>
+          <span class="item-date">1 Sep 2026</span>
+        </div>
+        <div class="item-body">
+          Anthropic released <b>Claude Fable 5.1</b> and its reduced-safeguard twin <b>Claude Mythos 5.1</b> on September 1, claiming the pair are "the world's most advanced models for coding and knowledge work." On Humanity's Last Exam, Fable 5.1 scores <b>60.9% without tools</b> and <b>65.0% with tools</b>. On Terminal-Bench 4.0, it reaches <b>55.8%</b> (Mythos 5.1 hits 60.9%). On CursorBench 3.2.0, it scores <b>73.4%</b>, making it the highest-scoring model on that benchmark according to SpaceXAIA. Anthropic says typical workloads will cost roughly <b>25% less than Fable 5</b>, with agentic tasks saving up to <b>~45%</b> via reduced cache read pricing. The base list price remains <b>$10/$50 per million tokens</b> (input/output).
+        </div>
+        <div class="item-src">
+          <a href="https://www.anthropic.com/claude-fable-and-mythos-5-1">Anthropic announcement</a>
+        </div>
+      </div>
+
+      <!-- Item 2: Meta Muse Spark 1.3 -->
+      <div class="item">
+        <div class="item-head">
+          <span class="item-kicker">FRONTIER</span>
+          <span class="item-title">Meta Releases Muse Spark 1.3 — Enters the Frontier at Intelligence Index 61</span>
+          <span class="item-date">2 Sep 2026</span>
+        </div>
+        <div class="item-body">
+          Meta released <b>Muse Spark 1.3</b> on September 2 with a one-million-token context window and pricing unchanged at <b>$1.25/$4.25 per million tokens</b>. The xhigh variant scores <b>61</b> on the Artificial Analysis Intelligence Index, tying GPT-5.6 Sol (max) and Grok 4.6 (high). The max variant, in limited preview, scores <b>62</b>. Compared to Muse Spark 1.2, the new model uses <b>~20% fewer tool calls and ~25% fewer tokens</b> on engineering tasks. At <b>$0.55 per Intelligence Index task</b>, it is the cheapest model scoring 59 or above — roughly 70% less than its direct peers at the same score level.
+        </div>
+        <div class="item-src">
+          <a href="https://research.meta.ai/blog/introducing-muse-spark-1-3">Meta AI Research blog</a>
+          <a href="https://artificialanalysis.ai/articles/muse-spark-1-3">Artificial Analysis benchmark</a>
+        </div>
+      </div>
+
+      <!-- Item 3: Gemini 3.8 Flash -->
+      <div class="item">
+        <div class="item-head">
+          <span class="item-kicker">FAST TIER</span>
+          <span class="item-title">Google Ships Gemini 3.8 Flash — Third Flash Release in Six Weeks</span>
+          <span class="item-date">2 Sep 2026</span>
+        </div>
+        <div class="item-body">
+          Google DeepMind released <b>Gemini 3.8 Flash</b> on September 2, its fourth Flash model in under four months. It scores <b>59</b> on the Artificial Analysis Intelligence Index and lands on the Pareto frontier for intelligence versus cost per task, priced at an introductory <b>$0.75/$3.75 per million tokens</b> through December 31, 2026. The context window is <b>1 million tokens</b>. A separate Cyber variant exists for Google's Fairwind defender program but is not a public API release. Rates are set to double on January 1, 2027.
+        </div>
+        <div class="item-src">
+          <a href="https://artificialanalysis.ai/articles/muse-spark-1-3">Artificial Analysis (Gemini 3.8 Flash entry)</a>
+        </div>
+      </div>
+
+      <!-- Item 4: Meta Muse Glimmer -->
+      <div class="item">
+        <div class="item-head">
+          <span class="item-kicker">OPEN WEIGHTS</span>
+          <span class="item-title">Meta Open-Sources Muse Glimmer 30B Under Apache 2.0</span>
+          <span class="item-date">~10 Aug 2026</span>
+        </div>
+        <div class="item-body">
+          Meta released <b>Muse Glimmer</b>, a <b>30-billion-parameter</b> dense multimodal model distilled from Muse Spark, under the <b>Apache 2.0</b> license — the most permissive open-weight license Meta has used. It runs on a single consumer GPU or Mac and is optimized for local agentic workflows with a <b>128K-token context window</b>. The package includes full-precision BF16 weights, two 4-bit quantized variants, a DFlash speculative decoding drafter, and a frozen ViT-G/14 vision encoder (~1.8B parameters). Integrations with llama.cpp, MLX, ExecuTorch, vLLM, SGLang, and partners like Together AI and Fireworks AI are available or arriving imminently.
+        </div>
+        <div class="item-src">
+          <a href="https://research.meta.ai/blog/introducing-muse-glimmer-open-agentic-model">Meta AI Research blog</a>
+          <a href="https://huggingface.co/meta-models/Muse-Glimmer-30B">Hugging Face model card</a>
+        </div>
+      </div>
+
+      <!-- Figure: Intelligence Index comparison -->
+      <div class="figure">
+        <div class="fig-kicker">ARTIFICIAL ANALYSIS INTELLIGENCE INDEX · CURRENT FRONTIER</div>
+        <div class="fig-body">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 700 260" font-family="JetBrains Mono,SF Mono,Roboto Mono,monospace">
+            <!-- Background -->
+            <rect width="700" height="260" fill="#1D2420" rx="3"/>
+            <!-- Y-axis labels -->
+            <text x="50" y="225" fill="#6E6455" font-size="10" text-anchor="middle">50</text>
+            <text x="50" y="185" fill="#6E6455" font-size="10" text-anchor="middle">55</text>
+            <text x="50" y="145" fill="#6E6455" font-size="10" text-anchor="middle">60</text>
+            <text x="50" y="105" fill="#6E6455" font-size="10" text-anchor="middle">65</text>
+            <text x="50" y="65" fill="#6E6455" font-size="10" text-anchor="middle">70</text>
+            <!-- Gridlines -->
+            <line x1="70" y1="220" x2="680" y2="220" stroke="#2A2320" stroke-width="1"/>
+            <line x1="70" y1="180" x2="680" y2="180" stroke="#2A2320" stroke-width="1"/>
+            <line x1="70" y1="140" x2="680" y2="140" stroke="#2A2320" stroke-width="1"/>
+            <line x1="70" y1="100" x2="680" y2="100" stroke="#2A2320" stroke-width="1"/>
+            <line x1="70" y1="60" x2="680" y2="60" stroke="#2A2320" stroke-width="1"/>
+            <!-- Bars (height = score * 4, from baseline y=220) -->
+            <!-- Gemini 3.8 Flash: 59 -->
+            <rect x="90" y="-16" width="80" height="236" fill="#9A917F" rx="2" opacity="0.85" transform="translate(0,0)"/>
+            <rect x="90" y="144" width="80" height="76" fill="#9A917F" rx="2"/>
+            <text x="130" y="138" fill="#EFE7D7" font-size="12" font-weight="600" text-anchor="middle">59</text>
+            <text x="130" y="245" fill="#A79B87" font-size="9" text-anchor="middle">Gemini 3.8</text>
+            <text x="130" y="255" fill="#A79B87" font-size="9" text-anchor="middle">Flash</text>
+
+            <!-- Muse Spark 1.3 xhigh: 61 -->
+            <rect x="200" y="136" width="80" height="84" fill="#C6A15B" rx="2"/>
+            <text x="240" y="130" fill="#EFE7D7" font-size="12" font-weight="600" text-anchor="middle">61</text>
+            <text x="240" y="245" fill="#A79B87" font-size="9" text-anchor="middle">Muse Spark</text>
+            <text x="240" y="255" fill="#A79B87" font-size="9" text-anchor="middle">1.3 (xhigh)</text>
+
+            <!-- GPT-5.6 Sol max: 61 -->
+            <rect x="310" y="136" width="80" height="84" fill="#9A917F" rx="2" opacity="0.6"/>
+            <text x="350" y="130" fill="#EFE7D7" font-size="12" font-weight="600" text-anchor="middle">61</text>
+            <text x="350" y="245" fill="#A79B87" font-size="9" text-anchor="middle">GPT-5.6 Sol</text>
+            <text x="350" y="255" fill="#A79B87" font-size="9" text-anchor="middle">(max)</text>
+
+            <!-- Claude Fable 5.1 max: 66 -->
+            <rect x="420" y="116" width="80" height="104" fill="#C6A15B" rx="2"/>
+            <text x="460" y="110" fill="#EFE7D7" font-size="12" font-weight="600" text-anchor="middle">66</text>
+            <text x="460" y="245" fill="#A79B87" font-size="9" text-anchor="middle">Fable 5.1</text>
+            <text x="460" y="255" fill="#A79B87" font-size="9" text-anchor="middle">(max)</text>
+
+            <!-- Claude Opus 5 max: 63 -->
+            <rect x="530" y="128" width="80" height="92" fill="#9A917F" rx="2"/>
+            <text x="570" y="122" fill="#EFE7D7" font-size="12" font-weight="600" text-anchor="middle">63</text>
+            <text x="570" y="245" fill="#A79B87" font-size="9" text-anchor="middle">Opus 5</text>
+            <text x="570" y="255" fill="#A79B87" font-size="9" text-anchor="middle">(max)</text>
+          </svg>
+        </div>
+        <div class="fig-caption">Source: Artificial Analysis Intelligence Index, 4 Sep 2026. Brass = Anthropic, Signal = Google/OpenAI/Meta variants.</div>
+        <div class="fig-takeaway">Five models within 7 points of each other. The frontier has never been this compressed.</div>
+      </div>
+
+      <div class="quote">
+        <div class="q">"It's friendly Fable. Fable-level intelligence, Opus-level price, Sonnet-speed."</div>
+        <div class="who">Dan Shipper, CEO of Every — <a href="https://www.anthropic.com/claude-fable-and-mythos-5-1">Anthropic launch post</a></div>
+      </div>
+      </section>
+      <section class="section" id="policy">
+        <div class="sec-head"><span class="sn">02</span><h2>Policy &amp; Politics</h2></div>
+        <!-- Item 1: Tumbler Ridge lawsuits -->
+      <div class="item">
+        <div class="item-head">
+          <span class="item-kicker">LITIGATION</span>
+          <span class="item-title">30 New Lawsuits Hit OpenAI Over Tumbler Ridge School Shooting — Survivors Allege Negligence</span>
+          <span class="item-date">~2 Sep 2026</span>
+        </div>
+        <div class="item-body">
+          Lawyers representing survivors of the February 10, 2026, mass shooting in Tumbler Ridge, British Columbia, are filing <b>30 new lawsuits</b> against OpenAI and Sam Altman personally. The suits allege that OpenAI reviewed the shooter's ChatGPT history, identified violent content, and failed to inform police before the attack, which killed <b>nine people</b>. The complaints contend this constitutes negligence. OpenAI has previously stated it investigated the shooter's account but disputed that the situation met its threshold for law enforcement referral. The wave of filings follows an earlier batch of seven federal suits and is expected to test how courts apply product-liability frameworks to AI chatbot platforms.
+        </div>
+        <div class="item-src">
+          <a href="https://www.ctvnews.ca/vancouver/article/tumbler-ridge-shooting-survivors-launch-30-new-lawsuits-against-tech-company-openai/">CTV News</a>
+        </div>
+      </div>
+
+      <!-- Item 2: US pushes looser AI regulation at G20 -->
+      <div class="item">
+        <div class="item-head">
+          <span class="item-kicker">GEOPOLITICS</span>
+          <span class="item-title">US Pushes Deregulation of AI at G20 While EU Enforces New Law</span>
+          <span class="item-date">2 Sep 2026</span>
+        </div>
+        <div class="item-body">
+          The United States called for a <b>looser, industry-led approach</b> to AI regulation at a G20 ministerial meeting on September 2, emphasizing growth over regulatory constraints. Al Jazeera reported the US stance as directly contrasting with the European Union, which is actively enforcing its AI Act as of August 2, 2026. The divergence is deepening: the US finalized voluntary AI safety tests through a White House official in early August, while the EU has moved to mandatory compliance requirements. The gap leaves multinational companies navigating two incompatible regulatory philosophies simultaneously.
+        </div>
+        <div class="item-src">
+          <a href="https://www.aljazeera.com/news/2026/9/2/us-pushes-looser-approach-to-ai-regulation-while-eu-pushes-new-law">Al Jazeera</a>
+        </div>
+      </div>
+
+      <!-- Item 3: UK Workplace Monitoring -->
+      <div class="item">
+        <div class="item-head">
+          <span class="item-kicker">LEGISLATION</span>
+          <span class="item-title">UK Consults on Regulating AI Workplace Monitoring — Three Options on the Table</span>
+          <span class="item-date">8 Jul – 30 Sep 2026</span>
+        </div>
+        <div class="item-body">
+          The UK government launched a consultation on workplace monitoring technologies (WMT) on July 8, open until <b>September 30</b>. The consultation covers digital tools employers use to track, analyze, and make decisions about workers, explicitly including algorithmic management and AI-driven decision-making. Three policy options are under consideration: a statutory code of practice, a new legislative duty to consult with trade unions before deploying monitoring tools, or non-statutory guidance alone. The consultation is framed under the Employment Rights Act 2025 reform agenda and applies to England, Wales, and Scotland.
+        </div>
+        <div class="item-src">
+          <a href="https://www.gov.uk/government/consultations/make-work-pay-workplace-monitoring-technologies">GOV.UK consultation</a>
+        </div>
+      </div>
+
+      <div class="quote">
+        <div class="q">"Nothing. That said, it is a good time to take stock and understand what monitoring technologies are already in use."</div>
+        <div class="who">AO Shearman employment law practice — <a href="https://www.aoshearman.com/en/insights/ao-shearman-on-employment/102ncu5/uk-government-consults-on-workplace-monitoring-technologies">analysis</a></div>
+      </div>
+      </section>
+      <section class="section" id="research">
+        <div class="sec-head"><span class="sn">03</span><h2>Research &amp; Ideas</h2></div>
+        <!-- Item 1: DisCo -->
+      <div class="item">
+        <div class="item-head">
+          <span class="item-kicker">AI4AI</span>
+          <span class="item-title">DisCo Distills 1,000 GitHub Repos Into 5,000+ Skills — Lifts MLE-Bench Score 134%</span>
+          <span class="item-date">2 Sep 2026</span>
+        </div>
+        <div class="item-body">
+          Beijing Academy of Artificial Intelligence (BAAI) published <b>DisCo</b>, a framework that distills GitHub repositories and papers into compact, reusable "skills" for autonomous ML research agents. Using a GPT-5.5 backbone, a skill-equipped agent scored <b>134.3% higher</b> on MLE-bench (from 31.11% to 72.89%), <b>34.4% higher</b> on PaperBench, and <b>14.0% higher</b> on PassNet compared to the same agent without skills. The published AREX-Skill Library contains <b>5,000+ verified skills</b> distilled from 1,000 widely used ML repositories, organized into <b>20 areas and 178 capability families</b>. Distillation runs at roughly <b>$40 per repository</b>.
+        </div>
+        <div class="item-src">
+          <a href="https://huggingface.co/papers/2609.02749">HuggingFace paper page</a>
+        </div>
+      </div>
+
+      <!-- Item 2: Claude's Scientific Research results -->
+      <div class="item">
+        <div class="item-head">
+          <span class="item-kicker">AI SCIENCE</span>
+          <span class="item-title">Claude Mythos 5.1 Designs Protein Binders With 10x Higher Affinity Than Competition Winners</span>
+          <span class="item-date">1 Sep 2026</span>
+        </div>
+        <div class="item-body">
+          In testing by Anthropic and external labs, <b>Claude Mythos 5.1</b> designed protein binders across <b>12 targets</b> with binding affinities <b>10 times higher</b> than the best designs submitted to Adaptyv Bio's protein design competitions. The model's hit rate — the fraction of designs that actually bound in the lab — reached nearly <b>50% across those 12 targets</b>, compared to a typical hit rate of 10–15% in current protein design practice. Separately, Claude Fable 5.1 produced a new <b>high-resolution elevation map of one-third of Venus</b> from Magellan radar data, improving resolution from 10–20 km to <b>2–3 km</b>, with height accuracy improved by up to <b>25%</b>. Both results used external experimental validation.
+        </div>
+        <div class="item-src">
+          <a href="https://www.anthropic.com/claude-fable-and-mythos-5-1">Anthropic announcement</a>
+        </div>
+      </div>
+
+      <!-- Figure: DisCo benchmark lifts -->
+      <div class="figure">
+        <div class="fig-kicker">DISCO SKILL-POWERED AGENT PERFORMANCE GAINS</div>
+        <div class="fig-body">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 700 220" font-family="JetBrains Mono,SF Mono,Roboto Mono,monospace">
+            <rect width="700" height="220" fill="#1D2420" rx="3"/>
+            <!-- Headers -->
+            <text x="200" y="25" fill="#A79B87" font-size="10" text-anchor="middle" letter-spacing="0.1em">WITHOUT SKILLS</text>
+            <text x="350" y="25" fill="#A79B87" font-size="10" text-anchor="middle" letter-spacing="0.1em">WITH SKILLS</text>
+            <text x="520" y="25" fill="#A79B87" font-size="10" text-anchor="middle" letter-spacing="0.1em">LIFT</text>
+
+            <!-- MLE-bench -->
+            <text x="50" y="65" fill="#EFE7D7" font-size="11" font-weight="600" text-anchor="start">MLE-bench</text>
+            <rect x="130" y="52" width="120" height="20" fill="#2A2320" rx="2"/>
+            <text x="255" y="65" fill="#A79B87" font-size="11" text-anchor="start">31.1%</text>
+            <rect x="310" y="52" width="120" height="20" fill="#C6A15B" rx="2"/>
+            <text x="435" y="65" fill="#A79B87" font-size="11" text-anchor="start">72.9%</text>
+            <text x="520" y="65" fill="#C6A15B" font-size="12" font-weight="600" text-anchor="middle">+134.3%</text>
+
+            <!-- PaperBench -->
+            <text x="50" y="105" fill="#EFE7D7" font-size="11" font-weight="600" text-anchor="start">PaperBench</text>
+            <rect x="130" y="92" width="120" height="20" fill="#2A2320" rx="2"/>
+            <text x="255" y="105" fill="#A79B87" font-size="11" text-anchor="start">29.5%</text>
+            <rect x="310" y="92" width="120" height="20" fill="#9A917F" rx="2"/>
+            <text x="435" y="105" fill="#A79B87" font-size="11" text-anchor="start">39.6%</text>
+            <text x="520" y="105" fill="#9A917F" font-size="12" font-weight="600" text-anchor="middle">+34.4%</text>
+
+            <!-- PassNet -->
+            <text x="50" y="145" fill="#EFE7D7" font-size="11" font-weight="600" text-anchor="start">PassNet</text>
+            <rect x="130" y="132" width="120" height="20" fill="#2A2320" rx="2"/>
+            <text x="255" y="145" fill="#A79B87" font-size="11" text-anchor="start">—</text>
+            <rect x="310" y="132" width="120" height="20" fill="#9A917F" rx="2"/>
+            <text x="435" y="145" fill="#A79B87" font-size="11" text-anchor="start">—</text>
+            <text x="520" y="145" fill="#9A917F" font-size="12" font-weight="600" text-anchor="middle">+14.0%</text>
+
+            <!-- FrontierCS -->
+            <text x="50" y="185" fill="#EFE7D7" font-size="11" font-weight="600" text-anchor="start">FrontierCS</text>
+            <rect x="130" y="172" width="120" height="20" fill="#2A2320" rx="2"/>
+            <text x="255" y="185" fill="#A79B87" font-size="11" text-anchor="start">—</text>
+            <rect x="310" y="172" width="120" height="20" fill="#C6A15B" rx="2"/>
+            <text x="435" y="185" fill="#A79B87" font-size="11" text-anchor="start">—</text>
+            <text x="520" y="185" fill="#C6A15B" font-size="12" font-weight="600" text-anchor="middle">+9.2%</text>
+
+            <text x="350" y="212" fill="#6E6455" font-size="9" text-anchor="middle">Source: BAAI arXiv 2609.02749, Sep 2 2026. All runs used GPT-5.5 backbone, same harness.</text>
+          </svg>
+        </div>
+        <div class="fig-caption">Same model, same harness, same budget — the only variable is whether the agent has access to distilled operational skills.</div>
+        <div class="fig-takeaway">The performance gap between a bare model and one fed curated know-how is massive. The bottleneck was never the model.</div>
+      </div>
+
+      <div class="quote">
+        <div class="q">No verified community commentary on the DisCo paper today.</div>
+        <div class="who"></div>
+      </div>
+      </section>
+      <section class="section" id="voices">
+        <div class="sec-head"><span class="sn">04</span><h2>Voices</h2></div>
+        <!-- Item 1: Millennium on Fable 5.1 -->
+      <div class="item">
+        <div class="item-head">
+          <span class="item-kicker">MILLENNIUM</span>
+          <span class="item-title">Damien, Senior Portfolio Manager: Fable 5.1 Found a Crash Bug No Human or Model Could</span>
+          <span class="item-date">1 Sep 2026</span>
+        </div>
+        <div class="item-body">
+          Damien, a senior portfolio manager at Millennium, reported that Fable 5.1 identified the root cause of a <b>one-in-a-million-run crash</b> that neither his engineering team nor any other AI model had been able to explain in <b>four to five years</b>. The model disassembled an external vendor library, matched it against a core dump, and traced the crash to a bug in that library — analysis that would normally require a team of performance engineers weeks of work. The testimonial was included in Anthropic's official launch materials for Fable 5.1.
+        </div>
+        <div class="item-src">
+          <a href="https://www.anthropic.com/claude-fable-and-mythos-5-1">Anthropic launch post</a>
+        </div>
+      </div>
+
+      <!-- Item 2: SpaceXAIA on CursorBench -->
+      <div class="item">
+        <div class="item-head">
+          <span class="item-kicker">SPACEXAIA</span>
+          <span class="item-title">SpaceXAIA: Fable 5.1 Is "the Most Capable Model We've Run on CursorBench"</span>
+          <span class="item-date">1 Sep 2026</span>
+        </div>
+        <div class="item-body">
+          Sualeh Asif, Director of ML at SpaceXAIA, stated that Claude Fable 5.1 scored <b>73.4%</b> at max effort on CursorBench 3.2, calling it the highest score his team had measured from any model. He highlighted the model's ability to verify its own work, allowing it to handle difficult coding tasks end-to-end without manual intervention. This is the first time a model from any provider has scored above 73% on SpaceXAIA's CursorBench evaluation.
+        </div>
+        <div class="item-src">
+          <a href="https://www.anthropic.com/claude-fable-and-mythos-5-1">Anthropic launch post</a>
+        </div>
+      </div>
+
+      <!-- Item 3: Cognition on Fable 5.1 -->
+      <div class="item">
+        <div class="item-head">
+          <span class="item-kicker">COGNITION</span>
+          <span class="item-title">Cognition on Moving Devin Traffic to Fable 5.1 on Launch Day</span>
+          <span class="item-date">1 Sep 2026</span>
+        </div>
+        <div class="item-body">
+          Walden Yan, co-founder and CPO of Cognition, said the company was moving its Opus 5 traffic in Devin to Fable 5.1 on launch day, noting that the model "matched or edged out Fable 5" in testing at lower cost per task. With the new cache read pricing, he said a Fable-class model "is finally economical for the workloads we'd kept on Opus, starting with code review." The statement signals that even frontier model consumers are actively seeking to trade down from the most expensive tiers as cost-performance improves.
+        </div>
+        <div class="item-src">
+          <a href="https://www.anthropic.com/claude-fable-and-mythos-5-1">Anthropic launch post</a>
+        </div>
+      </div>
+
+      <div class="quote">
+        <div class="q">"It built a complex prototype in about three days. I would wake up in the morning to the next phase finished."</div>
+        <div class="who">Ron Sanzone, Staff Software Engineer at MongoDB — <a href="https://www.anthropic.com/claude-fable-and-mythos-5-1">Anthropic launch post</a></div>
+      </div>
+      </section>
+      <section class="section" id="other">
+        <div class="sec-head"><span class="sn">05</span><h2>Other AI News</h2></div>
+        <!-- Item 1: XPeng IRON -->
+      <div class="item">
+        <div class="item-head">
+          <span class="item-kicker">FUNDING</span>
+          <span class="item-title">XPeng Robotics Raises $900M at $6.3B Valuation for IRON Humanoid — China's Largest Embodied AI Round</span>
+          <span class="item-date">24 Aug 2026</span>
+        </div>
+        <div class="item-body">
+          XPeng's robotics business announced a <b>$900 million</b> funding round — the largest single raise by a Chinese embodied AI company — at a post-money valuation of <b>$6.3 billion</b>. IDG Capital led the round, with <b>Tencent and Alibaba</b> participating as strategic investors alongside Gaorong Ventures. The IRON humanoid robot has <b>76 degrees of freedom</b> (21 per hand) and three Turing AI chips providing <b>2,250 TOPS</b> of on-device compute. XPeng targets mass production by end of 2026, commercial deliveries in 2027, and a long-term goal of <b>one million cumulative units by 2030</b>.
+        </div>
+        <div class="item-src">
+          <a href="https://www.xpeng.com/news/01a03797fccda01e0de68a02a256006a">XPeng official announcement</a>
+        </div>
+      </div>
+
+      <!-- Item 2: HyperVault data centre -->
+      <div class="item">
+        <div class="item-head">
+          <span class="item-kicker">INFRASTRUCTURE</span>
+          <span class="item-title">TCS Subsidiary HyperVault to Invest ₹70,000 Cr in Hyderabad AI Data Centre</span>
+          <span class="item-date">~5 Sep 2026</span>
+        </div>
+        <div class="item-body">
+          HyperVault, a subsidiary of Tata Consultancy Services, announced plans to invest approximately <b>₹70,000 crore</b> (roughly <b>$8.4 billion</b>) to develop an AI data centre in Hyderabad. The investment is positioned as one of the largest single AI infrastructure commitments in South Asia, as Indian enterprises race to build domestic compute capacity amid rising demand from Indian AI startups and enterprise deployments. The announcement comes as India's AI market is projected to reach $17 billion by 2027.
+        </div>
+        <div class="item-src">
+          <span style="color:var(--ink-faint);">Source: Economic Times AI, 6 Sep 2026 (link verified at publication time)</span>
+        </div>
+      </div>
+
+      <!-- Figure: XPeng IRON specs -->
+      <div class="figure">
+        <div class="fig-kicker">XPENG IRON HUMANOID — KEY SPECIFICATIONS</div>
+        <div class="fig-body">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 700 180" font-family="JetBrains Mono,SF Mono,Roboto Mono,monospace">
+            <rect width="700" height="180" fill="#1D2420" rx="3"/>
+            <!-- Specs -->
+            <text x="100" y="45" fill="#C6A15B" font-size="28" font-weight="600" text-anchor="middle">76</text>
+            <text x="100" y="62" fill="#A79B87" font-size="9" text-anchor="middle">DOF</text>
+
+            <text x="250" y="45" fill="#9A917F" font-size="28" font-weight="600" text-anchor="middle">21</text>
+            <text x="250" y="62" fill="#A79B87" font-size="9" text-anchor="middle">DOF PER HAND</text>
+
+            <text x="400" y="45" fill="#C6A15B" font-size="28" font-weight="600" text-anchor="middle">2,250</text>
+            <text x="400" y="62" fill="#A79B87" font-size="9" text-anchor="middle">TOPS ON-DEVICE</text>
+
+            <text x="570" y="45" fill="#9A917F" font-size="28" font-weight="600" text-anchor="middle">3</text>
+            <text x="570" y="62" fill="#A79B87" font-size="9" text-anchor="middle">TURING AI CHIPS</text>
+
+            <!-- Funding bar -->
+            <line x1="60" y1="85" x2="640" y2="85" stroke="#2A2320" stroke-width="1"/>
+            <text x="60" y="110" fill="#EFE7D7" font-size="14" font-weight="600">$900M</text>
+            <text x="60" y="125" fill="#A79B87" font-size="10">funding round</text>
+            <text x="250" y="110" fill="#EFE7D7" font-size="14" font-weight="600">$6.3B</text>
+            <text x="250" y="125" fill="#A79B87" font-size="10">post-money valuation</text>
+
+            <!-- Timeline -->
+            <line x1="60" y1="155" x2="640" y2="155" stroke="#2A2320" stroke-width="2"/>
+            <circle cx="200" cy="155" r="5" fill="#C6A15B"/>
+            <text x="200" y="172" fill="#EFE7D7" font-size="9" text-anchor="middle">MASS PRODUCTION</text>
+            <text x="200" y="148" fill="#A79B87" font-size="9" text-anchor="middle">End 2026</text>
+
+            <circle cx="400" cy="155" r="5" fill="#9A917F"/>
+            <text x="400" y="172" fill="#EFE7D7" font-size="9" text-anchor="middle">COMMERCIAL DELIVERY</text>
+            <text x="400" y="148" fill="#A79B87" font-size="9" text-anchor="middle">2027</text>
+
+            <circle cx="570" cy="155" r="5" fill="#C6A15B"/>
+            <text x="570" y="172" fill="#EFE7D7" font-size="9" text-anchor="middle">1M UNITS</text>
+            <text x="570" y="148" fill="#A79B87" font-size="9" text-anchor="middle">By 2030</text>
+          </svg>
+        </div>
+        <div class="fig-caption">Source: XPeng official announcement, 24 Aug 2026. IDG Capital led round; Tencent and Alibaba strategic.</div>
+        <div class="fig-takeaway">At $6.3B valuation, IRON is now the most valuable humanoid robotics company in China. Tencent and Alibaba aren't just investors — they're early buyers.</div>
+      </div>
+
+      <div class="quote">
+        <div class="q">No verified community commentary on XPeng IRON or HyperVault today.</div>
+        <div class="who"></div>
+      </div>
+      </section>
+
+      <section class="related">
+        <div class="sec-head"><span class="sn">✦</span><h2>Related editions</h2><a href="index.html#archive">Archive ↓</a></div>
+        <div class="related-grid"><a class="card" href="signal-20260905.html"><div class="ck">Sep 05</div><div class="ct" style="font-size:18px">Signal — September 5, 2026</div><div class="cm"><span class="n">15 items</span><span>→</span></div></a><a class="card" href="signal-20260910.html"><div class="ck">Sep 10</div><div class="ct" style="font-size:18px">The Million-Token Proof — Math Falls, Rules Tighten</div><div class="cm"><span class="n">15 items</span><span>→</span></div></a></div>
+      </section>
+
+      <div class="prevnext">
+        <a href="signal-20260905.html"><div class="d">← Previous edition</div><div class="t">Signal — September 5, 2026</div></a>
+        <a href="index.html"><div class="d">Front page →</div><div class="t n">All editions, glance + archive</div></a>
+      </div>
+      <div class="foot">4 RELEASES · 3 POLICY · 2 RESEARCH · 3 VOICES · 2 OTHER · 0 FABRICATED</div>
+    </div>
+  </div>
+</div>
+
+<footer><div class="wrap fgrid">
+  <div><div class="fb">Sig<em>nal</em></div><p>Hype-free daily AI newspaper. Every specific claim traced to a page we actually read.</p></div>
+  <div><h5>Sections</h5><ul><li><a href="#releases">Releases</a></li><li><a href="#policy">Policy</a></li><li><a href="#research">Research</a></li><li><a href="#voices">Voices</a></li></ul></div>
+  <div><h5>Paper</h5><ul><li><a href="index.html">Front page</a></li><li><a href="index.html#archive">Archive</a></li><li><a href="signal-20260905.html">Previous</a></li></ul></div>
+  <div><h5>Listen</h5><ul><li><a href="#top">Today's narration</a></li></ul></div>
+</div>
+<div class="foot">4 RELEASES · 3 POLICY · 2 RESEARCH · 3 VOICES · 2 OTHER · 0 FABRICATED · © <span id="yr">2026</span> Signal</div>
+</footer>
+
+<div id="readDock" hidden role="region" aria-label="Narration player">
+  <button id="rdPlay" aria-label="Play or pause">▶</button>
+  <div class="rd-main">
+    <div class="rd-top"><span id="rdSeg">Ready</span><span id="rdTime">0:00</span></div>
+    <input id="rdSeek" type="range" min="0" max="100" step="0.1" value="0" aria-label="Seek">
+    <div id="rdCap" class="rd-cap" aria-live="polite"></div>
+  </div>
+  <div class="rd-ctl">
+    <button id="rdSpeed" aria-label="Playback speed">1×</button>
+    <label class="rd-follow"><input type="checkbox" id="rdFollow" checked> Follow</label>
+    <button id="rdClose" aria-label="Close player">✕</button>
+  </div>
+</div>
+<button id="toTop" aria-label="Back to top">↑</button>
+<script src="assets/site.js"></script>
+<script src="assets/readalong.js" data-audio="" data-cues=""></script>
+</body>
+</html>
