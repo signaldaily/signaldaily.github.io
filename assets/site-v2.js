@@ -184,6 +184,15 @@
   /* app-like page transitions: veil sweeps in on internal navigation.
      Same-page anchors, new tabs, downloads and off-site links untouched. */
   (function () {
+    function dropVeil() {
+      var v = document.getElementById("pageVeil");
+      if (v && v.parentNode) v.parentNode.removeChild(v);
+    }
+    /* Back/forward restores the page from bfcache WITH the veil still in the
+       DOM and scripts frozen — without this the "loading" overlay never lifts. */
+    window.addEventListener("pagehide", dropVeil);
+    window.addEventListener("pageshow", dropVeil);
+    dropVeil();
     if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
     document.addEventListener("click", function (e) {
       var a = e.target.closest ? e.target.closest("a[href]") : null;
