@@ -33,6 +33,29 @@
 -->
 <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js"></script>
 <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+<style>
+.ax-tldr{border:1px solid var(--hairline-2);border-left:3px solid var(--brass);border-radius:0 6px 6px 0;background:var(--panel);padding:20px 22px;margin:20px 0}
+.ax-tldr .k{font-family:"JetBrains Mono",monospace;font-size:10px;letter-spacing:.18em;color:var(--brass);text-transform:uppercase;display:block;margin-bottom:8px}
+.ax-tldr p{font-size:17px;line-height:1.65;margin:0;max-width:70ch}
+.ax-h3{font-family:"JetBrains Mono",monospace;font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--ink);margin:34px 0 10px;display:flex;align-items:center;gap:10px}
+.ax-h3::after{content:"";flex:1;height:1px;background:var(--hairline-2)}
+.ax-h3 .n{color:var(--brass)}
+.ax-prose{font-size:15.5px;line-height:1.8;color:var(--ink-soft);max-width:75ch;margin:0 0 12px}
+.ax-prose b{color:var(--ink)}
+.ax-math{background:var(--panel);border:1px solid var(--hairline);border-radius:6px;padding:20px 22px;margin:14px 0;overflow-x:auto}
+.ax-math .eq-label{font-family:"JetBrains Mono",monospace;font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:var(--brass);margin-bottom:10px}
+.ax-chartbox{background:var(--panel);border:1px solid var(--hairline);border-radius:6px;padding:22px;margin:16px 0}
+.ax-chartbox canvas{max-height:420px}
+.ax-scan{background:#F4F1EA;border:1px solid var(--hairline-2);border-radius:8px;padding:14px;margin:16px 0}
+.ax-scan img{width:100%;height:auto;display:block;border-radius:4px;background:#fff}
+.scan-tag{font-family:"JetBrains Mono",monospace;font-size:10px;letter-spacing:.18em;color:#6E6455;text-transform:uppercase;margin-bottom:10px}
+table.ax-tab{width:100%;border-collapse:collapse;margin:14px 0;font-size:13px;line-height:1.55}
+table.ax-tab th{font-family:"JetBrains Mono",monospace;font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--brass);text-align:left;padding:10px 12px;border-bottom:2px solid var(--hairline-2)}
+table.ax-tab td{padding:9px 12px;border-bottom:1px solid var(--hairline);color:var(--ink-soft);vertical-align:top}
+table.ax-tab td:first-child{font-family:"JetBrains Mono",monospace;font-size:11.5px;color:var(--ink);white-space:nowrap}
+@media(max-width:800px){table.ax-tab{display:block;overflow-x:auto}table.ax-tab th,table.ax-tab td{min-width:92px}}
+</style>
 </head>
 <body>
 <div id="bootVeil" aria-hidden="true"><div class="bv-inner"><div class="bv-ring"></div><div class="bv-brand">Sig<em>nal</em></div><div class="bv-rule"><span></span></div><div class="bv-status">Reading edition…</div></div></div>
@@ -40,7 +63,7 @@
 <div id="progress"></div>
 
 <div class="strip"><div class="wrap">
-  <span>Signal · Arxiv desk · September 15, 2026</span>
+  <span>Signal · Arxiv desk · September 17, 2026</span>
   <span class="op"><i></i>Tracking arXiv daily</span>
 </div></div>
 
@@ -64,7 +87,7 @@
 
 <main class="wrap">
   <section class="front" style="padding-bottom:0">
-    <div class="kicker">Arxiv desk <span class="date">SEP 15</span></div>
+    <div class="kicker">Arxiv desk <span class="date">SEP 17</span></div>
     <h1 style="font-family:Fraunces,serif;font-size:clamp(38px,6vw,68px);line-height:1.02;letter-spacing:-.015em;font-weight:600">The papers <span style="color:var(--brass);font-style:italic">behind the news.</span></h1>
     <p class="dek" style="font-size:clamp(15px,1rem + .4vw,18px);line-height:1.65;color:var(--ink-soft);margin-top:16px;max-width:680px">Every listing below is a real paper, pulled from arXiv and read — abstract, equations, and what it means for where AI is heading. Beautiful enough to browse, honest enough to cite.</p>
     <div class="stats-row"><div class="stat"><div class="v">13</div><div class="k">PAPERS<br>TRACKED</div></div><div class="stat"><div class="v">7</div><div class="k">FRONTS<br>ACTIVE</div></div><div class="stat"><div class="v">7</div><div class="k">DAYS<br>COVERED</div></div><div class="stat"><div class="v">0</div><div class="k">FIGURES<br>PULLED</div></div></div>
