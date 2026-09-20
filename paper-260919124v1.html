@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="noir">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Signal">
+<meta property="og:title" content="Flag Game: A Toy Model for Mechanistic Swarm Interpretability — Signal Arxiv">
+<meta property="og:description" content="A hidden country flag defines the truth, each agent sees only a private crop, and beliefs spread peer to peer. This toy reproduces the full collective zoo: performance scales non-monotonically with po">
+<meta property="og:url" content="https://signaldaily.github.io/paper-260919124v1.html">
+<meta property="og:image" content="https://signaldaily.github.io/assets/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Flag Game: A Toy Model for Mechanistic Swarm Interpretability — Signal Arxiv">
+<meta name="twitter:description" content="A hidden country flag defines the truth, each agent sees only a private crop, and beliefs spread peer to peer. This toy reproduces the full collective zoo: performance scales non-monotonically with po">
+<meta name="theme-color" content="#0E0C0A">
+<title>Flag Game: A Toy Model for Mechanistic Swarm Interpretability — Signal Arxiv</title>
+<link rel="icon" type="image/svg+xml" href="assets/signal-favicon.svg" data-brand="signal">
+<link rel="apple-touch-icon" sizes="180x180" href="assets/apple-touch-icon.png" data-brand="signal">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,700;1,9..144,400;1,9..144,600&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css">
+<link rel="stylesheet" href="assets/styles.css">
+<script defer src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+<style>
+.ax-tldr{border:1px solid var(--hairline-2);border-left:3px solid var(--brass);border-radius:0 6px 6px 0;background:var(--panel);padding:20px 22px;margin:20px 0}
+.ax-tldr .k{font-family:"JetBrains Mono",monospace;font-size:10px;letter-spacing:.18em;color:var(--brass);text-transform:uppercase;display:block;margin-bottom:8px}
+.ax-tldr p{font-size:17px;line-height:1.65;margin:0;max-width:70ch}
+.ax-h3{font-family:"JetBrains Mono",monospace;font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--ink);margin:34px 0 10px;display:flex;align-items:center;gap:10px}
+.ax-h3::after{content:"";flex:1;height:1px;background:var(--hairline-2)}
+.ax-h3 .n{color:var(--brass)}
+.ax-prose{font-size:15.5px;line-height:1.8;color:var(--ink-soft);max-width:75ch;margin:0 0 12px}
+.ax-prose b{color:var(--ink)}
+.ax-math{background:var(--panel);border:1px solid var(--hairline);border-radius:6px;padding:20px 22px;margin:14px 0;overflow-x:auto}
+.ax-math .eq-label{font-family:"JetBrains Mono",monospace;font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:var(--brass);margin-bottom:10px}
+.ax-chartbox{background:var(--panel);border:1px solid var(--hairline);border-radius:6px;padding:22px;margin:16px 0}
+.ax-chartbox canvas{max-height:420px}
+.ax-scan{background:#F4F1EA;border:1px solid var(--hairline-2);border-radius:8px;padding:14px;margin:16px 0}
+.ax-scan img{width:100%;height:auto;display:block;border-radius:4px;background:#fff}
+.scan-tag{font-family:"JetBrains Mono",monospace;font-size:10px;letter-spacing:.18em;color:#6E6455;text-transform:uppercase;margin-bottom:10px}
+table.ax-tab{width:100%;border-collapse:collapse;margin:14px 0;font-size:13px;line-height:1.55}
+table.ax-tab th{font-family:"JetBrains Mono",monospace;font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--brass);text-align:left;padding:10px 12px;border-bottom:2px solid var(--hairline-2)}
+table.ax-tab td{padding:9px 12px;border-bottom:1px solid var(--hairline);color:var(--ink-soft);vertical-align:top}
+table.ax-tab td:first-child{font-family:"JetBrains Mono",monospace;font-size:11.5px;color:var(--ink);white-space:nowrap}
+@media(max-width:800px){table.ax-tab{display:block;overflow-x:auto}table.ax-tab th,table.ax-tab td{min-width:92px}}
+
+.deep-back{display:inline-block;margin:18px 0 4px;font-family:"JetBrains Mono",monospace;font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--brass);text-decoration:none}
+.deep-kick{font-family:"JetBrains Mono",monospace;font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--brass);margin:6px 0 14px}
+</style>
+</head>
+<body>
+<div id="bootVeil" aria-hidden="true"><div class="bv-inner"><div class="bv-ring"></div><div class="bv-brand">Sig<em>nal</em></div><div class="bv-rule"><span></span></div><div class="bv-status">Reading edition…</div></div></div>
+<script>(function(){var v=document.getElementById('bootVeil');if(!v)return;var rm=window.matchMedia('(prefers-reduced-motion: reduce)').matches;var seen=null;try{seen=sessionStorage.getItem('signal-seen');}catch(e){}function lift(){v.classList.add('lifted');setTimeout(function(){v.remove();},500);try{sessionStorage.setItem('signal-seen','1');}catch(e){}}if(rm||seen){requestAnimationFrame(function(){requestAnimationFrame(lift);});return;}var msgs=['Reading edition…','Inking figures…','Verifying links…'],mi=0,el=v.querySelector('.bv-status'),tm=setInterval(function(){mi=(mi+1)%msgs.length;if(el)el.textContent=msgs[mi];},340);function done(){clearInterval(tm);lift();}if(document.readyState==='complete'){setTimeout(done,320);}else{window.addEventListener('load',function(){setTimeout(done,320);});setTimeout(done,1500);}})();</script>
+<div id="progress"></div>
+<div class="strip"><div class="wrap">
+  <span>Signal · Arxiv desk · Deep read</span>
+  <span class="op"><i></i>2026-09-16</span>
+</div></div>
+<header class="masthead">
+  <button class="theme-btn" data-theme-toggle><span data-theme-label>☀ Paper</span></button>
+  <div class="brand"><svg class="brand-mark" viewBox="0 0 24 24" aria-hidden="true" data-brand="signal" fill="none" stroke="#C6A15B" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 13a2 2 0 0 0 2-2V7a2 2 0 0 1 4 0v13a2 2 0 0 0 4 0V4a2 2 0 0 1 4 0v13a2 2 0 0 0 4 0v-4a2 2 0 0 1 2-2"/></svg>Sig<em>nal</em></div>
+  <div class="tag">Arxiv desk · the papers behind the news</div>
+</header>
+<nav class="mainnav" id="mainnav"><div class="wrap">
+  <a class="home" href="index.html">Front Page</a>
+  <a href="releases.html">Releases</a>
+  <a href="policy.html">Policy</a>
+  <a href="research.html">Research</a>
+  <a href="voices.html">Voices</a>
+  <a href="other.html">Other</a>
+  <a href="arxiv.html" class="active">Arxiv</a>
+  <a href="index.html#archive">Archive</a>
+</div></nav>
+<main class="wrap">
+  <a class="deep-back" href="arxiv.html">← All papers</a>
+  <div class="deep-kick">Deep read · fully unpacked</div>
+  <article class="paper v2" id="paper-260919124v1"><div class="ed-head" style="margin:0 0 2px"><span class="ed-d">SEP 16 · cs.AI, cond-mat.dis-nn, cond-mat.stat-mech</span><a class="ed-t" href="https://arxiv.org/abs/2609.19124">Flag Game: A Toy Model for Mechanistic Swarm Interpretability</a><span class="front-chip">CAUSALITY</span><span class="front-chip">DEEP READ</span></div><p class="p-authors">Elizabeth Pavlova, Hidenori Tanaka</p><div class="ax-tldr"><span class="k">TL;DR</span><p>A hidden country flag defines the truth, each agent sees only a private crop, and beliefs spread peer to peer. This toy reproduces the full collective zoo: performance scales non-monotonically with population, social-awareness prompting and diversity help, structure matters. The mechanism underneath: belief collapse at small populations flips into polarization as populations grow, costing accuracy but creating diversity, and a new social circuit attribution technique predicts which agent and view drives the dynamics.</p></div><div class="stats-row"><div class="stat"><div class="v">N=128</div><div class="k">flag-run scale for probe analysis</div></div><div class="stat"><div class="v">10</div><div class="k">labeled equations in the source</div></div><div class="stat"><div class="v">50</div><div class="k">binary probes per crop in phase analysis</div></div><div class="stat"><div class="v">2</div><div class="k">mechanism probes: collapse and polarization</div></div></div><div class="ax-h3"><span class="n">01</span>The game</div><p class="ax-prose">One hidden flag, N bounded agents, each dealt a private crop of flag imagery. Agents state beliefs, observe peers, and weigh social evidence, a minimal substrate for collective belief formation with a known ground truth.</p><div class="ax-h3"><span class="n">02</span>Phenomenology</div><p class="ax-prose">Despite its simplicity the game reproduces rich collective behavior: accuracy first rises then falls with population size, socially aware prompting and diverse teams do better, and organizational structure shifts outcomes strongly.</p><div class="ax-h3"><span class="n">03</span>Collapse to polarization</div><p class="ax-prose">The core finding: small populations suffer collective belief collapse onto a wrong consensus, while larger ones polarize. Polarization explains the large-N performance decline, but the resulting belief diversity is itself a resource.</p><div class="ax-h3"><span class="n">04</span>Attribution</div><p class="ax-prose">Social circuit attribution predicts which agent, and which view, matters most to the collective dynamics, and the paper verifies those predictions with direct causal interventions on agents.</p><table class="ax-tab"><tr><th>Agent</th><th>(out of 10)</th><th>p_i</th><th>D_i</th><th>E_i</th><th>S_i</th><th>A_i</th></tr><tr><td>A0</td><td>0</td><td>1</td><td>19.4</td><td>0.47</td><td>0.47</td><td>0.50</td></tr><tr><td>A1</td><td>10</td><td>0</td><td>14.9</td><td>0.73</td><td>0.00</td><td>0.00</td></tr><tr><td>A2</td><td>0</td><td>1</td><td>16.4</td><td>1.01</td><td>1.01</td><td>0.13</td></tr><tr><td>A3</td><td>0</td><td>1</td><td>22.9</td><td>0.46</td><td>0.46</td><td>0.13</td></tr><tr><td>A4</td><td>0</td><td>1</td><td>12.9</td><td>1.81</td><td>1.81</td><td>0.75</td></tr><tr><td>A5</td><td>10</td><td>0</td><td>24.6</td><td>0.39</td><td>0.00</td><td>0.00</td></tr><tr><td>A6</td><td>0</td><td>1</td><td>15.6</td><td>0.64</td><td>0.64</td><td>0.13</td></tr><tr><td>A7</td><td>0</td><td>1</td><td>16.6</td><td>1.19</td><td>1.19</td><td>0.63</td></tr><tr><td>tabular</td></tr></table><div class="fig-caption">AUTO-TABLE · Agent-level metrics for the selected communication schedule. &#36;\Delta A_i&#36; is the empirical change in collective mean accuracy relative to th · showing 9/9 rows.</div><div class="ax-scan"><div class="scan-tag">SOURCE SCAN · as published</div><img loading="lazy" src="assets/arxiv/260919124v1-2.png" alt=" (a) Each trial samples a hidden flag, assigns private crops, elicits initial gu"/><div class="fig-caption">Fig ·  (a) Each trial samples a hidden flag, assigns private crops, elicits initial guesses, and then runs one of three protocols. (b) A \(N=8\) sweep across 60 trial (source: the paper)</div></div><div class="ax-scan"><div class="scan-tag">SOURCE SCAN · as published</div><img loading="lazy" src="assets/arxiv/260919124v1-1.png" alt=" (a) Rival response fractions from 50 binary probes per crop in an &#36;N=128&#36; Yemen"/><div class="fig-caption">Fig ·  (a) Rival response fractions from 50 binary probes per crop in an &#36;N=128&#36; Yemen run: blue supports Yemen, orange supports Austria. (b) Outcome probabilities at (source: the paper)</div></div><div class="ax-scan"><div class="scan-tag">SOURCE SCAN · as published</div><img loading="lazy" src="assets/arxiv/260919124v1-3.png" alt=" (a) In all-GPT-4o pairwise runs, collective accuracy is higher than initial acc"/><div class="fig-caption">Fig ·  (a) In all-GPT-4o pairwise runs, collective accuracy is higher than initial accuracy, peaking at intermediate \(N\). (b) As \(N\) grows, wrong consensus become (source: the paper)</div></div><div class="why"><b>Why it matters</b>Swarm belief dynamics are becoming a safety problem faster than our tools; a minimal model with a real attribution method is the foothold the field needs.</div><details><summary>Abstract</summary><p class="p-abs">Emergent coordinated behaviors of AI agents are starting to present critical safety risks. A key phenomenon driving these behaviors is the rapid formation and spread of beliefs about the world, and mechanistic understanding is crucial for collective alignment. To this end, we introduce the Flag Game, a toy model for studying the mechanisms of collective belief formation. Concretely, a hidden country flag defines the ground truth, and each bounded agent directly observes only a private crop but can exchange beliefs and weigh social evidence from peers. Despite its simplicity, the Flag Game reproduces rich collective phenomenology: non-monotonic scaling of performance with population size, accuracy gains from social-awareness prompting and team diversity, and strong effects of organizational structure. In particular, we identify that collective belief collapse at small population sizes turns into collective belief polarization as the population grows. This polarization causes the performance decline at large population sizes, but creates diversity in collective beliefs. Finally, we dissect the mechanisms underlying collective belief collapse and polarization with two complementary approaches. We first introduce social circuit attribution, a technique to predict which agent, and what view, matters most to collective dynamics, and verify its predictions by causal interventions on agents, tracing how agent patching changes collective outcomes. However, the efficacy of causal interventions on agents decreases as the population grows. We therefore develop a statistical mechanical theory for larger populations and verify that it matches the empirical phase diagram. Together, these results take a first step toward mechanistic swarm interpretability, a science of how the properties of individual agents and their communication give rise to emergent collective behavior.</p></details><div class="sig-row"><span class="sig-chip">multi-agent</span><span class="sig-chip">interpretability</span><span class="sig-chip">emergence</span><span class="sig-chip">safety</span><span class="sig-chip">toy-model</span><a class="sig-link" href="https://arxiv.org/abs/2609.19124">↗ arXiv</a><a class="sig-link" href="https://arxiv.org/pdf/2609.19124">↗ PDF</a></div></article>
+</main>
+<footer><div class="wrap fgrid">
+  <div><div class="fb">Sig<em>nal</em></div><p>A hype-free daily AI newspaper. This unpack is built from the paper itself — figures, tables and equations ship as published.</p></div>
+  <div><h5>Paper</h5><ul><li><a href="arxiv.html">Arxiv desk</a></li><li><a href="index.html">Front page</a></li></ul></div>
+</div>
+<div class="foot">Signal Arxiv deep read · 0 fabricated · © <span id="yr">2026</span> Signal</div>
+</footer>
+<button id="toTop" aria-label="Back to top">↑</button>
+<script src="assets/site.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="noir">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Signal">
+<meta property="og:title" content="Coding Agents with an Obstacle-Aware Harness for Safe Robot Manipulation — Signal Arxiv">
+<meta property="og:description" content="Coding agents now drive robots without robot-specific training, but pair the goal with an obstacle and they collide in most cases, even while reasoning about the obstacle in their traces under an expl">
+<meta property="og:url" content="https://signaldaily.github.io/paper-260920822v1.html">
+<meta property="og:image" content="https://signaldaily.github.io/assets/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Coding Agents with an Obstacle-Aware Harness for Safe Robot Manipulation — Signal Arxiv">
+<meta name="twitter:description" content="Coding agents now drive robots without robot-specific training, but pair the goal with an obstacle and they collide in most cases, even while reasoning about the obstacle in their traces under an expl">
+<meta name="theme-color" content="#0E0C0A">
+<title>Coding Agents with an Obstacle-Aware Harness for Safe Robot Manipulation — Signal Arxiv</title>
+<link rel="icon" type="image/svg+xml" href="assets/signal-favicon.svg" data-brand="signal">
+<link rel="apple-touch-icon" sizes="180x180" href="assets/apple-touch-icon.png" data-brand="signal">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,700;1,9..144,400;1,9..144,600&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css">
+<link rel="stylesheet" href="assets/styles.css">
+<script defer src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+<style>
+.ax-tldr{border:1px solid var(--hairline-2);border-left:3px solid var(--brass);border-radius:0 6px 6px 0;background:var(--panel);padding:20px 22px;margin:20px 0}
+.ax-tldr .k{font-family:"JetBrains Mono",monospace;font-size:10px;letter-spacing:.18em;color:var(--brass);text-transform:uppercase;display:block;margin-bottom:8px}
+.ax-tldr p{font-size:17px;line-height:1.65;margin:0;max-width:70ch}
+.ax-h3{font-family:"JetBrains Mono",monospace;font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--ink);margin:34px 0 10px;display:flex;align-items:center;gap:10px}
+.ax-h3::after{content:"";flex:1;height:1px;background:var(--hairline-2)}
+.ax-h3 .n{color:var(--brass)}
+.ax-prose{font-size:15.5px;line-height:1.8;color:var(--ink-soft);max-width:75ch;margin:0 0 12px}
+.ax-prose b{color:var(--ink)}
+.ax-math{background:var(--panel);border:1px solid var(--hairline);border-radius:6px;padding:20px 22px;margin:14px 0;overflow-x:auto}
+.ax-math .eq-label{font-family:"JetBrains Mono",monospace;font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:var(--brass);margin-bottom:10px}
+.ax-chartbox{background:var(--panel);border:1px solid var(--hairline);border-radius:6px;padding:22px;margin:16px 0}
+.ax-chartbox canvas{max-height:420px}
+.ax-scan{background:#F4F1EA;border:1px solid var(--hairline-2);border-radius:8px;padding:14px;margin:16px 0}
+.ax-scan img{width:100%;height:auto;display:block;border-radius:4px;background:#fff}
+.scan-tag{font-family:"JetBrains Mono",monospace;font-size:10px;letter-spacing:.18em;color:#6E6455;text-transform:uppercase;margin-bottom:10px}
+table.ax-tab{width:100%;border-collapse:collapse;margin:14px 0;font-size:13px;line-height:1.55}
+table.ax-tab th{font-family:"JetBrains Mono",monospace;font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--brass);text-align:left;padding:10px 12px;border-bottom:2px solid var(--hairline-2)}
+table.ax-tab td{padding:9px 12px;border-bottom:1px solid var(--hairline);color:var(--ink-soft);vertical-align:top}
+table.ax-tab td:first-child{font-family:"JetBrains Mono",monospace;font-size:11.5px;color:var(--ink);white-space:nowrap}
+@media(max-width:800px){table.ax-tab{display:block;overflow-x:auto}table.ax-tab th,table.ax-tab td{min-width:92px}}
+
+.deep-back{display:inline-block;margin:18px 0 4px;font-family:"JetBrains Mono",monospace;font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--brass);text-decoration:none}
+.deep-kick{font-family:"JetBrains Mono",monospace;font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--brass);margin:6px 0 14px}
+</style>
+</head>
+<body>
+<div id="bootVeil" aria-hidden="true"><div class="bv-inner"><div class="bv-ring"></div><div class="bv-brand">Sig<em>nal</em></div><div class="bv-rule"><span></span></div><div class="bv-status">Reading edition…</div></div></div>
+<script>(function(){var v=document.getElementById('bootVeil');if(!v)return;var rm=window.matchMedia('(prefers-reduced-motion: reduce)').matches;var seen=null;try{seen=sessionStorage.getItem('signal-seen');}catch(e){}function lift(){v.classList.add('lifted');setTimeout(function(){v.remove();},500);try{sessionStorage.setItem('signal-seen','1');}catch(e){}}if(rm||seen){requestAnimationFrame(function(){requestAnimationFrame(lift);});return;}var msgs=['Reading edition…','Inking figures…','Verifying links…'],mi=0,el=v.querySelector('.bv-status'),tm=setInterval(function(){mi=(mi+1)%msgs.length;if(el)el.textContent=msgs[mi];},340);function done(){clearInterval(tm);lift();}if(document.readyState==='complete'){setTimeout(done,320);}else{window.addEventListener('load',function(){setTimeout(done,320);});setTimeout(done,1500);}})();</script>
+<div id="progress"></div>
+<div class="strip"><div class="wrap">
+  <span>Signal · Arxiv desk · Deep read</span>
+  <span class="op"><i></i>2026-09-17</span>
+</div></div>
+<header class="masthead">
+  <button class="theme-btn" data-theme-toggle><span data-theme-label>☀ Paper</span></button>
+  <div class="brand"><svg class="brand-mark" viewBox="0 0 24 24" aria-hidden="true" data-brand="signal" fill="none" stroke="#C6A15B" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 13a2 2 0 0 0 2-2V7a2 2 0 0 1 4 0v13a2 2 0 0 0 4 0V4a2 2 0 0 1 4 0v13a2 2 0 0 0 4 0v-4a2 2 0 0 1 2-2"/></svg>Sig<em>nal</em></div>
+  <div class="tag">Arxiv desk · the papers behind the news</div>
+</header>
+<nav class="mainnav" id="mainnav"><div class="wrap">
+  <a class="home" href="index.html">Front Page</a>
+  <a href="releases.html">Releases</a>
+  <a href="policy.html">Policy</a>
+  <a href="research.html">Research</a>
+  <a href="voices.html">Voices</a>
+  <a href="other.html">Other</a>
+  <a href="arxiv.html" class="active">Arxiv</a>
+  <a href="index.html#archive">Archive</a>
+</div></nav>
+<main class="wrap">
+  <a class="deep-back" href="arxiv.html">← All papers</a>
+  <div class="deep-kick">Deep read · fully unpacked</div>
+  <article class="paper v2" id="paper-260920822v1"><div class="ed-head" style="margin:0 0 2px"><span class="ed-d">SEP 17 · cs.RO, cs.AI, cs.CL</span><a class="ed-t" href="https://arxiv.org/abs/2609.20822">Coding Agents with an Obstacle-Aware Harness for Safe Robot Manipulation</a><span class="front-chip">AGENCY</span><span class="front-chip">DEEP READ</span></div><p class="p-authors">Bingxin Xu, Yuzhang Shang, Zhen Dong, Emilio Ferrara</p><div class="ax-tldr"><span class="k">TL;DR</span><p>Coding agents now drive robots without robot-specific training, but pair the goal with an obstacle and they collide in most cases, even while reasoning about the obstacle in their traces under an explicit do-not-touch prompt. Neither perception nor instruction is at fault; planning is, with no notion of a clearing route, no replanning, and no constraint-aware contact. SafeHarness adds two obstacle-aware harnesses and reaches 71.9% success with 87.5% avoidance.</p></div><div class="stats-row"><div class="stat"><div class="v">71.9% / 87.5%</div><div class="k">task success / collision avoidance</div></div><div class="stat"><div class="v">2.3x / 1.5x</div><div class="k">vs the same agent unharnessed</div></div><div class="stat"><div class="v">+6.5 / +27.0</div><div class="k">points over prior SOTA</div></div><div class="stat"><div class="v">4</div><div class="k">task suites: Spatial, Goal, Object, Long</div></div></div><div class="ax-h3"><span class="n">01</span>The failure</div><p class="ax-prose">The agent pursues the goal and treats completion as its sole objective, neglecting safety. Because the traces discuss the obstacle and the prompt forbids touching it, the authors exonerate perception and instruction and indict planning, where the stated constraint never becomes a priority.</p><div class="ax-h3"><span class="n">02</span>Where it breaks</div><p class="ax-prose">Decomposing tasks into a route phase and a contact-rich moment locates two faults: along the route the model has no notion of a clearing route and never replans once a route goes infeasible; at contact it is unaware that execution itself is bounded by the same constraint.</p><div class="ax-h3"><span class="n">03</span>SafeHarness</div><p class="ax-prose">Obstacle-aware route planning grounds objects as bounding boxes, draws candidate routes as waypoint sequences, then plans in advance, verifies, replans when necessary, and only then executes. Obstacle-aware contact execution selects the contact position so the contact itself avoids the obstacle.</p><div class="ax-h3"><span class="n">04</span>Scoreboard</div><p class="ax-prose">The headline table reports per-suite success and avoidance for VLA baselines against harnessed backbones: OpenVLA-OFT and pi0.5 collapse on avoidance, AEGIS is competitive, and the harnessed GPT-6 row averages 71.9% success with 87.5% avoidance, matching the abstract's claims.</p><table class="ax-tab"><tr><th>Method</th><th>Spatial</th><th></th><th>Goal</th><th></th><th>Object</th><th></th><th>Long</th><th></th><th>Average</th><th></th></tr><tr><td>OpenVLA-OFT kim2025oft</td><td>36.5</td><td>8.3</td><td>24.3</td><td>19.5</td><td>28.8</td><td>11.5</td><td>15.3</td></tr><tr><td>black2025pi05</td><td>59.3</td><td>14.0</td><td>60.0</td><td>20.0</td><td>57.5</td><td>18.0</td><td>54.3</td></tr><tr><td>AEGIS hu2025vlsa</td><td>68.5</td><td>68.0</td><td>82.8</td><td>76.5</td><td>72.5</td><td>71.3</td><td>46.3</td></tr><tr><td>(GPT-5.5)</td><td>72.0</td><td>75.0</td><td>52.0</td><td>88.0</td><td>82.0</td><td>85.0</td><td>72.0</td></tr><tr><td>(GPT-6)</td><td>75.0</td><td>75.0</td><td>75.0</td><td>100.0</td><td>75.0</td><td>75.0</td><td>62.5</td></tr><tr><td>tabular</td></tr></table><div class="fig-caption">AUTO-TABLE · \bench  : per-suite and
+average task success rate (\tsr) and collision-avoidance rate (\car),
+in \%. \method instantiated with two coding-ag · showing 6/6 rows.</div><div class="ax-scan"><div class="scan-tag">SOURCE SCAN · as published</div><img loading="lazy" src="assets/arxiv/260920822v1-0.png" alt=" 
+  Coding agent receives a task instruction with a safety constraint, along wit"/><div class="fig-caption">Fig ·  
+  Coding agent receives a task instruction with a safety constraint, along with observation images. \method then equips it with obstacle-aware route planning  (source: the paper)</div></div><div class="ax-scan"><div class="scan-tag">SOURCE SCAN · as published</div><img loading="lazy" src="assets/arxiv/260920822v1-1.png" alt="
+  The task is cut at its contact events into phases, and both components
+  run "/><div class="fig-caption">Fig · 
+  The task is cut at its contact events into phases, and both components
+  run once per phase.
+   : the scene is
+  grounded as boxes, the route of the current  (source: the paper)</div></div><div class="ax-scan"><div class="scan-tag">SOURCE SCAN · as published</div><img loading="lazy" src="assets/arxiv/260920822v1-2.png" alt="
+  The task is to place the orange juice in the basket without hitting the wine "/><div class="fig-caption">Fig · 
+  The task is to place the orange juice in the basket without hitting the wine bottle. Without \method (top row), 
+  hits the obstacle en route to the grasp; w (source: the paper)</div></div><div class="why"><b>Why it matters</b>Code-writing agents are being pointed at physical robots; this is the first paper to ask whether that paradigm is safe, and the answer is no, not without harnesses.</div><details><summary>Abstract</summary><p class="p-abs">Coding agents have emerged as a promising paradigm for robot manipulation: a language model writes the robot controller as a program, and agents built in this way now operate robots without robot-specific training.Whether this paradigm is also safe, however, has not been asked. We evaluate coding agent under a safety constraint, where each task pairs a manipulation goal with an obstacle the robot must not touch. The agent pursues the goal but collides with the obstacle in most cases, treating task completion as its sole objective while neglecting safety. The agent reasons about the obstacle in its traces, and the prompt already forbids touching it, so neither perception nor instruction is at fault; the fault lies in the planning, where the stated constraint never becomes a priority. By decomposing manipulation into a route phase and a contact-rich moment, we locate the source of the failure. Along the route, the model cannot prioritize the safety constraint, having no notion of a clearing route and none of replanning once a chosen route becomes infeasible. At the contact, it is unaware that contact execution is bounded by the same constraint. To close this gap, we present SafeHarness, which equips the model with two obstacle-aware harnesses that enable it to prioritize the safety constraint. Obstacle-aware route planning grounds the objects as bounding boxes and draws candidate routes over them as sequences of waypoints. The agent then plans a route in advance, verifies it, replans when necessary, and only then executes it. Obstacle-aware contact execution instead selects the contact position so that the contact itself avoids the obstacle. SafeHarness attains 71.9% task success and 87.5% collision avoidance, surpassing the previous SOTA by 6.5% and 27.0%, respectively. These results are &#36;2.3\times&#36; and &#36;1.5\times&#36; those of the same agent without harnesses.</p></details><div class="sig-row"><span class="sig-chip">robotics</span><span class="sig-chip">agents</span><span class="sig-chip">safety</span><span class="sig-chip">planning</span><span class="sig-chip">manipulation</span><a class="sig-link" href="https://arxiv.org/abs/2609.20822">↗ arXiv</a><a class="sig-link" href="https://arxiv.org/pdf/2609.20822">↗ PDF</a></div></article>
+</main>
+<footer><div class="wrap fgrid">
+  <div><div class="fb">Sig<em>nal</em></div><p>A hype-free daily AI newspaper. This unpack is built from the paper itself — figures, tables and equations ship as published.</p></div>
+  <div><h5>Paper</h5><ul><li><a href="arxiv.html">Arxiv desk</a></li><li><a href="index.html">Front page</a></li></ul></div>
+</div>
+<div class="foot">Signal Arxiv deep read · 0 fabricated · © <span id="yr">2026</span> Signal</div>
+</footer>
+<button id="toTop" aria-label="Back to top">↑</button>
+<script src="assets/site.js"></script>
+
+</body>
+</html>

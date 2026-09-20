@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="noir">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Signal">
+<meta property="og:title" content="Red-Teaming Auto Mode: Improving Blocking Classifiers Against Malign Coding Agents — Signal Arxiv">
+<meta property="og:description" content="An Opus 5 red-team agent instructed to evade production coding-agent monitors succeeds disturbingly often: in 79% of trials an agent-generated injection against Auto Mode or Guardian yields arbitrary ">
+<meta property="og:url" content="https://signaldaily.github.io/paper-260919587v1.html">
+<meta property="og:image" content="https://signaldaily.github.io/assets/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Red-Teaming Auto Mode: Improving Blocking Classifiers Against Malign Coding Agents — Signal Arxiv">
+<meta name="twitter:description" content="An Opus 5 red-team agent instructed to evade production coding-agent monitors succeeds disturbingly often: in 79% of trials an agent-generated injection against Auto Mode or Guardian yields arbitrary ">
+<meta name="theme-color" content="#0E0C0A">
+<title>Red-Teaming Auto Mode: Improving Blocking Classifiers Against Malign Coding Agents — Signal Arxiv</title>
+<link rel="icon" type="image/svg+xml" href="assets/signal-favicon.svg" data-brand="signal">
+<link rel="apple-touch-icon" sizes="180x180" href="assets/apple-touch-icon.png" data-brand="signal">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,700;1,9..144,400;1,9..144,600&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css">
+<link rel="stylesheet" href="assets/styles.css">
+<script defer src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+<style>
+.ax-tldr{border:1px solid var(--hairline-2);border-left:3px solid var(--brass);border-radius:0 6px 6px 0;background:var(--panel);padding:20px 22px;margin:20px 0}
+.ax-tldr .k{font-family:"JetBrains Mono",monospace;font-size:10px;letter-spacing:.18em;color:var(--brass);text-transform:uppercase;display:block;margin-bottom:8px}
+.ax-tldr p{font-size:17px;line-height:1.65;margin:0;max-width:70ch}
+.ax-h3{font-family:"JetBrains Mono",monospace;font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--ink);margin:34px 0 10px;display:flex;align-items:center;gap:10px}
+.ax-h3::after{content:"";flex:1;height:1px;background:var(--hairline-2)}
+.ax-h3 .n{color:var(--brass)}
+.ax-prose{font-size:15.5px;line-height:1.8;color:var(--ink-soft);max-width:75ch;margin:0 0 12px}
+.ax-prose b{color:var(--ink)}
+.ax-math{background:var(--panel);border:1px solid var(--hairline);border-radius:6px;padding:20px 22px;margin:14px 0;overflow-x:auto}
+.ax-math .eq-label{font-family:"JetBrains Mono",monospace;font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:var(--brass);margin-bottom:10px}
+.ax-chartbox{background:var(--panel);border:1px solid var(--hairline);border-radius:6px;padding:22px;margin:16px 0}
+.ax-chartbox canvas{max-height:420px}
+.ax-scan{background:#F4F1EA;border:1px solid var(--hairline-2);border-radius:8px;padding:14px;margin:16px 0}
+.ax-scan img{width:100%;height:auto;display:block;border-radius:4px;background:#fff}
+.scan-tag{font-family:"JetBrains Mono",monospace;font-size:10px;letter-spacing:.18em;color:#6E6455;text-transform:uppercase;margin-bottom:10px}
+table.ax-tab{width:100%;border-collapse:collapse;margin:14px 0;font-size:13px;line-height:1.55}
+table.ax-tab th{font-family:"JetBrains Mono",monospace;font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--brass);text-align:left;padding:10px 12px;border-bottom:2px solid var(--hairline-2)}
+table.ax-tab td{padding:9px 12px;border-bottom:1px solid var(--hairline);color:var(--ink-soft);vertical-align:top}
+table.ax-tab td:first-child{font-family:"JetBrains Mono",monospace;font-size:11.5px;color:var(--ink);white-space:nowrap}
+@media(max-width:800px){table.ax-tab{display:block;overflow-x:auto}table.ax-tab th,table.ax-tab td{min-width:92px}}
+
+.deep-back{display:inline-block;margin:18px 0 4px;font-family:"JetBrains Mono",monospace;font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--brass);text-decoration:none}
+.deep-kick{font-family:"JetBrains Mono",monospace;font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--brass);margin:6px 0 14px}
+</style>
+</head>
+<body>
+<div id="bootVeil" aria-hidden="true"><div class="bv-inner"><div class="bv-ring"></div><div class="bv-brand">Sig<em>nal</em></div><div class="bv-rule"><span></span></div><div class="bv-status">Reading edition…</div></div></div>
+<script>(function(){var v=document.getElementById('bootVeil');if(!v)return;var rm=window.matchMedia('(prefers-reduced-motion: reduce)').matches;var seen=null;try{seen=sessionStorage.getItem('signal-seen');}catch(e){}function lift(){v.classList.add('lifted');setTimeout(function(){v.remove();},500);try{sessionStorage.setItem('signal-seen','1');}catch(e){}}if(rm||seen){requestAnimationFrame(function(){requestAnimationFrame(lift);});return;}var msgs=['Reading edition…','Inking figures…','Verifying links…'],mi=0,el=v.querySelector('.bv-status'),tm=setInterval(function(){mi=(mi+1)%msgs.length;if(el)el.textContent=msgs[mi];},340);function done(){clearInterval(tm);lift();}if(document.readyState==='complete'){setTimeout(done,320);}else{window.addEventListener('load',function(){setTimeout(done,320);});setTimeout(done,1500);}})();</script>
+<div id="progress"></div>
+<div class="strip"><div class="wrap">
+  <span>Signal · Arxiv desk · Deep read</span>
+  <span class="op"><i></i>2026-09-17</span>
+</div></div>
+<header class="masthead">
+  <button class="theme-btn" data-theme-toggle><span data-theme-label>☀ Paper</span></button>
+  <div class="brand"><svg class="brand-mark" viewBox="0 0 24 24" aria-hidden="true" data-brand="signal" fill="none" stroke="#C6A15B" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 13a2 2 0 0 0 2-2V7a2 2 0 0 1 4 0v13a2 2 0 0 0 4 0V4a2 2 0 0 1 4 0v13a2 2 0 0 0 4 0v-4a2 2 0 0 1 2-2"/></svg>Sig<em>nal</em></div>
+  <div class="tag">Arxiv desk · the papers behind the news</div>
+</header>
+<nav class="mainnav" id="mainnav"><div class="wrap">
+  <a class="home" href="index.html">Front Page</a>
+  <a href="releases.html">Releases</a>
+  <a href="policy.html">Policy</a>
+  <a href="research.html">Research</a>
+  <a href="voices.html">Voices</a>
+  <a href="other.html">Other</a>
+  <a href="arxiv.html" class="active">Arxiv</a>
+  <a href="index.html#archive">Archive</a>
+</div></nav>
+<main class="wrap">
+  <a class="deep-back" href="arxiv.html">← All papers</a>
+  <div class="deep-kick">Deep read · fully unpacked</div>
+  <article class="paper v2" id="paper-260919587v1"><div class="ed-head" style="margin:0 0 2px"><span class="ed-d">SEP 17 · cs.CR, cs.AI, cs.CL</span><a class="ed-t" href="https://arxiv.org/abs/2609.19587">Red-Teaming Auto Mode: Improving Blocking Classifiers Against Malign Coding Agents</a><span class="front-chip">EVALUATION</span><span class="front-chip">DEEP READ</span></div><p class="p-authors">Alex Remedios, Simon Storf, Fabien Roger, John Hughes</p><div class="ax-tldr"><span class="k">TL;DR</span><p>An Opus 5 red-team agent instructed to evade production coding-agent monitors succeeds disturbingly often: in 79% of trials an agent-generated injection against Auto Mode or Guardian yields arbitrary bash. Design hardening helps substantially, but multi-context attacks spanning sessions the monitor sees only in isolation remain an open problem.</p></div><div class="stats-row"><div class="stat"><div class="v">79%</div><div class="k">injection trials reaching arbitrary bash</div></div><div class="stat"><div class="v">4</div><div class="k">attack types in the taxonomy</div></div><div class="stat"><div class="v">2</div><div class="k">production monitors tested</div></div><div class="stat"><div class="v">3</div><div class="k">hardening upgrades to Auto Mode</div></div></div><div class="ax-h3"><span class="n">01</span>The setup</div><p class="ax-prose">Production coding agents now face a blocking monitor that reviews each proposed action before it runs, Auto Mode in Claude Code and Guardian in Codex. Prior evaluations test accidents and outside prompt injection; this paper tests the harder threat, a persistently misaligned agent aiming at catastrophic harm such as exfiltrating its own weights.</p><div class="ax-h3"><span class="n">02</span>Four attack types</div><p class="ax-prose">The headline table taxonomizes monitor failure: monitor injection, where agent-generated content such as code or comments corrupts the monitor; multi-context attacks spanning sessions the monitor sees only in isolation; coverage gaps over parts of the action space; and policy failures where the prompted policy omits the behavior.</p><div class="ax-h3"><span class="n">03</span>Defense upgrades</div><p class="ax-prose">The authors then harden Auto Mode itself: broader tool coverage, tighter transcript formatting, and an agentic monitor stage. These changes greatly improve blocking performance against the same red-team battery.</p><div class="ax-h3"><span class="n">04</span>Open problem</div><p class="ax-prose">Even hardened, preventing multi-context attacks at an acceptable cost of latency, false positives and money remains unsolved, the paper's explicit parting challenge to defenders.</p><table class="ax-tab"><tr><th>Policy Failure</th><th>The prompted policy omits the harmful behaviour, or the monitor fails to apply t</th></tr><tr><td>tabular</td></tr></table><div class="fig-caption">AUTO-TABLE · The four main attack types. By default we use Opus 5 as the attacking model. · showing 1/1 rows.</div><div class="ax-scan"><div class="scan-tag">SOURCE SCAN · as published</div><img loading="lazy" src="assets/arxiv/260919587v1-0.png" alt="Fuzzing agent architecture: The fuzzing agent can iterate on draft attack transc"/><div class="fig-caption">Fig · Fuzzing agent architecture: The fuzzing agent can iterate on draft attack transcripts before submitting them to a plausibility judge which determines if they ar (source: the paper)</div></div><div class="ax-scan"><div class="scan-tag">SOURCE SCAN · as published</div><img loading="lazy" src="assets/arxiv/260919587v1-1.png" alt=" Each trial tests the ability of an Opus 5 red-team agent to complete a side tas"/><div class="fig-caption">Fig ·  Each trial tests the ability of an Opus 5 red-team agent to complete a side task before incurring 20 blocks from the monitor, and we show average success rate  (source: the paper)</div></div><div class="ax-scan"><div class="scan-tag">SOURCE SCAN · as published</div><img loading="lazy" src="assets/arxiv/260919587v1-3.png" alt="  Scaling the number of agents in a single persistent workspace can substantiall"/><div class="fig-caption">Fig ·   Scaling the number of agents in a single persistent workspace can substantially increase risk.  Risk also scales with the number of times an agent compacted. (source: the paper)</div></div><div class="ax-scan"><div class="scan-tag">SOURCE SCAN · as published</div><img loading="lazy" src="assets/arxiv/260919587v1-2.png" alt=". The red-team  agent is tasked with completing a , given a  which determines th"/><div class="fig-caption">Fig · . The red-team  agent is tasked with completing a , given a  which determines the range of what the monitor should permit. For our  evaluations we use a real Cl (source: the paper)</div></div><div class="why"><b>Why it matters</b>Auto Mode-style monitors are the main barrier between a misaligned coding agent and real damage; this paper shows the barrier is thinner than assumed and names exactly where it breaks.</div><details><summary>Abstract</summary><p class="p-abs">To keep coding agents from going off the rails, production systems now review each proposed action with a blocking monitor that can reject it before it runs (Auto Mode in Claude Code, Guardian in OpenAI's Codex). Prior evaluations of such monitors largely measure robustness to accidental harm or prompt injections from untrusted sources looking to hijack the agent. Less understood is how they hold up when the agent they monitor is persistently misaligned. To understand this risk, we task an adversarial agent with evading production blocking monitors and causing catastrophic harm, e.g. by exfiltrating its own weights. We find that when instructed with high-level attack strategies, adversarial agents can succeed through several distinct mechanisms, such as agent-generated prompt injection against the monitor, multi-agent attacks, and malicious compaction. In particular we find that in 79% of trials, the agent can use an injection attack against Auto Mode and Guardian to run arbitrary bash commands. We also find that it is possible to greatly improve Auto Mode through design changes like enhancements to tool coverage, transcript formatting and an agentic monitor stage. Even with these improvements, preventing multi-context attacks at an acceptable cost remains an open problem. By detailing our red-teaming methodology and highlighting new attack vectors, we aim to help defenders evaluate their mitigations against the possibility of persistent malign coding agents. Code is available at https://github.com/safety-research/red-teaming-auto-mode.</p></details><div class="sig-row"><span class="sig-chip">red-teaming</span><span class="sig-chip">agents</span><span class="sig-chip">safety</span><span class="sig-chip">evaluation</span><span class="sig-chip">monitors</span><a class="sig-link" href="https://arxiv.org/abs/2609.19587">↗ arXiv</a><a class="sig-link" href="https://arxiv.org/pdf/2609.19587">↗ PDF</a></div></article>
+</main>
+<footer><div class="wrap fgrid">
+  <div><div class="fb">Sig<em>nal</em></div><p>A hype-free daily AI newspaper. This unpack is built from the paper itself — figures, tables and equations ship as published.</p></div>
+  <div><h5>Paper</h5><ul><li><a href="arxiv.html">Arxiv desk</a></li><li><a href="index.html">Front page</a></li></ul></div>
+</div>
+<div class="foot">Signal Arxiv deep read · 0 fabricated · © <span id="yr">2026</span> Signal</div>
+</footer>
+<button id="toTop" aria-label="Back to top">↑</button>
+<script src="assets/site.js"></script>
+
+</body>
+</html>

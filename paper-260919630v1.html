@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="noir">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Signal">
+<meta property="og:title" content="From Intent to Action: Benchmarking LLM Safety in Vehicle Voice Command Authorization — Signal Arxiv">
+<meta property="og:description" content="A 202-scenario benchmark isolates the pre-action authorization decision, execute, refuse, clarify, confirm, manual control, emergency, or no tool call, across speaker role, authentication status, vehi">
+<meta property="og:url" content="https://signaldaily.github.io/paper-260919630v1.html">
+<meta property="og:image" content="https://signaldaily.github.io/assets/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="From Intent to Action: Benchmarking LLM Safety in Vehicle Voice Command Authorization — Signal Arxiv">
+<meta name="twitter:description" content="A 202-scenario benchmark isolates the pre-action authorization decision, execute, refuse, clarify, confirm, manual control, emergency, or no tool call, across speaker role, authentication status, vehi">
+<meta name="theme-color" content="#0E0C0A">
+<title>From Intent to Action: Benchmarking LLM Safety in Vehicle Voice Command Authorization — Signal Arxiv</title>
+<link rel="icon" type="image/svg+xml" href="assets/signal-favicon.svg" data-brand="signal">
+<link rel="apple-touch-icon" sizes="180x180" href="assets/apple-touch-icon.png" data-brand="signal">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,700;1,9..144,400;1,9..144,600&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css">
+<link rel="stylesheet" href="assets/styles.css">
+<script defer src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+<style>
+.ax-tldr{border:1px solid var(--hairline-2);border-left:3px solid var(--brass);border-radius:0 6px 6px 0;background:var(--panel);padding:20px 22px;margin:20px 0}
+.ax-tldr .k{font-family:"JetBrains Mono",monospace;font-size:10px;letter-spacing:.18em;color:var(--brass);text-transform:uppercase;display:block;margin-bottom:8px}
+.ax-tldr p{font-size:17px;line-height:1.65;margin:0;max-width:70ch}
+.ax-h3{font-family:"JetBrains Mono",monospace;font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--ink);margin:34px 0 10px;display:flex;align-items:center;gap:10px}
+.ax-h3::after{content:"";flex:1;height:1px;background:var(--hairline-2)}
+.ax-h3 .n{color:var(--brass)}
+.ax-prose{font-size:15.5px;line-height:1.8;color:var(--ink-soft);max-width:75ch;margin:0 0 12px}
+.ax-prose b{color:var(--ink)}
+.ax-math{background:var(--panel);border:1px solid var(--hairline);border-radius:6px;padding:20px 22px;margin:14px 0;overflow-x:auto}
+.ax-math .eq-label{font-family:"JetBrains Mono",monospace;font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:var(--brass);margin-bottom:10px}
+.ax-chartbox{background:var(--panel);border:1px solid var(--hairline);border-radius:6px;padding:22px;margin:16px 0}
+.ax-chartbox canvas{max-height:420px}
+.ax-scan{background:#F4F1EA;border:1px solid var(--hairline-2);border-radius:8px;padding:14px;margin:16px 0}
+.ax-scan img{width:100%;height:auto;display:block;border-radius:4px;background:#fff}
+.scan-tag{font-family:"JetBrains Mono",monospace;font-size:10px;letter-spacing:.18em;color:#6E6455;text-transform:uppercase;margin-bottom:10px}
+table.ax-tab{width:100%;border-collapse:collapse;margin:14px 0;font-size:13px;line-height:1.55}
+table.ax-tab th{font-family:"JetBrains Mono",monospace;font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--brass);text-align:left;padding:10px 12px;border-bottom:2px solid var(--hairline-2)}
+table.ax-tab td{padding:9px 12px;border-bottom:1px solid var(--hairline);color:var(--ink-soft);vertical-align:top}
+table.ax-tab td:first-child{font-family:"JetBrains Mono",monospace;font-size:11.5px;color:var(--ink);white-space:nowrap}
+@media(max-width:800px){table.ax-tab{display:block;overflow-x:auto}table.ax-tab th,table.ax-tab td{min-width:92px}}
+
+.deep-back{display:inline-block;margin:18px 0 4px;font-family:"JetBrains Mono",monospace;font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--brass);text-decoration:none}
+.deep-kick{font-family:"JetBrains Mono",monospace;font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--brass);margin:6px 0 14px}
+</style>
+</head>
+<body>
+<div id="bootVeil" aria-hidden="true"><div class="bv-inner"><div class="bv-ring"></div><div class="bv-brand">Sig<em>nal</em></div><div class="bv-rule"><span></span></div><div class="bv-status">Reading edition…</div></div></div>
+<script>(function(){var v=document.getElementById('bootVeil');if(!v)return;var rm=window.matchMedia('(prefers-reduced-motion: reduce)').matches;var seen=null;try{seen=sessionStorage.getItem('signal-seen');}catch(e){}function lift(){v.classList.add('lifted');setTimeout(function(){v.remove();},500);try{sessionStorage.setItem('signal-seen','1');}catch(e){}}if(rm||seen){requestAnimationFrame(function(){requestAnimationFrame(lift);});return;}var msgs=['Reading edition…','Inking figures…','Verifying links…'],mi=0,el=v.querySelector('.bv-status'),tm=setInterval(function(){mi=(mi+1)%msgs.length;if(el)el.textContent=msgs[mi];},340);function done(){clearInterval(tm);lift();}if(document.readyState==='complete'){setTimeout(done,320);}else{window.addEventListener('load',function(){setTimeout(done,320);});setTimeout(done,1500);}})();</script>
+<div id="progress"></div>
+<div class="strip"><div class="wrap">
+  <span>Signal · Arxiv desk · Deep read</span>
+  <span class="op"><i></i>2026-09-17</span>
+</div></div>
+<header class="masthead">
+  <button class="theme-btn" data-theme-toggle><span data-theme-label>☀ Paper</span></button>
+  <div class="brand"><svg class="brand-mark" viewBox="0 0 24 24" aria-hidden="true" data-brand="signal" fill="none" stroke="#C6A15B" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 13a2 2 0 0 0 2-2V7a2 2 0 0 1 4 0v13a2 2 0 0 0 4 0V4a2 2 0 0 1 4 0v13a2 2 0 0 0 4 0v-4a2 2 0 0 1 2-2"/></svg>Sig<em>nal</em></div>
+  <div class="tag">Arxiv desk · the papers behind the news</div>
+</header>
+<nav class="mainnav" id="mainnav"><div class="wrap">
+  <a class="home" href="index.html">Front Page</a>
+  <a href="releases.html">Releases</a>
+  <a href="policy.html">Policy</a>
+  <a href="research.html">Research</a>
+  <a href="voices.html">Voices</a>
+  <a href="other.html">Other</a>
+  <a href="arxiv.html" class="active">Arxiv</a>
+  <a href="index.html#archive">Archive</a>
+</div></nav>
+<main class="wrap">
+  <a class="deep-back" href="arxiv.html">← All papers</a>
+  <div class="deep-kick">Deep read · fully unpacked</div>
+  <article class="paper v2" id="paper-260919630v1"><div class="ed-head" style="margin:0 0 2px"><span class="ed-d">SEP 17 · cs.AI, cs.CL, cs.RO</span><a class="ed-t" href="https://arxiv.org/abs/2609.19630">From Intent to Action: Benchmarking LLM Safety in Vehicle Voice Command Authorization</a><span class="front-chip">BENCHMARKS</span><span class="front-chip">DEEP READ</span></div><p class="p-authors">Diba Afroze, Xingli Zhang, Yazhou Tu, Xiali Hei</p><div class="ax-tldr"><span class="k">TL;DR</span><p>A 202-scenario benchmark isolates the pre-action authorization decision, execute, refuse, clarify, confirm, manual control, emergency, or no tool call, across speaker role, authentication status, vehicle state and tool availability. The best model aligns at 89.1%, yet still false-executes two to three times across 161 non-execution scenarios. A structured policy lifts Llama 3.2 3B from about 28% to 40.1% but never to zero false executes: LLM decisions are insufficient as a standalone safety layer.</p></div><div class="stats-row"><div class="stat"><div class="v">202</div><div class="k">scenarios across 7 decision classes</div></div><div class="stat"><div class="v">89.1%</div><div class="k">best alignment, Gemini 3.1 Pro Preview</div></div><div class="stat"><div class="v">40.1%</div><div class="k">Llama 3.2 3B under structured policy</div></div><div class="stat"><div class="v">2-3</div><div class="k">false executes per frontier model / 161 scenarios</div></div></div><div class="ax-h3"><span class="n">01</span>What is tested</div><p class="ax-prose">The benchmark's seven-class taxonomy covers every pre-action option with ground-truth Reference Decisions. Each scenario varies who is speaking, whether they are authenticated, what state the vehicle is in, and which tools exist, isolating authorization judgment from driving skill.</p><div class="ax-h3"><span class="n">02</span>Scoreboard</div><p class="ax-prose">The headline table tells the story: API models cluster at 83 to 89% alignment with no statistically significant differences, local models trail badly, and the error columns bite, false executes up to 13.7% for Llama 3.1 8B, clarification misses up to 70% for the small Llama, emergency misses up to 50%.</p><div class="ax-h3"><span class="n">03</span>Structured policy ablation</div><p class="ax-prose">A controlled Llama 3.2 3B ablation shows policy structure matters: 40.1% alignment under the structured authorization policy versus 28.2 to 29.2% under schema-only and generic-safety baselines, though false executes survive.</p><div class="ax-h3"><span class="n">04</span>The line</div><p class="ax-prose">Persistent errors concentrate exactly where humans would intervene, confirmation and manual-control handoffs. The authors' conclusion is blunt: structured LLM decisions cannot stand alone on safety-critical paths.</p><div class="ax-chartbox"><canvas id="ch-260919630v1-0"></canvas><div class="fig-caption">NATIVE CHART · Overall model performance on the 202-scenario benchmark. Brass = author-highlighted.</div></div><table class="ax-tab"><tr><th>Model</th><th>Align.</th><th>False Ex.</th><th>Over-ref.</th><th>Clar. Miss</th><th>Emerg. Miss</th><th>Fmt. NC</th></tr><tr><td>Llama 3.2 3B</td><td>40.1%</td><td>3.7%</td><td>41.5%</td><td>70.0%</td><td>50.0%</td><td>0.0%</td></tr><tr><td>Llama 3.1 8B</td><td>61.4%</td><td>13.7%</td><td>2.4%</td><td>45.0%</td><td>25.0%</td><td>0.0%</td></tr><tr><td>GPT-4o</td><td>83.2%</td><td>1.2%</td><td>4.9%</td><td>25.0%</td><td>0.0%</td><td>0.0%</td></tr><tr><td>Gemini 3.1 Pro Preview</td><td>89.1%</td><td>1.9%</td><td>0.0%</td><td>5.0%</td><td>0.0%</td><td>0.5%</td></tr><tr><td>Gemini Flash</td><td>88.1%</td><td>1.2%</td><td>0.0%</td><td>10.0%</td><td>0.0%</td><td>8.9%</td></tr><tr><td>tabular</td></tr></table><div class="fig-caption">AUTO-TABLE · Overall model performance on the 202-scenario benchmark. · showing 6/6 rows.</div><div class="ax-scan"><div class="scan-tag">SOURCE SCAN · as published</div><img loading="lazy" src="assets/arxiv/260919630v1-0.png" alt="Evaluation pipeline: the LLM maps a contextualized command to one of
+seven autho"/><div class="fig-caption">Fig · Evaluation pipeline: the LLM maps a contextualized command to one of
+seven authorization decisions, which is compared with the Reference Decision
+using alignmen (source: the paper)</div></div><div class="ax-scan"><div class="scan-tag">SOURCE SCAN · as published</div><img loading="lazy" src="assets/arxiv/260919630v1-1.png" alt="Confusion matrices for (a) GPT-4o and (b) Gemini Flash on the 202-scenario bench"/><div class="fig-caption">Fig · Confusion matrices for (a) GPT-4o and (b) Gemini Flash on the 202-scenario benchmark. Rows denote Reference Decisions, and
+columns denote predicted decisions. (source: the paper)</div></div><div class="why"><b>Why it matters</b>Voice agents are moving into cars now; this benchmark draws the exact line, an LLM may draft the authorization decision but execution authority needs independent guardrails.</div><details><summary>Abstract</summary><p class="p-abs">Large language models (LLMs) are increasingly integrated into vehicle voice assistants. But linking natural-language requests to vehicle functions creates a safety-critical authorization problem. Before executing a command, the system must choose whether to execute, refuse, clarify, require confirmation, defer to manual control, trigger an emergency response, or make no tool call. To our knowledge, prior evaluations do not isolate this pre-action decision across speaker role, authentication status, vehicle state, and tool availability. We introduce a 202-scenario benchmark with Reference Decisions under a seven-class taxonomy. We evaluate two local open-weight models and three API-based LLMs using Decision Alignment and safety-specific error metrics. Alignment ranges from 40.1% for Llama 3.2 3B to 89.1% for Gemini 3.1 Pro Preview. The API-based models score between 83.2% and 89.1%, with no statistically significant differences among them. Even these models produce two to three False Executes among 161 non-execution scenarios, and persistent errors remain in confirmation and manual-control decisions. A controlled Llama 3.2 3B ablation increases alignment to 40.1% under the structured authorization policy, versus 28.2-29.2% under schema-only and generic-safety baselines, but it does not eliminate False Executes. Structured LLM decisions are therefore insufficient as a standalone safety mechanism, and deployment requires an independent enforcement layer that verifies tool permissions and vehicle-state constraints before invoking any vehicle function.</p></details><div class="sig-row"><span class="sig-chip">benchmark</span><span class="sig-chip">safety</span><span class="sig-chip">voice-agents</span><span class="sig-chip">automotive</span><span class="sig-chip">authorization</span><a class="sig-link" href="https://arxiv.org/abs/2609.19630">↗ arXiv</a><a class="sig-link" href="https://arxiv.org/pdf/2609.19630">↗ PDF</a></div></article>
+</main>
+<footer><div class="wrap fgrid">
+  <div><div class="fb">Sig<em>nal</em></div><p>A hype-free daily AI newspaper. This unpack is built from the paper itself — figures, tables and equations ship as published.</p></div>
+  <div><h5>Paper</h5><ul><li><a href="arxiv.html">Arxiv desk</a></li><li><a href="index.html">Front page</a></li></ul></div>
+</div>
+<div class="foot">Signal Arxiv deep read · 0 fabricated · © <span id="yr">2026</span> Signal</div>
+</footer>
+<button id="toTop" aria-label="Back to top">↑</button>
+<script src="assets/site.js"></script>
+<script>document.addEventListener('DOMContentLoaded',function(){if(!window.Chart)return;var cs=getComputedStyle(document.documentElement);var brass=cs.getPropertyValue('--brass').trim()||'#C6A15B';var ash=cs.getPropertyValue('--ash').trim()||'#9A917F';Chart.defaults.font.family="'JetBrains Mono',monospace";var grid={color:cs.getPropertyValue('--hairline-2').trim()||'#3B322B'};new Chart(document.getElementById('ch-260919630v1-0'),{type:'bar',data:{labels:["Llama 3.2 3B", "Llama 3.1 8B", "GPT-4o", "Gemini 3.1 Pro Preview", "Gemini Flash"],datasets:[{label:"Align.",data:[40.1, 61.4, 83.2, 89.1, 88.1],backgroundColor:["ASH", "ASH", "ASH", "ASH", "ASH"].map(c=>c==='BRASS'?brass:(c==='LINE'?brass:ash))}]},options:{indexAxis:'y',responsive:true,plugins:{legend:{display:false}},scales:{x:{grid:grid},y:{grid:{display:false}}}}});});</script>
+</body>
+</html>

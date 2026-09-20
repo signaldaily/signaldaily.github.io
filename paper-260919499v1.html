@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="noir">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Signal">
+<meta property="og:title" content="Sample Count Is Not Enough: Candidate-Generation Strategy Shapes the Energy and Performance of LLM Test-Time Scaling — Signal Arxiv">
+<meta property="og:description" content="Test-time scaling budgets are quoted as N, the number of candidates, but N says nothing about execution: eight candidates can come from one batched call or eight serial ones. Holding N fixed at 8, eig">
+<meta property="og:url" content="https://signaldaily.github.io/paper-260919499v1.html">
+<meta property="og:image" content="https://signaldaily.github.io/assets/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Sample Count Is Not Enough: Candidate-Generation Strategy Shapes the Energy and Performance of LLM Test-Time Scaling — Signal Arxiv">
+<meta name="twitter:description" content="Test-time scaling budgets are quoted as N, the number of candidates, but N says nothing about execution: eight candidates can come from one batched call or eight serial ones. Holding N fixed at 8, eig">
+<meta name="theme-color" content="#0E0C0A">
+<title>Sample Count Is Not Enough: Candidate-Generation Strategy Shapes the Energy and Performance of LLM Test-Time Scaling — Signal Arxiv</title>
+<link rel="icon" type="image/svg+xml" href="assets/signal-favicon.svg" data-brand="signal">
+<link rel="apple-touch-icon" sizes="180x180" href="assets/apple-touch-icon.png" data-brand="signal">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,700;1,9..144,400;1,9..144,600&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css">
+<link rel="stylesheet" href="assets/styles.css">
+<script defer src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+<style>
+.ax-tldr{border:1px solid var(--hairline-2);border-left:3px solid var(--brass);border-radius:0 6px 6px 0;background:var(--panel);padding:20px 22px;margin:20px 0}
+.ax-tldr .k{font-family:"JetBrains Mono",monospace;font-size:10px;letter-spacing:.18em;color:var(--brass);text-transform:uppercase;display:block;margin-bottom:8px}
+.ax-tldr p{font-size:17px;line-height:1.65;margin:0;max-width:70ch}
+.ax-h3{font-family:"JetBrains Mono",monospace;font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--ink);margin:34px 0 10px;display:flex;align-items:center;gap:10px}
+.ax-h3::after{content:"";flex:1;height:1px;background:var(--hairline-2)}
+.ax-h3 .n{color:var(--brass)}
+.ax-prose{font-size:15.5px;line-height:1.8;color:var(--ink-soft);max-width:75ch;margin:0 0 12px}
+.ax-prose b{color:var(--ink)}
+.ax-math{background:var(--panel);border:1px solid var(--hairline);border-radius:6px;padding:20px 22px;margin:14px 0;overflow-x:auto}
+.ax-math .eq-label{font-family:"JetBrains Mono",monospace;font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:var(--brass);margin-bottom:10px}
+.ax-chartbox{background:var(--panel);border:1px solid var(--hairline);border-radius:6px;padding:22px;margin:16px 0}
+.ax-chartbox canvas{max-height:420px}
+.ax-scan{background:#F4F1EA;border:1px solid var(--hairline-2);border-radius:8px;padding:14px;margin:16px 0}
+.ax-scan img{width:100%;height:auto;display:block;border-radius:4px;background:#fff}
+.scan-tag{font-family:"JetBrains Mono",monospace;font-size:10px;letter-spacing:.18em;color:#6E6455;text-transform:uppercase;margin-bottom:10px}
+table.ax-tab{width:100%;border-collapse:collapse;margin:14px 0;font-size:13px;line-height:1.55}
+table.ax-tab th{font-family:"JetBrains Mono",monospace;font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--brass);text-align:left;padding:10px 12px;border-bottom:2px solid var(--hairline-2)}
+table.ax-tab td{padding:9px 12px;border-bottom:1px solid var(--hairline);color:var(--ink-soft);vertical-align:top}
+table.ax-tab td:first-child{font-family:"JetBrains Mono",monospace;font-size:11.5px;color:var(--ink);white-space:nowrap}
+@media(max-width:800px){table.ax-tab{display:block;overflow-x:auto}table.ax-tab th,table.ax-tab td{min-width:92px}}
+
+.deep-back{display:inline-block;margin:18px 0 4px;font-family:"JetBrains Mono",monospace;font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--brass);text-decoration:none}
+.deep-kick{font-family:"JetBrains Mono",monospace;font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--brass);margin:6px 0 14px}
+</style>
+</head>
+<body>
+<div id="bootVeil" aria-hidden="true"><div class="bv-inner"><div class="bv-ring"></div><div class="bv-brand">Sig<em>nal</em></div><div class="bv-rule"><span></span></div><div class="bv-status">Reading edition…</div></div></div>
+<script>(function(){var v=document.getElementById('bootVeil');if(!v)return;var rm=window.matchMedia('(prefers-reduced-motion: reduce)').matches;var seen=null;try{seen=sessionStorage.getItem('signal-seen');}catch(e){}function lift(){v.classList.add('lifted');setTimeout(function(){v.remove();},500);try{sessionStorage.setItem('signal-seen','1');}catch(e){}}if(rm||seen){requestAnimationFrame(function(){requestAnimationFrame(lift);});return;}var msgs=['Reading edition…','Inking figures…','Verifying links…'],mi=0,el=v.querySelector('.bv-status'),tm=setInterval(function(){mi=(mi+1)%msgs.length;if(el)el.textContent=msgs[mi];},340);function done(){clearInterval(tm);lift();}if(document.readyState==='complete'){setTimeout(done,320);}else{window.addEventListener('load',function(){setTimeout(done,320);});setTimeout(done,1500);}})();</script>
+<div id="progress"></div>
+<div class="strip"><div class="wrap">
+  <span>Signal · Arxiv desk · Deep read</span>
+  <span class="op"><i></i>2026-09-16</span>
+</div></div>
+<header class="masthead">
+  <button class="theme-btn" data-theme-toggle><span data-theme-label>☀ Paper</span></button>
+  <div class="brand"><svg class="brand-mark" viewBox="0 0 24 24" aria-hidden="true" data-brand="signal" fill="none" stroke="#C6A15B" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 13a2 2 0 0 0 2-2V7a2 2 0 0 1 4 0v13a2 2 0 0 0 4 0V4a2 2 0 0 1 4 0v13a2 2 0 0 0 4 0v-4a2 2 0 0 1 2-2"/></svg>Sig<em>nal</em></div>
+  <div class="tag">Arxiv desk · the papers behind the news</div>
+</header>
+<nav class="mainnav" id="mainnav"><div class="wrap">
+  <a class="home" href="index.html">Front Page</a>
+  <a href="releases.html">Releases</a>
+  <a href="policy.html">Policy</a>
+  <a href="research.html">Research</a>
+  <a href="voices.html">Voices</a>
+  <a href="other.html">Other</a>
+  <a href="arxiv.html" class="active">Arxiv</a>
+  <a href="index.html#archive">Archive</a>
+</div></nav>
+<main class="wrap">
+  <a class="deep-back" href="arxiv.html">← All papers</a>
+  <div class="deep-kick">Deep read · fully unpacked</div>
+  <article class="paper v2" id="paper-260919499v1"><div class="ed-head" style="margin:0 0 2px"><span class="ed-d">SEP 16 · cs.LG, cs.DC, cs.PF</span><a class="ed-t" href="https://arxiv.org/abs/2609.19499">Sample Count Is Not Enough: Candidate-Generation Strategy Shapes the Energy and Performance of LLM Test-Time Scaling</a><span class="front-chip">EVALUATION</span><span class="front-chip">DEEP READ</span></div><p class="p-authors">Mobina Kashaniyan, Ali Jannesari</p><div class="ax-tldr"><span class="k">TL;DR</span><p>Test-time scaling budgets are quoted as N, the number of candidates, but N says nothing about execution: eight candidates can come from one batched call or eight serial ones. Holding N fixed at 8, eight serial single-candidate calls burn 4.64 to 4.86 times the gross GPU-device energy with 5.77 to 6.12 times the P95 latency of one batched call on A100s. N counts candidates, not cost; the schedule is the cost.</p></div><div class="stats-row"><div class="stat"><div class="v">4.64-4.86x</div><div class="k">serial vs batched GPU energy</div></div><div class="stat"><div class="v">5.77-6.12x</div><div class="k">serial vs batched P95 latency</div></div><div class="stat"><div class="v">+8.4 / +18.4pp</div><div class="k">accuracy N 1 to 8, Phi-3 / Qwen</div></div><div class="stat"><div class="v">7.54 to 44.98s</div><div class="k">Phi-3 mean latency, batched to serial</div></div></div><div class="ax-h3"><span class="n">01</span>N is not a cost metric</div><p class="ax-prose">One batched generation call with eight candidates and eight sequential single-candidate calls produce the identical candidate budget through radically different execution, yet the literature reports only N. The paper's generation-schedule diagram makes the four tested schedules, 1x8, 2x4, 4x2 and 8x1, visually explicit.</p><div class="ax-h3"><span class="n">02</span>Accuracy</div><p class="ax-prose">Raising N from 1 to 8 on 500 GSM8K prompts improves accuracy 8.4 points for Phi-3-mini and 18.4 for Qwen2.5-1.5B, confirming the motive for scaling, while saying nothing about its systems price.</p><div class="ax-h3"><span class="n">03</span>The bill</div><p class="ax-prose">The fixed-N sweep table prices each schedule: Phi-3 mean latency climbs 7.54 to 14.03 to 25.22 to 44.98 seconds across the four schedules with P95 reaching 66.83, Qwen mirrors it, and the energy and latency ratios replicate across three independently scheduled A100 nodes.</p><div class="ax-h3"><span class="n">04</span>Rule</div><p class="ax-prose">Report the schedule alongside N, and batch candidates by default. The serial tax is pure overhead: identical candidates, identical accuracy, five times the energy.</p><div class="ax-chartbox"><canvas id="ch-260919499v1-0"></canvas><div class="fig-caption">NATIVE CHART · Fixed-&#36;N=8&#36; candidate-generation strategy sweep on A100-SXM4 80\,GB GPUs. Values are mean&#36;\pm&#36;SD across three repetitions. Brass = author-highlighted.</div></div><table class="ax-tab"><tr><th>Model</th><th>Strategy</th><th>Calls/q</th><th>Cand./call</th><th>Mean s</th><th>P95 s</th><th>Tok/s</th><th>J/q</th><th>J/token</th><th>GPU-h/1k</th></tr><tr><td>Phi-3</td><td>1 call x 8</td><td>1</td><td>8</td><td>7.54</td><td>11.58</td><td>258.7</td><td>1355</td></tr><tr><td>Phi-3</td><td>2 calls x 4</td><td>2</td><td>4</td><td>14.03</td><td>21.00</td><td>139.5</td><td>2210</td></tr><tr><td>Phi-3</td><td>4 calls x 2</td><td>4</td><td>2</td><td>25.22</td><td>37.13</td><td>77.0</td><td>3670</td></tr><tr><td>Phi-3</td><td>8 calls x 1</td><td>8</td><td>1</td><td>44.98</td><td>66.83</td><td>43.3</td><td>6286</td></tr><tr><td>Qwen</td><td>1 call x 8</td><td>1</td><td>8</td><td>7.66</td><td>10.53</td><td>277.5</td><td>936</td></tr><tr><td>Qwen</td><td>2 calls x 4</td><td>2</td><td>4</td><td>13.92</td><td>20.78</td><td>152.6</td><td>1558</td></tr><tr><td>Qwen</td><td>4 calls x 2</td><td>4</td><td>2</td><td>24.85</td><td>37.59</td><td>85.7</td><td>2683</td></tr><tr><td>Qwen</td><td>8 calls x 1</td><td>8</td><td>1</td><td>42.33</td><td>64.44</td><td>49.8</td><td>4547</td></tr><tr><td>tabular</td></tr></table><div class="fig-caption">AUTO-TABLE · Fixed-&#36;N=8&#36; candidate-generation strategy sweep on A100-SXM4 80\,GB GPUs. Values are mean&#36;\pm&#36;SD across three repetitions. · showing 9/9 rows.</div><div class="ax-scan"><div class="scan-tag">SOURCE SCAN · as published</div><img loading="lazy" src="assets/arxiv/260919499v1-0.png" alt="Generation schedules for a fixed candidate budget of &#36;N=8&#36;.
+    All schedules us"/><div class="fig-caption">Fig · Generation schedules for a fixed candidate budget of &#36;N=8&#36;.
+    All schedules use the same prompt, generate eight candidates, and apply
+    the same plurality v (source: the paper)</div></div><div class="why"><b>Why it matters</b>Everyone reports N; nobody reports the schedule. This makes the hidden tax visible and hands practitioners a free efficiency win.</div><details><summary>Abstract</summary><p class="p-abs">Test-time scaling can improve large language model reasoning by generating and combining multiple candidate responses. In sampling-based methods, the inference budget is often described by the number of generated candidates, N. However, N tells us how many candidates are generated, not how they are executed. The same candidate budget can be produced in one batched generation call or split across several sequential calls with smaller batch sizes. We first study the effect of increasing N on reasoning accuracy using Phi-3-mini and Qwen2.5-1.5B on 500 GSM8K prompts. As expected, increasing N from 1 to 8 improves accuracy by 8.4 percentage points for Phi-3-mini and 18.4 points for Qwen2.5-1.5B. However, accuracy alone does not show the systems cost of using a larger candidate budget. We therefore fix N = 8 and compare four generation schedules: 1x8, 2x4, 4x2, and 8x1, where axb denotes a generation calls with b candidates per call. We measure latency, throughput, GPU-hours, and gross GPU-device energy while keeping the total candidate count fixed. On A100 GPUs, eight serial calls use 4.64-4.86x as much gross GPU-device energy and have 5.77-6.12x the P95 latency of one batched call with eight candidates. The same pattern appears across three independently scheduled A100 nodes per model and in short-output SciQ/V100 experiments. These results show that candidate count alone is not enough to describe the systems cost of multi-candidate test-time scaling. When candidates are independent and memory allows it, fewer generation calls with larger batch sizes are more efficient. Evaluations should therefore report not only candidate count and accuracy, but also generation schedule and GPU-level systems metrics.</p></details><div class="sig-row"><span class="sig-chip">test-time-scaling</span><span class="sig-chip">efficiency</span><span class="sig-chip">energy</span><span class="sig-chip">inference</span><span class="sig-chip">benchmarking</span><a class="sig-link" href="https://arxiv.org/abs/2609.19499">↗ arXiv</a><a class="sig-link" href="https://arxiv.org/pdf/2609.19499">↗ PDF</a></div></article>
+</main>
+<footer><div class="wrap fgrid">
+  <div><div class="fb">Sig<em>nal</em></div><p>A hype-free daily AI newspaper. This unpack is built from the paper itself — figures, tables and equations ship as published.</p></div>
+  <div><h5>Paper</h5><ul><li><a href="arxiv.html">Arxiv desk</a></li><li><a href="index.html">Front page</a></li></ul></div>
+</div>
+<div class="foot">Signal Arxiv deep read · 0 fabricated · © <span id="yr">2026</span> Signal</div>
+</footer>
+<button id="toTop" aria-label="Back to top">↑</button>
+<script src="assets/site.js"></script>
+<script>document.addEventListener('DOMContentLoaded',function(){if(!window.Chart)return;var cs=getComputedStyle(document.documentElement);var brass=cs.getPropertyValue('--brass').trim()||'#C6A15B';var ash=cs.getPropertyValue('--ash').trim()||'#9A917F';Chart.defaults.font.family="'JetBrains Mono',monospace";var grid={color:cs.getPropertyValue('--hairline-2').trim()||'#3B322B'};new Chart(document.getElementById('ch-260919499v1-0'),{type:'bar',data:{labels:["Phi-3 \u2014 1 call x 8", "Phi-3 \u2014 2 calls x 4", "Phi-3 \u2014 4 calls x 2", "Phi-3 \u2014 8 calls x 1", "Qwen \u2014 1 call x 8", "Qwen \u2014 2 calls x 4", "Qwen \u2014 4 calls x 2", "Qwen \u2014 8 calls x 1"],datasets:[{label:"Mean s",data:[7.54, 14.03, 25.22, 44.98, 7.66, 13.92, 24.85, 42.33],backgroundColor:["ASH", "ASH", "ASH", "ASH", "ASH", "ASH", "ASH", "ASH"].map(c=>c==='BRASS'?brass:(c==='LINE'?brass:ash))}]},options:{indexAxis:'y',responsive:true,plugins:{legend:{display:false}},scales:{x:{grid:grid},y:{grid:{display:false}}}}});});</script>
+</body>
+</html>

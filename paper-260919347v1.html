@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="noir">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Signal">
+<meta property="og:title" content="Kinematics-Grounded Agentic AI for Robotic Additive Manufacturing Process Planning — Signal Arxiv">
+<meta property="og:description" content="Slicer plans that look favorable in part coordinates can turn infeasible or robotically unfavorable on a real manipulator, because slicing, orientation and placement interact through kinematics. A-RAM">
+<meta property="og:url" content="https://signaldaily.github.io/paper-260919347v1.html">
+<meta property="og:image" content="https://signaldaily.github.io/assets/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Kinematics-Grounded Agentic AI for Robotic Additive Manufacturing Process Planning — Signal Arxiv">
+<meta name="twitter:description" content="Slicer plans that look favorable in part coordinates can turn infeasible or robotically unfavorable on a real manipulator, because slicing, orientation and placement interact through kinematics. A-RAM">
+<meta name="theme-color" content="#0E0C0A">
+<title>Kinematics-Grounded Agentic AI for Robotic Additive Manufacturing Process Planning — Signal Arxiv</title>
+<link rel="icon" type="image/svg+xml" href="assets/signal-favicon.svg" data-brand="signal">
+<link rel="apple-touch-icon" sizes="180x180" href="assets/apple-touch-icon.png" data-brand="signal">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,700;1,9..144,400;1,9..144,600&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css">
+<link rel="stylesheet" href="assets/styles.css">
+<script defer src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+<style>
+.ax-tldr{border:1px solid var(--hairline-2);border-left:3px solid var(--brass);border-radius:0 6px 6px 0;background:var(--panel);padding:20px 22px;margin:20px 0}
+.ax-tldr .k{font-family:"JetBrains Mono",monospace;font-size:10px;letter-spacing:.18em;color:var(--brass);text-transform:uppercase;display:block;margin-bottom:8px}
+.ax-tldr p{font-size:17px;line-height:1.65;margin:0;max-width:70ch}
+.ax-h3{font-family:"JetBrains Mono",monospace;font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--ink);margin:34px 0 10px;display:flex;align-items:center;gap:10px}
+.ax-h3::after{content:"";flex:1;height:1px;background:var(--hairline-2)}
+.ax-h3 .n{color:var(--brass)}
+.ax-prose{font-size:15.5px;line-height:1.8;color:var(--ink-soft);max-width:75ch;margin:0 0 12px}
+.ax-prose b{color:var(--ink)}
+.ax-math{background:var(--panel);border:1px solid var(--hairline);border-radius:6px;padding:20px 22px;margin:14px 0;overflow-x:auto}
+.ax-math .eq-label{font-family:"JetBrains Mono",monospace;font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:var(--brass);margin-bottom:10px}
+.ax-chartbox{background:var(--panel);border:1px solid var(--hairline);border-radius:6px;padding:22px;margin:16px 0}
+.ax-chartbox canvas{max-height:420px}
+.ax-scan{background:#F4F1EA;border:1px solid var(--hairline-2);border-radius:8px;padding:14px;margin:16px 0}
+.ax-scan img{width:100%;height:auto;display:block;border-radius:4px;background:#fff}
+.scan-tag{font-family:"JetBrains Mono",monospace;font-size:10px;letter-spacing:.18em;color:#6E6455;text-transform:uppercase;margin-bottom:10px}
+table.ax-tab{width:100%;border-collapse:collapse;margin:14px 0;font-size:13px;line-height:1.55}
+table.ax-tab th{font-family:"JetBrains Mono",monospace;font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--brass);text-align:left;padding:10px 12px;border-bottom:2px solid var(--hairline-2)}
+table.ax-tab td{padding:9px 12px;border-bottom:1px solid var(--hairline);color:var(--ink-soft);vertical-align:top}
+table.ax-tab td:first-child{font-family:"JetBrains Mono",monospace;font-size:11.5px;color:var(--ink);white-space:nowrap}
+@media(max-width:800px){table.ax-tab{display:block;overflow-x:auto}table.ax-tab th,table.ax-tab td{min-width:92px}}
+
+.deep-back{display:inline-block;margin:18px 0 4px;font-family:"JetBrains Mono",monospace;font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--brass);text-decoration:none}
+.deep-kick{font-family:"JetBrains Mono",monospace;font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--brass);margin:6px 0 14px}
+</style>
+</head>
+<body>
+<div id="bootVeil" aria-hidden="true"><div class="bv-inner"><div class="bv-ring"></div><div class="bv-brand">Sig<em>nal</em></div><div class="bv-rule"><span></span></div><div class="bv-status">Reading edition…</div></div></div>
+<script>(function(){var v=document.getElementById('bootVeil');if(!v)return;var rm=window.matchMedia('(prefers-reduced-motion: reduce)').matches;var seen=null;try{seen=sessionStorage.getItem('signal-seen');}catch(e){}function lift(){v.classList.add('lifted');setTimeout(function(){v.remove();},500);try{sessionStorage.setItem('signal-seen','1');}catch(e){}}if(rm||seen){requestAnimationFrame(function(){requestAnimationFrame(lift);});return;}var msgs=['Reading edition…','Inking figures…','Verifying links…'],mi=0,el=v.querySelector('.bv-status'),tm=setInterval(function(){mi=(mi+1)%msgs.length;if(el)el.textContent=msgs[mi];},340);function done(){clearInterval(tm);lift();}if(document.readyState==='complete'){setTimeout(done,320);}else{window.addEventListener('load',function(){setTimeout(done,320);});setTimeout(done,1500);}})();</script>
+<div id="progress"></div>
+<div class="strip"><div class="wrap">
+  <span>Signal · Arxiv desk · Deep read</span>
+  <span class="op"><i></i>2026-09-16</span>
+</div></div>
+<header class="masthead">
+  <button class="theme-btn" data-theme-toggle><span data-theme-label>☀ Paper</span></button>
+  <div class="brand"><svg class="brand-mark" viewBox="0 0 24 24" aria-hidden="true" data-brand="signal" fill="none" stroke="#C6A15B" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 13a2 2 0 0 0 2-2V7a2 2 0 0 1 4 0v13a2 2 0 0 0 4 0V4a2 2 0 0 1 4 0v13a2 2 0 0 0 4 0v-4a2 2 0 0 1 2-2"/></svg>Sig<em>nal</em></div>
+  <div class="tag">Arxiv desk · the papers behind the news</div>
+</header>
+<nav class="mainnav" id="mainnav"><div class="wrap">
+  <a class="home" href="index.html">Front Page</a>
+  <a href="releases.html">Releases</a>
+  <a href="policy.html">Policy</a>
+  <a href="research.html">Research</a>
+  <a href="voices.html">Voices</a>
+  <a href="other.html">Other</a>
+  <a href="arxiv.html" class="active">Arxiv</a>
+  <a href="index.html#archive">Archive</a>
+</div></nav>
+<main class="wrap">
+  <a class="deep-back" href="arxiv.html">← All papers</a>
+  <div class="deep-kick">Deep read · fully unpacked</div>
+  <article class="paper v2" id="paper-260919347v1"><div class="ed-head" style="margin:0 0 2px"><span class="ed-d">SEP 16 · cs.RO, cs.AI, eess.SY</span><a class="ed-t" href="https://arxiv.org/abs/2609.19347">Kinematics-Grounded Agentic AI for Robotic Additive Manufacturing Process Planning</a><span class="front-chip">AGENCY</span><span class="front-chip">DEEP READ</span></div><p class="p-authors">Jingzhan Ge, Ruimin Chen, Azadeh Haghighi, Jiong Tang, Farhad Imani</p><div class="ax-tldr"><span class="k">TL;DR</span><p>Slicer plans that look favorable in part coordinates can turn infeasible or robotically unfavorable on a real manipulator, because slicing, orientation and placement interact through kinematics. A-RAM closes the loop: an LLM triage agent turns intent and a part file into a schema-constrained request, a deterministic Planning Agent runs the search, and domain tools score slicing, placement, inverse kinematics, trajectory timing, Joint-6 jerk and extrusion, all watched by a layer-wise digital shadow.</p></div><div class="stats-row"><div class="stat"><div class="v">6-axis</div><div class="k">robotic-arm AM cell</div></div><div class="stat"><div class="v">6</div><div class="k">scored quantities incl. J6 jerk and extrusion</div></div><div class="stat"><div class="v">12,220 mm</div><div class="k">rectilinear extrusion at 90% infill</div></div><div class="stat"><div class="v">1,135 s</div><div class="k">rectilinear fill time at 90%</div></div></div><div class="ax-h3"><span class="n">01</span>The coupling problem</div><p class="ax-prose">Robotic additive manufacturing escapes gantry kinematics but entangles decisions: slicer choices plus part orientation set the path, while orientation plus workspace placement decide kinematic feasibility. Existing AM tools, LLM decision aids and digital shadows never evaluate these coupled choices together before execution.</p><div class="ax-h3"><span class="n">02</span>A-RAM</div><p class="ax-prose">An agent-specialist-tool framework: the LLM interprets objectives and constraints and encodes its reasoning in a schema-constrained request, the Planning Agent instantiates the matching search workflow, and quantitative tools supply the evidence for each candidate plan.</p><div class="ax-h3"><span class="n">03</span>Evidence</div><p class="ax-prose">Evaluated on a six-axis robotic-arm cell through case studies spanning expert-specified planning, goal-only planning, objective-dependent infill screening and geometry-driven planning, with digital-shadow visualization monitoring deposition layer by layer during printing.</p><div class="ax-h3"><span class="n">04</span>Infill screening</div><p class="ax-prose">The headline table screens realizable infill patterns at 90 and 100% density: rectilinear logs 12,220.33 mm extrusion over 8,815.74 mm of path in 1,135.08 s at 90%, while concentric reaches 12,632.71 mm over 9,228.12 mm at 100%, with grid, triangles, stars and line filling out the comparison.</p><table class="ax-tab"><tr><th>2-45-7
+Infill pattern</th><th>L_e (mm)</th><th>Infill path (mm)</th><th>t_f (s)</th><th>L_e (mm)</th><th>Infill path (mm)</th><th>t_f (s)</th></tr><tr><td>rectilinear</td><td>12220.33</td><td>8815.74</td><td>1135.08</td><td>12486.36</td><td>9081.77</td><td>1137.91</td></tr><tr><td>grid</td><td>12167.21</td><td>8762.61</td><td>1200.27</td><td>--</td><td>--</td><td>--</td></tr><tr><td>triangles</td><td>12157.48</td><td>8752.88</td><td>1186.18</td><td>--</td><td>--</td><td>--</td></tr><tr><td>stars</td><td>12071.30</td><td>8666.71</td><td>1183.80</td><td>--</td><td>--</td><td>--</td></tr><tr><td>line</td><td>12188.57</td><td>8783.97</td><td>1172.86</td><td>--</td><td>--</td><td>--</td></tr><tr><td>concentric</td><td>12229.98</td><td>8825.38</td><td>1192.90</td><td>12632.71</td><td>9228.12</td><td>1247.24</td></tr><tr><td>honeycomb</td><td>12295.04</td><td>8890.45</td><td>1289.16</td><td>--</td><td>--</td><td>--</td></tr><tr><td>3dhoneycomb</td><td>12652.44</td><td>9247.84</td><td>1306.53</td><td>--</td><td>--</td><td>--</td></tr><tr><td>gyroid</td><td>11995.10</td><td>8590.50</td><td>1184.12</td><td>--</td><td>--</td><td>--</td></tr><tr><td>cubic</td><td>12121.89</td><td>8717.30</td><td>1203.00</td><td>--</td><td>--</td><td>--</td></tr><tr><td>adaptivecubic</td><td>11417.62</td><td>8013.03</td><td>1113.70</td><td>--</td><td>--</td><td>--</td></tr><tr><td>supportcubic</td><td>11417.62</td><td>8013.03</td><td>1113.70</td><td>--</td><td>--</td><td>--</td></tr><tr><td>hilbertcurve</td><td>11703.31</td><td>8298.72</td><td>1753.49</td><td>12025.40</td><td>8620.81</td><td>1900.25</td></tr><tr><td>archimedeanchords</td><td>11728.88</td><td>8324.29</td><td>1244.84</td><td>12023.45</td><td>8618.85</td><td>1317.26</td></tr></table><div class="fig-caption">AUTO-TABLE · Pattern-screening results for realizable infill candidates at 90\% and 100\% infill densities. · showing 14/17 rows.</div><div class="ax-scan"><div class="scan-tag">SOURCE SCAN · as published</div><img loading="lazy" src="assets/arxiv/260919347v1-0.png" alt="Overview of A-RAM from natural-language manufacturing intent to tool-grounded ca"/><div class="fig-caption">Fig · Overview of A-RAM from natural-language manufacturing intent to tool-grounded candidate evaluation and monitored execution. Candidate artifacts are retained thr (source: the paper)</div></div><div class="ax-scan"><div class="scan-tag">SOURCE SCAN · as published</div><img loading="lazy" src="assets/arxiv/260919347v1-1.png" alt="A-RAM agent--specialist--tool architecture for robotic AM. The LLM-based Triage "/><div class="fig-caption">Fig · A-RAM agent--specialist--tool architecture for robotic AM. The LLM-based Triage Agent interprets the manufacturing objective and constraints, identifies the pla (source: the paper)</div></div><div class="ax-scan"><div class="scan-tag">SOURCE SCAN · as published</div><img loading="lazy" src="assets/arxiv/260919347v1-2.png" alt="Layer-wise deposition visualization from the digital-shadow pipeline. Screenshot"/><div class="fig-caption">Fig · Layer-wise deposition visualization from the digital-shadow pipeline. Screenshots are taken at the end of the second-layer infill for (a) fastest, 90\% infill,  (source: the paper)</div></div><div class="why"><b>Why it matters</b>This is the template for grounding LLM agents in physical processes, deterministic tools carry the numbers while the LLM carries the intent.</div><details><summary>Abstract</summary><p class="p-abs">Robotic additive manufacturing (AM) extends material-extrusion printing beyond gantry kinematics but makes process planning robot-dependent. A slicer-generated plan that appears favorable in part coordinates can become infeasible or robotically unfavorable on a manipulator because slicer-process decisions and part orientation determine the generated path, while part orientation and workspace placement affect its kinematic realization. Existing AM tools, large language model (LLM)-based decision-support methods, and digital-shadow systems do not provide integrated pre-execution evaluation of these coupled decisions. This paper presents agentic robotic additive manufacturing (A-RAM), an agent-specialist-tool framework that converts user intent and a part file into traceable, execution-ready plans. The LLM interprets manufacturing objectives and constraints, identifies prescribed and searchable planning variables, and encodes this reasoning in a schema-constrained request; a deterministic Planning Agent instantiates the corresponding search workflow, while domain tools compute quantitative evidence for slicing, placement, inverse kinematics, trajectory timing, Joint-6 jerk, and extrusion. The framework is evaluated on a six-axis robotic-arm AM cell through three case studies covering expert-specified planning, goal-only planning, objective-dependent infill screening, and geometry-dependent orientation-placement selection. Across the evaluated candidate sets, selected plans achieve up to 53.5% lower maximum Joint-6 jerk and 48.3% lower mean absolute Joint-6 jerk than the least favorable valid candidates, while objective-specific infill screening yields motion-plan completion times up to 40.1% shorter and extrusion paths up to 12.7% shorter than the corresponding least favorable screened patterns.</p></details><div class="sig-row"><span class="sig-chip">robotics</span><span class="sig-chip">agents</span><span class="sig-chip">manufacturing</span><span class="sig-chip">planning</span><span class="sig-chip">digital-twin</span><a class="sig-link" href="https://arxiv.org/abs/2609.19347">↗ arXiv</a><a class="sig-link" href="https://arxiv.org/pdf/2609.19347">↗ PDF</a></div></article>
+</main>
+<footer><div class="wrap fgrid">
+  <div><div class="fb">Sig<em>nal</em></div><p>A hype-free daily AI newspaper. This unpack is built from the paper itself — figures, tables and equations ship as published.</p></div>
+  <div><h5>Paper</h5><ul><li><a href="arxiv.html">Arxiv desk</a></li><li><a href="index.html">Front page</a></li></ul></div>
+</div>
+<div class="foot">Signal Arxiv deep read · 0 fabricated · © <span id="yr">2026</span> Signal</div>
+</footer>
+<button id="toTop" aria-label="Back to top">↑</button>
+<script src="assets/site.js"></script>
+
+</body>
+</html>
