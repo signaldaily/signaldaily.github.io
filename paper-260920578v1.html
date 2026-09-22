@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="noir">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Signal">
+<meta property="og:title" content="NS3Learn: Transferring 5G NR Mode-2 Reception Realism from ns-3 to the Veins/SUMO Stack for Connected-Vehicle Safety Assessment — Signal Arxiv">
+<meta property="og:description" content="Ignoring radio resource competition in 5G sidelink Mode-2 inflates delivery rates in dense traffic. NS3Learn distills full-protocol realism into a closed-form model that ports between simulators witho">
+<meta property="og:url" content="https://signaldaily.github.io/paper-260920578v1.html">
+<meta property="og:image" content="https://signaldaily.github.io/assets/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="NS3Learn: Transferring 5G NR Mode-2 Reception Realism from ns-3 to the Veins/SUMO Stack for Connected-Vehicle Safety Assessment — Signal Arxiv">
+<meta name="twitter:description" content="Ignoring radio resource competition in 5G sidelink Mode-2 inflates delivery rates in dense traffic. NS3Learn distills full-protocol realism into a closed-form model that ports between simulators witho">
+<meta name="theme-color" content="#0E0C0A">
+<title>NS3Learn: Transferring 5G NR Mode-2 Reception Realism from ns-3 to the Veins/SUMO Stack for Connected-Vehicle Safety Assessment — Signal Arxiv</title>
+<link rel="icon" type="image/svg+xml" href="assets/signal-favicon.svg" data-brand="signal">
+<link rel="apple-touch-icon" sizes="180x180" href="assets/apple-touch-icon.png" data-brand="signal">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,700;1,9..144,400;1,9..144,600&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css">
+<link rel="stylesheet" href="assets/styles.css">
+<script defer src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+<style>
+.ax-tldr{border:1px solid var(--hairline-2);border-left:3px solid var(--brass);border-radius:0 6px 6px 0;background:var(--panel);padding:20px 22px;margin:20px 0}
+.ax-tldr .k{font-family:"JetBrains Mono",monospace;font-size:10px;letter-spacing:.18em;color:var(--brass);text-transform:uppercase;display:block;margin-bottom:8px}
+.ax-tldr p{font-size:17px;line-height:1.65;margin:0;max-width:70ch}
+.ax-h3{font-family:"JetBrains Mono",monospace;font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--ink);margin:34px 0 10px;display:flex;align-items:center;gap:10px}
+.ax-h3::after{content:"";flex:1;height:1px;background:var(--hairline-2)}
+.ax-h3 .n{color:var(--brass)}
+.ax-prose{font-size:15.5px;line-height:1.8;color:var(--ink-soft);max-width:75ch;margin:0 0 12px}
+.ax-prose b{color:var(--ink)}
+.ax-math{background:var(--panel);border:1px solid var(--hairline);border-radius:6px;padding:20px 22px;margin:14px 0;overflow-x:auto}
+.ax-math .eq-label{font-family:"JetBrains Mono",monospace;font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:var(--brass);margin-bottom:10px}
+.ax-chartbox{background:var(--panel);border:1px solid var(--hairline);border-radius:6px;padding:22px;margin:16px 0}
+.ax-chartbox canvas{max-height:420px}
+.ax-scan{background:#F4F1EA;border:1px solid var(--hairline-2);border-radius:8px;padding:14px;margin:16px 0}
+.ax-scan img{width:100%;height:auto;display:block;border-radius:4px;background:#fff}
+.scan-tag{font-family:"JetBrains Mono",monospace;font-size:10px;letter-spacing:.18em;color:#6E6455;text-transform:uppercase;margin-bottom:10px}
+table.ax-tab{width:100%;border-collapse:collapse;margin:14px 0;font-size:13px;line-height:1.55}
+table.ax-tab th{font-family:"JetBrains Mono",monospace;font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--brass);text-align:left;padding:10px 12px;border-bottom:2px solid var(--hairline-2)}
+table.ax-tab td{padding:9px 12px;border-bottom:1px solid var(--hairline);color:var(--ink-soft);vertical-align:top}
+table.ax-tab td:first-child{font-family:"JetBrains Mono",monospace;font-size:11.5px;color:var(--ink);white-space:nowrap}
+@media(max-width:800px){table.ax-tab{display:block;overflow-x:auto}table.ax-tab th,table.ax-tab td{min-width:92px}}
+
+.deep-back{display:inline-block;margin:18px 0 4px;font-family:"JetBrains Mono",monospace;font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--brass);text-decoration:none}
+.deep-kick{font-family:"JetBrains Mono",monospace;font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--brass);margin:6px 0 14px}
+</style>
+</head>
+<body>
+<div id="bootVeil" aria-hidden="true"><div class="bv-inner"><div class="bv-ring"></div><div class="bv-brand">Sig<em>nal</em></div><div class="bv-rule"><span></span></div><div class="bv-status">Reading edition…</div></div></div>
+<script>(function(){var v=document.getElementById('bootVeil');if(!v)return;var rm=window.matchMedia('(prefers-reduced-motion: reduce)').matches;var seen=null;try{seen=sessionStorage.getItem('signal-seen');}catch(e){}function lift(){v.classList.add('lifted');setTimeout(function(){v.remove();},500);try{sessionStorage.setItem('signal-seen','1');}catch(e){}}if(rm||seen){requestAnimationFrame(function(){requestAnimationFrame(lift);});return;}var msgs=['Reading edition…','Inking figures…','Verifying links…'],mi=0,el=v.querySelector('.bv-status'),tm=setInterval(function(){mi=(mi+1)%msgs.length;if(el)el.textContent=msgs[mi];},340);function done(){clearInterval(tm);lift();}if(document.readyState==='complete'){setTimeout(done,320);}else{window.addEventListener('load',function(){setTimeout(done,320);});setTimeout(done,1500);}})();</script>
+<div id="progress"></div>
+<div class="strip"><div class="wrap">
+  <span>Signal · Arxiv desk · Deep read</span>
+  <span class="op"><i></i>2026-09-17</span>
+</div></div>
+<header class="masthead">
+  <button class="theme-btn" data-theme-toggle><span data-theme-label>☀ Paper</span></button>
+  <div class="brand"><svg class="brand-mark" viewBox="0 0 24 24" aria-hidden="true" data-brand="signal" fill="none" stroke="#C6A15B" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 13a2 2 0 0 0 2-2V7a2 2 0 0 1 4 0v13a2 2 0 0 0 4 0V4a2 2 0 0 1 4 0v13a2 2 0 0 0 4 0v-4a2 2 0 0 1 2-2"/></svg>Sig<em>nal</em></div>
+  <div class="tag">Arxiv desk · the papers behind the news</div>
+</header>
+<nav class="mainnav" id="mainnav"><div class="wrap">
+  <a class="home" href="index.html">Front Page</a>
+  <a href="releases.html">Releases</a>
+  <a href="policy.html">Policy</a>
+  <a href="research.html">Research</a>
+  <a href="voices.html">Voices</a>
+  <a href="other.html">Other</a>
+  <a href="arxiv.html" class="active">Arxiv</a>
+  <a href="index.html#archive">Archive</a>
+</div></nav>
+<main class="wrap">
+  <a class="deep-back" href="arxiv.html">← All papers</a>
+  <div class="deep-kick">Deep read · fully unpacked</div>
+  <article class="paper v2" id="paper-260920578v1"><div class="ed-head" style="margin:0 0 2px"><span class="ed-d">SEP 17 · cs.NI, cs.LG, cs.MA</span><a class="ed-t" href="https://arxiv.org/abs/2609.20578">NS3Learn: Transferring 5G NR Mode-2 Reception Realism from ns-3 to the Veins/SUMO Stack for Connected-Vehicle Safety Assessment</a><span class="front-chip">EVALUATION</span><span class="front-chip">DEEP READ</span></div><p class="p-authors">Rasheed Bello, Arthur Mukwaya, Gurcan Comert, Varghese Vaidyan, Vijay Bendigeri, Anthony Dontoh, Jagruti Sahoo, Judith Mwakalonge</p><div class="ax-tldr"><span class="k">TL;DR</span><p>Ignoring radio resource competition in 5G sidelink Mode-2 inflates delivery rates in dense traffic. NS3Learn distills full-protocol realism into a closed-form model that ports between simulators without reimplementation.</p></div><div class="stats-row"><div class="stat"><div class="v">10.5M</div><div class="k">labeled reception outcomes</div></div><div class="stat"><div class="v">0.06</div><div class="k">delivery deviation vs full simulator</div></div><div class="stat"><div class="v">1 to 100%</div><div class="k">penetration levels tested</div></div><div class="stat"><div class="v">2x+</div><div class="k">hard-braking events predicted</div></div></div><div class="why"><b>Why it matters</b>Connected-vehicle safety claims rest on coupled simulators that ignore radio competition; wrong delivery models mean wrong braking and speed predictions on real roads.</div><div class="fig-caption">Fidelity: Auto-chart from parsed coefficient table; delivery-deviation comparisons read against the paper's protocol.</div><div class="fig-caption">Fidelity: Source scans in paper order carrying the cascade fit and traffic-safety flips.</div><div class="ax-h3"><span class="n">01</span>The optimism bug</div><p class="ax-prose">Standard channel models skip resource competition, so dense-traffic simulations report delivery rates no real road would see — and downstream traffic conclusions inherit the error.</p><div class="ax-h3"><span class="n">02</span>The fit</div><p class="ax-prose">Ten and a half million labeled outcomes across two signalized urban networks, six penetration levels from one to one hundred percent, and five seeds per condition compress into half-duplex, collision, capture, and decoding terms.</p><div class="ax-h3"><span class="n">03</span>The flip</div><p class="ax-prose">Against the full simulator the cascade deviates 0.06 versus 0.44 and 0.55 for alternatives; plugged into traffic sims it reverses speed trends and more than doubles hard-braking predictions.</p><div class="ax-scan"><div class="scan-tag">SOURCE SCAN · as published</div><img loading="lazy" src="assets/arxiv/260920578v1-0.png" alt="Distillation pipeline. ns-3 5G-LENA replays a fixed SUMO trajectory file and sup"/><div class="fig-caption">Fig · Distillation pipeline. ns-3 5G-LENA replays a fixed SUMO trajectory file and supplies the fitting labels. The fitted model then runs inside OMNeT++/INET beside  (source: the paper)</div></div><div class="ax-scan"><div class="scan-tag">SOURCE SCAN · as published</div><img loading="lazy" src="assets/arxiv/260920578v1-1.png" alt="Each cascade stage against the ns-3 5G-LENA labels it was fitted to; markers are"/><div class="fig-caption">Fig · Each cascade stage against the ns-3 5G-LENA labels it was fitted to; markers are empirical proportions with 95% Wilson intervals, curves the deployed coefficien (source: the paper)</div></div><div class="ax-scan"><div class="scan-tag">SOURCE SCAN · as published</div><img loading="lazy" src="assets/arxiv/260920578v1-2.png" alt="Loss attribution against ns-3 5G-LENA's total loss (a), and single-axis ablation"/><div class="fig-caption">Fig · Loss attribution against ns-3 5G-LENA's total loss (a), and single-axis ablations of the analytical reference (b). In (b) the contention-only and combined curve (source: the paper)</div></div><div class="ax-scan"><div class="scan-tag">SOURCE SCAN · as published</div><img loading="lazy" src="assets/arxiv/260920578v1-3.png" alt="Per-instant in-range delivery against ns-3 5G-LENA, by penetration (a) and by me"/><div class="fig-caption">Fig · Per-instant in-range delivery against ns-3 5G-LENA, by penetration (a) and by measured density (b). Error bars are the standard deviation over five seeds. Label (source: the paper)</div></div><details><summary>Source table · Fitted Coefficients of the Distilled Reception Cascade (3 rows)</summary><table class="ax-tab"><tr><th>^(nc)_0–4</th><th>Decode, no collision, Eq. eq:decode</th><th>0.00686, 0.09830, 0.00231, 0.01918, -9.92\!\!10^-4</th></tr><tr><td>^(cc)_0–4</td><td>Decode, collision (capture), Eq. eq:decode</td><td>-3.06368, 0.04412, 1.22\!\!10^-3, -0.02376, -6.80\!\!10^-5</td></tr><tr><td>Assumed, not fitted: the reference implementation bounds no receiver processing</td><td>Decode, collision (capture), Eq. eq:decode</td><td></td></tr><tr><td>C_obu,W,s</td><td>OBU capacity, window, drop slope, Eq. eq:obu</td><td>600 pkt/s, 1 s, 2.0</td></tr></table></details><details><summary>Abstract</summary><p class="p-abs">Connected-vehicle safety evaluations rely on coupled traffic and network simulations, but standard channel models ignore radio resource competition in 5G NR sidelink Mode-2, reporting unrealistically high message delivery in dense traffic. This study introduces resource-competition losses without requiring full protocol reimplementation. We labeled 10.5 million reception outcomes from ns-3 5G-LENA traces (calibrated on 3GPP scenarios and driven by SUMO trajectories) to fit NS3Learn - a closed-form model capturing half-duplex loss, scheduling collisions, receiver capture, and decoding. Evaluation spanned two signalized urban networks, six penetration levels (1-100%), and five random seeds per condition. NS3Learn achieved a mean absolute deviation of 0.06 in per-instant delivery compared to ns-3 5G-LENA, outperforming alternative models (0.44 and 0.55 deviation). Fitted parameters transferred to a distinct intersection with only 20% additional error. Crucially, using realistic communication models reversed simulated traffic speed trends and more than doubled predicted hard-braking events. The framework transfers reception realism between simulators via model distillation instead of full reimplementation. Every stage maps directly to an explicit physical mechanism. Researchers and transportation agencies can maintain existing simulation pipelines while accurately accounting for dense-traffic packet loss and denial-of-service impacts. Adapting to new radio configurations requires only offline refitting rather than code modification.</p></details><div class="sig-row"><span class="sig-chip">simulation</span><span class="sig-chip">5G</span><span class="sig-chip">vehicles</span><span class="sig-chip">distillation</span><span class="sig-chip">safety</span><a class="sig-link" href="https://arxiv.org/abs/2609.20578">↗ arXiv</a><a class="sig-link" href="https://arxiv.org/pdf/2609.20578">↗ PDF</a></div></article>
+</main>
+<footer><div class="wrap fgrid">
+  <div><div class="fb">Sig<em>nal</em></div><p>A hype-free daily AI newspaper. This unpack is built from the paper itself — figures, tables and equations ship as published.</p></div>
+  <div><h5>Paper</h5><ul><li><a href="arxiv.html">Arxiv desk</a></li><li><a href="index.html">Front page</a></li></ul></div>
+</div>
+<div class="foot">Signal Arxiv deep read · 0 fabricated · © <span id="yr">2026</span> Signal</div>
+</footer>
+<button id="toTop" aria-label="Back to top">↑</button>
+<script src="assets/site.js"></script>
+
+</body>
+</html>

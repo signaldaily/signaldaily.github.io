@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="noir">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Signal">
+<meta property="og:title" content="FedeRage: Provably Convergent Agnostic Federated Learning under General Client Drift — Signal Arxiv">
+<meta property="og:description" content="When nobody knows which clients participate, uniform aggregation is not a hack — it minimizes a participation-weighted stochastic objective at the standard rate. FedeRage adds risk-aversion so infrequ">
+<meta property="og:url" content="https://signaldaily.github.io/paper-260921057v1.html">
+<meta property="og:image" content="https://signaldaily.github.io/assets/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="FedeRage: Provably Convergent Agnostic Federated Learning under General Client Drift — Signal Arxiv">
+<meta name="twitter:description" content="When nobody knows which clients participate, uniform aggregation is not a hack — it minimizes a participation-weighted stochastic objective at the standard rate. FedeRage adds risk-aversion so infrequ">
+<meta name="theme-color" content="#0E0C0A">
+<title>FedeRage: Provably Convergent Agnostic Federated Learning under General Client Drift — Signal Arxiv</title>
+<link rel="icon" type="image/svg+xml" href="assets/signal-favicon.svg" data-brand="signal">
+<link rel="apple-touch-icon" sizes="180x180" href="assets/apple-touch-icon.png" data-brand="signal">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,700;1,9..144,400;1,9..144,600&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css">
+<link rel="stylesheet" href="assets/styles.css">
+<script defer src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+<style>
+.ax-tldr{border:1px solid var(--hairline-2);border-left:3px solid var(--brass);border-radius:0 6px 6px 0;background:var(--panel);padding:20px 22px;margin:20px 0}
+.ax-tldr .k{font-family:"JetBrains Mono",monospace;font-size:10px;letter-spacing:.18em;color:var(--brass);text-transform:uppercase;display:block;margin-bottom:8px}
+.ax-tldr p{font-size:17px;line-height:1.65;margin:0;max-width:70ch}
+.ax-h3{font-family:"JetBrains Mono",monospace;font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--ink);margin:34px 0 10px;display:flex;align-items:center;gap:10px}
+.ax-h3::after{content:"";flex:1;height:1px;background:var(--hairline-2)}
+.ax-h3 .n{color:var(--brass)}
+.ax-prose{font-size:15.5px;line-height:1.8;color:var(--ink-soft);max-width:75ch;margin:0 0 12px}
+.ax-prose b{color:var(--ink)}
+.ax-math{background:var(--panel);border:1px solid var(--hairline);border-radius:6px;padding:20px 22px;margin:14px 0;overflow-x:auto}
+.ax-math .eq-label{font-family:"JetBrains Mono",monospace;font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:var(--brass);margin-bottom:10px}
+.ax-chartbox{background:var(--panel);border:1px solid var(--hairline);border-radius:6px;padding:22px;margin:16px 0}
+.ax-chartbox canvas{max-height:420px}
+.ax-scan{background:#F4F1EA;border:1px solid var(--hairline-2);border-radius:8px;padding:14px;margin:16px 0}
+.ax-scan img{width:100%;height:auto;display:block;border-radius:4px;background:#fff}
+.scan-tag{font-family:"JetBrains Mono",monospace;font-size:10px;letter-spacing:.18em;color:#6E6455;text-transform:uppercase;margin-bottom:10px}
+table.ax-tab{width:100%;border-collapse:collapse;margin:14px 0;font-size:13px;line-height:1.55}
+table.ax-tab th{font-family:"JetBrains Mono",monospace;font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--brass);text-align:left;padding:10px 12px;border-bottom:2px solid var(--hairline-2)}
+table.ax-tab td{padding:9px 12px;border-bottom:1px solid var(--hairline);color:var(--ink-soft);vertical-align:top}
+table.ax-tab td:first-child{font-family:"JetBrains Mono",monospace;font-size:11.5px;color:var(--ink);white-space:nowrap}
+@media(max-width:800px){table.ax-tab{display:block;overflow-x:auto}table.ax-tab th,table.ax-tab td{min-width:92px}}
+
+.deep-back{display:inline-block;margin:18px 0 4px;font-family:"JetBrains Mono",monospace;font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--brass);text-decoration:none}
+.deep-kick{font-family:"JetBrains Mono",monospace;font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--brass);margin:6px 0 14px}
+</style>
+</head>
+<body>
+<div id="bootVeil" aria-hidden="true"><div class="bv-inner"><div class="bv-ring"></div><div class="bv-brand">Sig<em>nal</em></div><div class="bv-rule"><span></span></div><div class="bv-status">Reading edition…</div></div></div>
+<script>(function(){var v=document.getElementById('bootVeil');if(!v)return;var rm=window.matchMedia('(prefers-reduced-motion: reduce)').matches;var seen=null;try{seen=sessionStorage.getItem('signal-seen');}catch(e){}function lift(){v.classList.add('lifted');setTimeout(function(){v.remove();},500);try{sessionStorage.setItem('signal-seen','1');}catch(e){}}if(rm||seen){requestAnimationFrame(function(){requestAnimationFrame(lift);});return;}var msgs=['Reading edition…','Inking figures…','Verifying links…'],mi=0,el=v.querySelector('.bv-status'),tm=setInterval(function(){mi=(mi+1)%msgs.length;if(el)el.textContent=msgs[mi];},340);function done(){clearInterval(tm);lift();}if(document.readyState==='complete'){setTimeout(done,320);}else{window.addEventListener('load',function(){setTimeout(done,320);});setTimeout(done,1500);}})();</script>
+<div id="progress"></div>
+<div class="strip"><div class="wrap">
+  <span>Signal · Arxiv desk · Deep read</span>
+  <span class="op"><i></i>2026-09-17</span>
+</div></div>
+<header class="masthead">
+  <button class="theme-btn" data-theme-toggle><span data-theme-label>☀ Paper</span></button>
+  <div class="brand"><svg class="brand-mark" viewBox="0 0 24 24" aria-hidden="true" data-brand="signal" fill="none" stroke="#C6A15B" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 13a2 2 0 0 0 2-2V7a2 2 0 0 1 4 0v13a2 2 0 0 0 4 0V4a2 2 0 0 1 4 0v13a2 2 0 0 0 4 0v-4a2 2 0 0 1 2-2"/></svg>Sig<em>nal</em></div>
+  <div class="tag">Arxiv desk · the papers behind the news</div>
+</header>
+<nav class="mainnav" id="mainnav"><div class="wrap">
+  <a class="home" href="index.html">Front Page</a>
+  <a href="releases.html">Releases</a>
+  <a href="policy.html">Policy</a>
+  <a href="research.html">Research</a>
+  <a href="voices.html">Voices</a>
+  <a href="other.html">Other</a>
+  <a href="arxiv.html" class="active">Arxiv</a>
+  <a href="index.html#archive">Archive</a>
+</div></nav>
+<main class="wrap">
+  <a class="deep-back" href="arxiv.html">← All papers</a>
+  <div class="deep-kick">Deep read · fully unpacked</div>
+  <article class="paper v2" id="paper-260921057v1"><div class="ed-head" style="margin:0 0 2px"><span class="ed-d">SEP 17 · cs.LG, cs.DC, eess.SP</span><a class="ed-t" href="https://arxiv.org/abs/2609.21057">FedeRage: Provably Convergent Agnostic Federated Learning under General Client Drift</a><span class="front-chip">OPTIMIZATION</span><span class="front-chip">DEEP READ</span></div><p class="p-authors">Herlock Rahimi, Dionysis Kalogerias</p><div class="ax-tldr"><span class="k">TL;DR</span><p>When nobody knows which clients participate, uniform aggregation is not a hack — it minimizes a participation-weighted stochastic objective at the standard rate. FedeRage adds risk-aversion so infrequent, high-loss clients pull more weight, with proofs to match.</p></div><div class="stats-row"><div class="stat"><div class="v">standard rate</div><div class="k">convex nonsmooth convergence, agnostic participation</div></div><div class="stat"><div class="v">CVaR + DRO</div><div class="k">risk-averse robust framework</div></div><div class="stat"><div class="v">3 datasets</div><div class="k">MNIST, FashionMNIST, CIFAR-10</div></div><div class="stat"><div class="v">2 weightings</div><div class="k">high-loss and infrequent clients upweighted</div></div></div><div class="why"><b>Why it matters</b>Deployed federations never know who will show up each round; theory that assumes known participation probabilities does not describe the real system.</div><div class="fig-caption">Fidelity: Auto-chart from parsed accuracy table; deviation bars read against the paper's protocol.</div><div class="fig-caption">Fidelity: Source scans in paper order carrying convergence and accuracy claims.</div><div class="ax-h3"><span class="n">01</span>What agnostic FedAvg solves</div><p class="ax-prose">With participation unknown, possibly skewed, and varying in size, uniform aggregation minimizes a well-defined stochastic objective weighted by the participation-induced marginal — at the standard rate for convex, possibly nonsmooth losses.</p><div class="ax-h3"><span class="n">02</span>The upgrade</div><p class="ax-prose">FedeRage folds Conditional Value-at-Risk into local objectives under distributional robustness, implicitly upweighting the clients that lose most and show up least, at minimal extra cost.</p><div class="ax-h3"><span class="n">03</span>Evidence</div><p class="ax-prose">Accuracy tables across three vision datasets against FedAvg and Scaffold-style baselines.</p><div class="ax-scan"><div class="scan-tag">SOURCE SCAN · as published</div><img loading="lazy" src="assets/arxiv/260921057v1-0.png" alt="Motivating example: Interaction of statistical heterogeneity and skewed availabi"/><div class="fig-caption">Fig · Motivating example: Interaction of statistical heterogeneity and skewed availability. Five clients possess highly non-IID data (clustered by user). Client avail (source: the paper)</div></div><div class="ax-scan"><div class="scan-tag">SOURCE SCAN · as published</div><img loading="lazy" src="assets/arxiv/260921057v1-1.png" alt="Motivating example: Interaction of statistical heterogeneity and skewed availabi"/><div class="fig-caption">Fig · Motivating example: Interaction of statistical heterogeneity and skewed availability. Five clients possess highly non-IID data (clustered by user). Client avail (source: the paper)</div></div><div class="ax-scan"><div class="scan-tag">SOURCE SCAN · as published</div><img loading="lazy" src="assets/arxiv/260921057v1-2.png" alt="Motivating example: Interaction of statistical heterogeneity and skewed availabi"/><div class="fig-caption">Fig · Motivating example: Interaction of statistical heterogeneity and skewed availability. Five clients possess highly non-IID data (clustered by user). Client avail (source: the paper)</div></div><div class="ax-scan"><div class="scan-tag">SOURCE SCAN · as published</div><img loading="lazy" src="assets/arxiv/260921057v1-3.png" alt="(a) Effect of CVaR on the effective client-availability distribution. (b) Effect"/><div class="fig-caption">Fig · (a) Effect of CVaR on the effective client-availability distribution. (b) Effect of mini-batch size on effective selection probabilities. Both illustrate how di (source: the paper)</div></div><details><summary>Source table · Test accuracy (%) ± standard deviation for FedAvg, , Scaffold, and on MNIST, Fas (4 rows)</summary><table class="ax-tab"><tr><th>Algorithm</th><th>Uniform</th><th>Non-Uniform</th><th>Uniform</th><th>Non-Uniform</th><th>Uniform</th><th>Non-Uniform</th></tr><tr><td>FedAvg</td><td>79.54</td><td>78.19</td><td>75.08</td><td>61.82</td><td>51.43</td><td>50.61</td></tr><tr><td>FedProx</td><td>79.19</td><td>77.85</td><td>75.11</td><td>61.82</td><td>52.18</td><td>50.25</td></tr><tr><td>Scaffold</td><td>96.95 0.26</td><td>95.01</td><td>84.24</td><td>77.36</td><td>51.21</td><td>50.57</td></tr><tr><td>FedeRage</td><td>96.02</td><td>95.91 0.41</td><td>83.99 1.71</td><td>83.95 1.03</td><td>57.41 1.51</td><td>56.34 0.61</td></tr></table></details><details><summary>Abstract</summary><p class="p-abs">Federated learning (FL) enables collaborative model training without sharing raw data, but its performance degrades under non-IID data and stochastic client participation. Remedies built on classical Federated Averaging (FedAvg) typically presuppose that client participation probabilities are known to the server, which is rarely the case in deployed systems. We first discuss and then characterize the optimization problem that \emph{distributionally agnostic} FedAvg actually solves when participation is entirely unknown, possibly highly skewed, and of variable size across rounds: uniform aggregation is shown to minimize a well-defined stochastic objective, weighted by the participation-induced marginal, at a standard &#36;\mathcal{O}(1/\sqrt{T})&#36; rate for convex and possibly nonsmooth losses. Building on this characterization, we propose \emph{Federated Risk-Averse Averaging} (\textsc{FedeRage}), a risk-averse extension of FedAvg that embeds the \emph{Conditional Value-at-Risk} (CVaR) into the local objective within a natural distributionally robust optimization (DRO) framework. \textsc{FedeRage} implicitly upweights high-loss and infrequently participating clients while adding only a \emph{single scalar per-client}, and admits an &#36;\mathcal{O}(κ/\sqrt{T})&#36; rate in which the factor &#36;κ&#36; is the upper bound on the ``price" of risk aversion. In contrast with aggregation-alignment schemes based on optimal transport, which require the availability distribution as an input, \textsc{FedeRage} remains agnostic to it. Several experiments on three heterogeneous benchmarks indicate consistent improvements over state-of-the-art methods in accuracy, fairness, and convergence speed.</p></details><div class="sig-row"><span class="sig-chip">federated</span><span class="sig-chip">optimization</span><span class="sig-chip">robustness</span><span class="sig-chip">theory</span><span class="sig-chip">CVaR</span><a class="sig-link" href="https://arxiv.org/abs/2609.21057">↗ arXiv</a><a class="sig-link" href="https://arxiv.org/pdf/2609.21057">↗ PDF</a></div></article>
+</main>
+<footer><div class="wrap fgrid">
+  <div><div class="fb">Sig<em>nal</em></div><p>A hype-free daily AI newspaper. This unpack is built from the paper itself — figures, tables and equations ship as published.</p></div>
+  <div><h5>Paper</h5><ul><li><a href="arxiv.html">Arxiv desk</a></li><li><a href="index.html">Front page</a></li></ul></div>
+</div>
+<div class="foot">Signal Arxiv deep read · 0 fabricated · © <span id="yr">2026</span> Signal</div>
+</footer>
+<button id="toTop" aria-label="Back to top">↑</button>
+<script src="assets/site.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="noir">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Signal">
+<meta property="og:title" content="Scaling Discovery through Test-Time Communication — Signal Arxiv">
+<meta property="og:description" content="Science advances through collaboration, but agentic systems barely use it. On ARC-AGI-3, k communicating agents match 4k independent ones, crack tasks no lone agent solves, and the recipe transfers to">
+<meta property="og:url" content="https://signaldaily.github.io/paper-260921032v1.html">
+<meta property="og:image" content="https://signaldaily.github.io/assets/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Scaling Discovery through Test-Time Communication — Signal Arxiv">
+<meta name="twitter:description" content="Science advances through collaboration, but agentic systems barely use it. On ARC-AGI-3, k communicating agents match 4k independent ones, crack tasks no lone agent solves, and the recipe transfers to">
+<meta name="theme-color" content="#0E0C0A">
+<title>Scaling Discovery through Test-Time Communication — Signal Arxiv</title>
+<link rel="icon" type="image/svg+xml" href="assets/signal-favicon.svg" data-brand="signal">
+<link rel="apple-touch-icon" sizes="180x180" href="assets/apple-touch-icon.png" data-brand="signal">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,700;1,9..144,400;1,9..144,600&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css">
+<link rel="stylesheet" href="assets/styles.css">
+<script defer src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+<style>
+.ax-tldr{border:1px solid var(--hairline-2);border-left:3px solid var(--brass);border-radius:0 6px 6px 0;background:var(--panel);padding:20px 22px;margin:20px 0}
+.ax-tldr .k{font-family:"JetBrains Mono",monospace;font-size:10px;letter-spacing:.18em;color:var(--brass);text-transform:uppercase;display:block;margin-bottom:8px}
+.ax-tldr p{font-size:17px;line-height:1.65;margin:0;max-width:70ch}
+.ax-h3{font-family:"JetBrains Mono",monospace;font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--ink);margin:34px 0 10px;display:flex;align-items:center;gap:10px}
+.ax-h3::after{content:"";flex:1;height:1px;background:var(--hairline-2)}
+.ax-h3 .n{color:var(--brass)}
+.ax-prose{font-size:15.5px;line-height:1.8;color:var(--ink-soft);max-width:75ch;margin:0 0 12px}
+.ax-prose b{color:var(--ink)}
+.ax-math{background:var(--panel);border:1px solid var(--hairline);border-radius:6px;padding:20px 22px;margin:14px 0;overflow-x:auto}
+.ax-math .eq-label{font-family:"JetBrains Mono",monospace;font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:var(--brass);margin-bottom:10px}
+.ax-chartbox{background:var(--panel);border:1px solid var(--hairline);border-radius:6px;padding:22px;margin:16px 0}
+.ax-chartbox canvas{max-height:420px}
+.ax-scan{background:#F4F1EA;border:1px solid var(--hairline-2);border-radius:8px;padding:14px;margin:16px 0}
+.ax-scan img{width:100%;height:auto;display:block;border-radius:4px;background:#fff}
+.scan-tag{font-family:"JetBrains Mono",monospace;font-size:10px;letter-spacing:.18em;color:#6E6455;text-transform:uppercase;margin-bottom:10px}
+table.ax-tab{width:100%;border-collapse:collapse;margin:14px 0;font-size:13px;line-height:1.55}
+table.ax-tab th{font-family:"JetBrains Mono",monospace;font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--brass);text-align:left;padding:10px 12px;border-bottom:2px solid var(--hairline-2)}
+table.ax-tab td{padding:9px 12px;border-bottom:1px solid var(--hairline);color:var(--ink-soft);vertical-align:top}
+table.ax-tab td:first-child{font-family:"JetBrains Mono",monospace;font-size:11.5px;color:var(--ink);white-space:nowrap}
+@media(max-width:800px){table.ax-tab{display:block;overflow-x:auto}table.ax-tab th,table.ax-tab td{min-width:92px}}
+
+.deep-back{display:inline-block;margin:18px 0 4px;font-family:"JetBrains Mono",monospace;font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--brass);text-decoration:none}
+.deep-kick{font-family:"JetBrains Mono",monospace;font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--brass);margin:6px 0 14px}
+</style>
+</head>
+<body>
+<div id="bootVeil" aria-hidden="true"><div class="bv-inner"><div class="bv-ring"></div><div class="bv-brand">Sig<em>nal</em></div><div class="bv-rule"><span></span></div><div class="bv-status">Reading edition…</div></div></div>
+<script>(function(){var v=document.getElementById('bootVeil');if(!v)return;var rm=window.matchMedia('(prefers-reduced-motion: reduce)').matches;var seen=null;try{seen=sessionStorage.getItem('signal-seen');}catch(e){}function lift(){v.classList.add('lifted');setTimeout(function(){v.remove();},500);try{sessionStorage.setItem('signal-seen','1');}catch(e){}}if(rm||seen){requestAnimationFrame(function(){requestAnimationFrame(lift);});return;}var msgs=['Reading edition…','Inking figures…','Verifying links…'],mi=0,el=v.querySelector('.bv-status'),tm=setInterval(function(){mi=(mi+1)%msgs.length;if(el)el.textContent=msgs[mi];},340);function done(){clearInterval(tm);lift();}if(document.readyState==='complete'){setTimeout(done,320);}else{window.addEventListener('load',function(){setTimeout(done,320);});setTimeout(done,1500);}})();</script>
+<div id="progress"></div>
+<div class="strip"><div class="wrap">
+  <span>Signal · Arxiv desk · Deep read</span>
+  <span class="op"><i></i>2026-09-17</span>
+</div></div>
+<header class="masthead">
+  <button class="theme-btn" data-theme-toggle><span data-theme-label>☀ Paper</span></button>
+  <div class="brand"><svg class="brand-mark" viewBox="0 0 24 24" aria-hidden="true" data-brand="signal" fill="none" stroke="#C6A15B" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 13a2 2 0 0 0 2-2V7a2 2 0 0 1 4 0v13a2 2 0 0 0 4 0V4a2 2 0 0 1 4 0v13a2 2 0 0 0 4 0v-4a2 2 0 0 1 2-2"/></svg>Sig<em>nal</em></div>
+  <div class="tag">Arxiv desk · the papers behind the news</div>
+</header>
+<nav class="mainnav" id="mainnav"><div class="wrap">
+  <a class="home" href="index.html">Front Page</a>
+  <a href="releases.html">Releases</a>
+  <a href="policy.html">Policy</a>
+  <a href="research.html">Research</a>
+  <a href="voices.html">Voices</a>
+  <a href="other.html">Other</a>
+  <a href="arxiv.html" class="active">Arxiv</a>
+  <a href="index.html#archive">Archive</a>
+</div></nav>
+<main class="wrap">
+  <a class="deep-back" href="arxiv.html">← All papers</a>
+  <div class="deep-kick">Deep read · fully unpacked</div>
+  <article class="paper v2" id="paper-260921032v1"><div class="ed-head" style="margin:0 0 2px"><span class="ed-d">SEP 17 · cs.LG, cs.AI, cs.CL</span><a class="ed-t" href="https://arxiv.org/abs/2609.21032">Scaling Discovery through Test-Time Communication</a><span class="front-chip">AGENCY</span><span class="front-chip">DEEP READ</span></div><p class="p-authors">Jongho Park, Vasilis Kontonis, Shivam Garg, Akshay Krishnamurthy, Dimitris Papailiopoulos</p><div class="ax-tldr"><span class="k">TL;DR</span><p>Science advances through collaboration, but agentic systems barely use it. On ARC-AGI-3, k communicating agents match 4k independent ones, crack tasks no lone agent solves, and the recipe transfers to real research tasks.</p></div><div class="stats-row"><div class="stat"><div class="v">team@k = 4k</div><div class="k">communicating team matches 4x independents</div></div><div class="stat"><div class="v">ARC-AGI-3</div><div class="k">novel-problem-solving benchmark</div></div><div class="stat"><div class="v">4 agents</div><div class="k">research-task team size</div></div><div class="stat"><div class="v">2 tasks</div><div class="k">polyomino packing + MNIST compression wins</div></div></div><div class="why"><b>Why it matters</b>Multi-agent collaboration has shown mixed results until now; a clean scaling law where communication multiplies effective team size reframes how to spend inference compute.</div><div class="fig-caption">Fidelity: Auto-chart from parsed headline table where numeric; proportions read against the paper's captions.</div><div class="fig-caption">Fidelity: Source scans in paper order carrying the scaling and transfer claims.</div><div class="ax-h3"><span class="n">01</span>The setup</div><p class="ax-prose">Agents with no assigned roles communicate through a shared directory while working, so one agent's breakthrough can push the whole group forward instead of dying in isolation.</p><div class="ax-h3"><span class="n">02</span>Scaling</div><p class="ax-prose">A team of k communicating agents matches the success rate of four times k independent agents, and the communication advantage compounds as k grows — an efficiency gain, plus tasks that flip from impossible to reliable.</p><div class="ax-h3"><span class="n">03</span>Transfer</div><p class="ax-prose">With enough compute the effect carries to research work: polyomino packing beats the prior best-known score and MNIST classifier compression surpasses the best-known human solution.</p><div class="ax-scan"><div class="scan-tag">SOURCE SCAN · as published</div><img loading="lazy" src="assets/arxiv/260921032v1-0.png" alt="With communication, a team of k communicating agents not only outperforms best@k"/><div class="fig-caption">Fig · With communication, a team of k communicating agents not only outperforms best@k but scales success rate on ARC-AGI-3 faster. On algorithmic and ML optimization (source: the paper)</div></div><div class="ax-scan"><div class="scan-tag">SOURCE SCAN · as published</div><img loading="lazy" src="assets/arxiv/260921032v1-1.png" alt="Average furthest level reached by team@5 and best@5, sorted by absolute differen"/><div class="fig-caption">Fig · Average furthest level reached by team@5 and best@5, sorted by absolute difference. Communication helps on 18 of the 25 games and hurts on 7, and the best gain  (source: the paper)</div></div><div class="ax-scan"><div class="scan-tag">SOURCE SCAN · as published</div><img loading="lazy" src="assets/arxiv/260921032v1-2.png" alt="RHAE (Eq. ) for the team's best agent and average agent across all games. RHAE s"/><div class="fig-caption">Fig · RHAE (Eq. ) for the team's best agent and average agent across all games. RHAE scores trajectories based on whether and how quickly an agent solves each level r (source: the paper)</div></div><div class="ax-scan"><div class="scan-tag">SOURCE SCAN · as published</div><img loading="lazy" src="assets/arxiv/260921032v1-3.png" alt="Best-so-far packing score for the highest-scoring run among 60 single-agent tria"/><div class="fig-caption">Fig · Best-so-far packing score for the highest-scoring run among 60 single-agent trials and 20 team@3 trials. Team@3 pulls decisively ahead at about 1.6 hours and re (source: the paper)</div></div><details><summary>Source table · Proportion of trials reaching within d levels of a full solve, averaged over 25  (6 rows)</summary><table class="ax-tab"><tr><th>Levels from target</th><th>team@3</th><th>best@3</th><th>best@13</th><th>team@5</th><th>best@5</th><th>best@33</th></tr><tr><td>5</td><td>52.8</td><td>45.4</td><td>63.9</td><td>64.1</td><td>52.8</td><td>69.5</td></tr><tr><td>4</td><td>28.2</td><td>25.8</td><td>46.5</td><td>33.6</td><td>32.9</td><td>55.4</td></tr><tr><td>3</td><td>16.6</td><td>9.7</td><td>20.8</td><td>22.9</td><td>12.8</td><td>31.3</td></tr><tr><td>2</td><td>7.2</td><td>5.0</td><td>9.3</td><td>16.2</td><td>6.1</td><td>15.8</td></tr><tr><td>1</td><td>4.8</td><td>2.6</td><td>6.3</td><td>10.0</td><td>3.7</td><td>10.2</td></tr><tr><td>(Solved) 0</td><td>4.6</td><td>1.4</td><td>4.7</td><td>8.0</td><td>2.2</td><td>8.1</td></tr></table></details><details><summary>Abstract</summary><p class="p-abs">Science advances not in isolation but through collaboration, yet existing agentic systems capture little of this. Whether communicating agents help remains an open question with mixed prior results. We show that test-time communication can substantially outperform independent parallel attempts on challenging tasks, where sharing a breakthrough can push the whole group forward. We first study the effect of scaling multi-agent test-time communication, where agents have no predefined roles and communicate via a shared directory, on ARC-AGI-3, a benchmark requiring novel problem solving. We find that a team of &#36;k&#36; communicating agents, team@&#36;k&#36;, matches the success rate of &#36;4k&#36; independent agents, and this advantage grows with &#36;k&#36;, suggesting gains compound with scale. The effect is not merely efficiency: a task that no single agent can solve, a team of agents can solve reliably. Furthermore, these gains transfer to research-oriented tasks, given sufficient compute. On polyomino packing, communicating agents outperform best@&#36;k&#36; and exceed the prior best-known score. On MNIST classifier compression, communication surpasses the best-known human solution. A team of four agents produced a 1,957-byte classifier submission achieving 99.4% test accuracy, smaller than both the best-known human solution and the best single-agent result. These gains are not unconditional. Independent agents may outperform communication when compute is limited or when a clear measure of progress is absent. However, under sufficient compute and clear feedback, multi-agent communication consistently yields stronger results.</p></details><div class="sig-row"><span class="sig-chip">multi-agent</span><span class="sig-chip">test-time</span><span class="sig-chip">scaling</span><span class="sig-chip">ARC</span><span class="sig-chip">collaboration</span><a class="sig-link" href="https://arxiv.org/abs/2609.21032">↗ arXiv</a><a class="sig-link" href="https://arxiv.org/pdf/2609.21032">↗ PDF</a></div></article>
+</main>
+<footer><div class="wrap fgrid">
+  <div><div class="fb">Sig<em>nal</em></div><p>A hype-free daily AI newspaper. This unpack is built from the paper itself — figures, tables and equations ship as published.</p></div>
+  <div><h5>Paper</h5><ul><li><a href="arxiv.html">Arxiv desk</a></li><li><a href="index.html">Front page</a></li></ul></div>
+</div>
+<div class="foot">Signal Arxiv deep read · 0 fabricated · © <span id="yr">2026</span> Signal</div>
+</footer>
+<button id="toTop" aria-label="Back to top">↑</button>
+<script src="assets/site.js"></script>
+
+</body>
+</html>

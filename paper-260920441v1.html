@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="noir">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Signal">
+<meta property="og:title" content="Cross-Architecture Foundation-Model Distillation for Edge Flood Segmentation — Signal Arxiv">
+<meta property="og:description" content="Geospatial foundation models segment floods well but cannot fit edge devices. Teacher supervision over unlabeled satellite imagery grows the student pool tenfold without new annotations, ending in a 1">
+<meta property="og:url" content="https://signaldaily.github.io/paper-260920441v1.html">
+<meta property="og:image" content="https://signaldaily.github.io/assets/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Cross-Architecture Foundation-Model Distillation for Edge Flood Segmentation — Signal Arxiv">
+<meta name="twitter:description" content="Geospatial foundation models segment floods well but cannot fit edge devices. Teacher supervision over unlabeled satellite imagery grows the student pool tenfold without new annotations, ending in a 1">
+<meta name="theme-color" content="#0E0C0A">
+<title>Cross-Architecture Foundation-Model Distillation for Edge Flood Segmentation — Signal Arxiv</title>
+<link rel="icon" type="image/svg+xml" href="assets/signal-favicon.svg" data-brand="signal">
+<link rel="apple-touch-icon" sizes="180x180" href="assets/apple-touch-icon.png" data-brand="signal">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,700;1,9..144,400;1,9..144,600&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css">
+<link rel="stylesheet" href="assets/styles.css">
+<script defer src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+<style>
+.ax-tldr{border:1px solid var(--hairline-2);border-left:3px solid var(--brass);border-radius:0 6px 6px 0;background:var(--panel);padding:20px 22px;margin:20px 0}
+.ax-tldr .k{font-family:"JetBrains Mono",monospace;font-size:10px;letter-spacing:.18em;color:var(--brass);text-transform:uppercase;display:block;margin-bottom:8px}
+.ax-tldr p{font-size:17px;line-height:1.65;margin:0;max-width:70ch}
+.ax-h3{font-family:"JetBrains Mono",monospace;font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--ink);margin:34px 0 10px;display:flex;align-items:center;gap:10px}
+.ax-h3::after{content:"";flex:1;height:1px;background:var(--hairline-2)}
+.ax-h3 .n{color:var(--brass)}
+.ax-prose{font-size:15.5px;line-height:1.8;color:var(--ink-soft);max-width:75ch;margin:0 0 12px}
+.ax-prose b{color:var(--ink)}
+.ax-math{background:var(--panel);border:1px solid var(--hairline);border-radius:6px;padding:20px 22px;margin:14px 0;overflow-x:auto}
+.ax-math .eq-label{font-family:"JetBrains Mono",monospace;font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:var(--brass);margin-bottom:10px}
+.ax-chartbox{background:var(--panel);border:1px solid var(--hairline);border-radius:6px;padding:22px;margin:16px 0}
+.ax-chartbox canvas{max-height:420px}
+.ax-scan{background:#F4F1EA;border:1px solid var(--hairline-2);border-radius:8px;padding:14px;margin:16px 0}
+.ax-scan img{width:100%;height:auto;display:block;border-radius:4px;background:#fff}
+.scan-tag{font-family:"JetBrains Mono",monospace;font-size:10px;letter-spacing:.18em;color:#6E6455;text-transform:uppercase;margin-bottom:10px}
+table.ax-tab{width:100%;border-collapse:collapse;margin:14px 0;font-size:13px;line-height:1.55}
+table.ax-tab th{font-family:"JetBrains Mono",monospace;font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--brass);text-align:left;padding:10px 12px;border-bottom:2px solid var(--hairline-2)}
+table.ax-tab td{padding:9px 12px;border-bottom:1px solid var(--hairline);color:var(--ink-soft);vertical-align:top}
+table.ax-tab td:first-child{font-family:"JetBrains Mono",monospace;font-size:11.5px;color:var(--ink);white-space:nowrap}
+@media(max-width:800px){table.ax-tab{display:block;overflow-x:auto}table.ax-tab th,table.ax-tab td{min-width:92px}}
+
+.deep-back{display:inline-block;margin:18px 0 4px;font-family:"JetBrains Mono",monospace;font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--brass);text-decoration:none}
+.deep-kick{font-family:"JetBrains Mono",monospace;font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--brass);margin:6px 0 14px}
+</style>
+</head>
+<body>
+<div id="bootVeil" aria-hidden="true"><div class="bv-inner"><div class="bv-ring"></div><div class="bv-brand">Sig<em>nal</em></div><div class="bv-rule"><span></span></div><div class="bv-status">Reading edition…</div></div></div>
+<script>(function(){var v=document.getElementById('bootVeil');if(!v)return;var rm=window.matchMedia('(prefers-reduced-motion: reduce)').matches;var seen=null;try{seen=sessionStorage.getItem('signal-seen');}catch(e){}function lift(){v.classList.add('lifted');setTimeout(function(){v.remove();},500);try{sessionStorage.setItem('signal-seen','1');}catch(e){}}if(rm||seen){requestAnimationFrame(function(){requestAnimationFrame(lift);});return;}var msgs=['Reading edition…','Inking figures…','Verifying links…'],mi=0,el=v.querySelector('.bv-status'),tm=setInterval(function(){mi=(mi+1)%msgs.length;if(el)el.textContent=msgs[mi];},340);function done(){clearInterval(tm);lift();}if(document.readyState==='complete'){setTimeout(done,320);}else{window.addEventListener('load',function(){setTimeout(done,320);});setTimeout(done,1500);}})();</script>
+<div id="progress"></div>
+<div class="strip"><div class="wrap">
+  <span>Signal · Arxiv desk · Deep read</span>
+  <span class="op"><i></i>2026-09-17</span>
+</div></div>
+<header class="masthead">
+  <button class="theme-btn" data-theme-toggle><span data-theme-label>☀ Paper</span></button>
+  <div class="brand"><svg class="brand-mark" viewBox="0 0 24 24" aria-hidden="true" data-brand="signal" fill="none" stroke="#C6A15B" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 13a2 2 0 0 0 2-2V7a2 2 0 0 1 4 0v13a2 2 0 0 0 4 0V4a2 2 0 0 1 4 0v13a2 2 0 0 0 4 0v-4a2 2 0 0 1 2-2"/></svg>Sig<em>nal</em></div>
+  <div class="tag">Arxiv desk · the papers behind the news</div>
+</header>
+<nav class="mainnav" id="mainnav"><div class="wrap">
+  <a class="home" href="index.html">Front Page</a>
+  <a href="releases.html">Releases</a>
+  <a href="policy.html">Policy</a>
+  <a href="research.html">Research</a>
+  <a href="voices.html">Voices</a>
+  <a href="other.html">Other</a>
+  <a href="arxiv.html" class="active">Arxiv</a>
+  <a href="index.html#archive">Archive</a>
+</div></nav>
+<main class="wrap">
+  <a class="deep-back" href="arxiv.html">← All papers</a>
+  <div class="deep-kick">Deep read · fully unpacked</div>
+  <article class="paper v2" id="paper-260920441v1"><div class="ed-head" style="margin:0 0 2px"><span class="ed-d">SEP 17 · cs.CV, cs.LG</span><a class="ed-t" href="https://arxiv.org/abs/2609.20441">Cross-Architecture Foundation-Model Distillation for Edge Flood Segmentation</a><span class="front-chip">DATA-SCALING</span><span class="front-chip">DEEP READ</span></div><p class="p-authors">Fabian Schmalstieg, Karsten Mueller, Wojciech Samek</p><div class="ax-tldr"><span class="k">TL;DR</span><p>Geospatial foundation models segment floods well but cannot fit edge devices. Teacher supervision over unlabeled satellite imagery grows the student pool tenfold without new annotations, ending in a 1.5MB INT8 engine.</p></div><div class="stats-row"><div class="stat"><div class="v">300M to 0.7M</div><div class="k">teacher to student parameters</div></div><div class="stat"><div class="v">252 to 2,500</div><div class="k">labeled to teacher-supervised scenes</div></div><div class="stat"><div class="v">0.787 vs 0.822</div><div class="k">student vs teacher water IoU</div></div><div class="stat"><div class="v">1.5MB INT8</div><div class="k">TensorRT engine on Jetson</div></div></div><div class="why"><b>Why it matters</b>Flood maps save lives but need to run on memory-starved edge hardware in the field; this is a clean recipe for shrinking geospatial foundation models without new manual labels.</div><div class="fig-caption">Fidelity: Auto-chart from parsed headline table; kernel-time and IoU figures read against the paper's protocol notes.</div><div class="fig-caption">Fidelity: Source scans in paper order: method, efficiency, and segmentation comparisons.</div><div class="ax-h3"><span class="n">01</span>The squeeze</div><p class="ax-prose">From a 300-million-parameter teacher to a 0.7-million-parameter student — over four hundred times smaller — trained first on the same 252 labeled scenes, where teacher supervision already matches direct training and helps STURM-Flood.</p><div class="ax-h3"><span class="n">02</span>Scaling unlabeled</div><p class="ax-prose">Growing the teacher-supervised pool to 2,500 scenes without new manual labels narrows the gap: 0.787 vs 0.822 water IoU, parity on STURM-Flood, still short on WorldFloods-v2.</p><div class="ax-h3"><span class="n">03</span>On device</div><p class="ax-prose">Activation replacement and quantization-aware training produce a 1.5-megabyte INT8 TensorRT engine timed on a Jetson Xavier NX over 200 iterations.</p><div class="ax-scan"><div class="scan-tag">SOURCE SCAN · as published</div><img loading="lazy" src="assets/arxiv/260920441v1-1.png" alt="Clean micro mIoU against pseudo-label pool size for the three objectives, on all"/><div class="fig-caption">Fig · Clean micro mIoU against pseudo-label pool size for the three objectives, on all three benchmarks. EfficientViT-B0, one recipe, one pool, four seeds (±1sd). The (source: the paper)</div></div><div class="ax-scan"><div class="scan-tag">SOURCE SCAN · as published</div><img loading="lazy" src="assets/arxiv/260920441v1-2.png" alt="Rows are the four evaluation sources (Sen1Floods11, STURM-Flood, WorldFloods-v2,"/><div class="fig-caption">Fig · Rows are the four evaluation sources (Sen1Floods11, STURM-Flood, WorldFloods-v2, and a held-out GDACS tile whose ``ground truth'' is the teacher's pseudo-label) (source: the paper)</div></div><div class="ax-scan"><div class="scan-tag">SOURCE SCAN · as published</div><img loading="lazy" src="assets/arxiv/260920441v1-3.png" alt="EfficientViT-B0 with OFA, 4 seeds, ±1sd. curves distill from the same frozen tea"/><div class="fig-caption">Fig · EfficientViT-B0 with OFA, 4 seeds, ±1sd. curves distill from the same frozen teacher and differ only in the training scenes and in the source of the hard target (source: the paper)</div></div><details><summary>Source table · On-device efficiency on Jetson Xavier NX: GPU kernel time (, 200 iterations, 20  (3 rows)</summary><table class="ax-tab"><tr><th>Teacher (300M) — not benchmarked on device</th><th>(ms)</th><th>(ms)</th><th></th><th>(MB)</th><th>(Wmean/max)</th><th>vs FP32</th></tr><tr><td>FP32</td><td>7.91</td><td>8.05</td><td>134.1</td><td>3.4</td><td>3.95/7.67</td><td>1.00</td></tr><tr><td>FP16</td><td>5.20</td><td>5.28</td><td>214.6</td><td>2.4</td><td>4.21/7.26</td><td>1.52</td></tr><tr><td>INT8 (QAT, deployed)</td><td>5.57</td><td>5.60</td><td>179.2</td><td>1.5</td><td>3.42/5.83</td><td>1.42</td></tr></table></details><details><summary>Abstract</summary><p class="p-abs">Geospatial foundation models can provide strong flood-segmentation performance, but their size limits deployment on memory-constrained edge hardware. We distill a 300-million-parameter Prithvi-EO-2.0 teacher, fine-tuned on the 252 manually labeled Sen1Floods11 training scenes, into a 0.7-million-parameter EfficientViT-B0 student. The teacher supervises additional unlabeled Sentinel-2 imagery, allowing the student training set to grow without new manual annotations. At the matched budget of 252 scenes, teacher-supervised training is competitive with direct training and improves STURM-Flood performance across tested configurations; a geometry-matched control shows that label source alone does not explain the difference. Scaling the teacher-supervised pool to 2,500 scenes narrows the remaining student--teacher gap: the float student reaches 0.787 water intersection over union on the Sen1Floods11 test split against 0.822 for the teacher, matches the teacher on STURM-Flood under our evaluation protocol, and remains below it on WorldFloods-v2. After activation replacement and quantization-aware training, the student runs as a 1.5-megabyte 8-bit integer (INT8) TensorRT engine on a Jetson Xavier NX at 5.57 milliseconds of graphics processing unit (GPU) compute per 512-by-512 image, with approximately 14 megabytes of runtime device memory. A fixed modified normalized difference water index (MNDWI) threshold is competitive with both models on the two clean external benchmarks, so we interpret those benchmarks as generalization tests rather than as evidence of learned-model superiority over a spectral rule. The results support the conclusion: foundation-model supervision can amplify a fixed manual annotation budget into a substantially larger training set and yield a compact, deployable edge model.</p></details><div class="sig-row"><span class="sig-chip">distillation</span><span class="sig-chip">edge</span><span class="sig-chip">remote-sensing</span><span class="sig-chip">floods</span><span class="sig-chip">quantization</span><a class="sig-link" href="https://arxiv.org/abs/2609.20441">↗ arXiv</a><a class="sig-link" href="https://arxiv.org/pdf/2609.20441">↗ PDF</a></div></article>
+</main>
+<footer><div class="wrap fgrid">
+  <div><div class="fb">Sig<em>nal</em></div><p>A hype-free daily AI newspaper. This unpack is built from the paper itself — figures, tables and equations ship as published.</p></div>
+  <div><h5>Paper</h5><ul><li><a href="arxiv.html">Arxiv desk</a></li><li><a href="index.html">Front page</a></li></ul></div>
+</div>
+<div class="foot">Signal Arxiv deep read · 0 fabricated · © <span id="yr">2026</span> Signal</div>
+</footer>
+<button id="toTop" aria-label="Back to top">↑</button>
+<script src="assets/site.js"></script>
+
+</body>
+</html>
